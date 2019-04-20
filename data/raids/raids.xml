@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<raids>
+	<!--
+		<raid name="Testraid" file="testraid.xml" interval2="30" margin="0" />
+		executed on average once every 30 minutes
+	-->
+<raid name="Ferumbras" file="Ferumbras.xml" interval2="30" margin="1000" enabled="yes"/>
+<raid name="Necropharus" file="Necropharus.xml" interval2="30" margin="1000" enabled="yes"/>
+<raid name="The Horned Fox" file="The Horned Fox.xml" interval2="30" margin="1000" enabled="yes"/>
+</raids>

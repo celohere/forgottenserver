@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<raid>
+
+	<!--
+
+	// Raid System by 5mok3
+
+	// Nao mude o intervalo da raid, apenas em globalevents vocce podera mudar
+
+	-->
+
+
+  <!--Announcements-->
+
+    <announce delay="60000" type="Event" message="The Horned Fox appeared in the desert." />
+
+  <!--Single Spawns-->
+
+  <singlespawn delay="60000" name="The Horned Fox" x="256" y="73" z="7" />
+
+</raid>
