@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<npc name="Ashtamor" script="loot.lua" autowalk="0" floorchange="0">
+    <health now="100" max="100"/>
+    <look type="130" head="19" body="114" legs="76" feet="114" />
+<parameters>
+<parameter key="module_shop" value="1" />
+<parameter key="message_greet" value="Warm Welcome, dear traveler."/>
+<parameter key="shop_sellable" value="royal helmet,2498,14000;warrior helmet,2475,2300;crusader helmet,2497,2300;crown helmet,2491,1500;devil helmet,2462,2000;mystic turban,2663,1000;chain helmet,2458,35;iron helmet,2459,30;steel boots,2645,30000;boots of haste,2195,16000;golden boots,2646,32000;magic plate armor,2472,100000;dragon scale mail,2492,20000;golden armor,2466,15000;crown armor,2487,5000;knight armor,2476,3000;blue robe,2656,9000;plate armor,2463,400;brass armor,2465,200;chain armor,2464,100;golden legs,2470,80000;crown legs,2488,20000;knight legs,2477,4000;plate legs,2647,500;brass legs,2487,100;mastermind shield,2514,70000;demon shield,2520,20000;vampire shield,2534,7000;medusa shield,2536,45000;crown shield,2519,5000;tower shield,2528,4000;dragon shield,2516,3000;guardian shield,2515,2000;beholder shield,2518,1000;dwarven shield,2525,100;giant sword,2393,6000;bright sword,2407,7000;serpent sword,2409,700;ice rapier,2396,1900;fire sword,2392,4000;two handed sword,2377,400;broad sword,2413,500;short sword,2406,30;sword,2376,25;dragon lance,2414,5800;stonecutter axe,2431,100000;guardian halberd,2427,4000;fire axe,2432,5000;knight axe,2430,2000;double axe,2387,200;halberd,2381,400;battle axe,2378,100;hatchet,2388,20;war hammer,2391,2000;skull staff,2436,4000;dragon hammer,2434,2200;clerical mace,2423,500;battle hammer,2417,60;mace,2398,30;beastslayer axe,3962,5000;crystal sword,7449,4000;blacksteel sword,7406,5500;mystic blade,7384,10000;taurus mace,7425,2000;dragonbone staff,7430,1100;brutetamer's staff,7379,2000;orcish maul,7392,2000;amber staff,7426,3000;chaos mace,7427,3000;blessed sceptre,7429,7500;wand of inferno,2187,1800;platinum amulet,2171,1800" />
+<parameter key="message_farewell" value="Good bye."/>
+<parameter key="message_walkaway" value="Bye."/>
+</parameters>
+</npc>

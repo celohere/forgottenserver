@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<npc name="Tim" script="seller.lua" access="1" lookdir="2" autowalk="25">
+	<mana now="800" max="800"/>
+	<health now="200" max="200"/>
+<look type="134" head="114" body="113" legs="113" feet="113"/>
+	<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="message_greet" value="Hello |PLAYERNAME|. I sell amulet of loss(10k)." />
+      	<parameter key="shop_buyable" value="amulet of loss,2173,10000;aol,2173,10000" />
+	</parameters>
+</npc>

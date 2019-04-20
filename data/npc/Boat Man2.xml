@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Boat Man" script="default.lua" walkinterval="0" floorchange="0">
+	<health now="150" max="150"/>
+	<look type="129" head="114" body="119" legs="114" feet="114"/>
+    <parameters>
+        <parameter key="module_travel" value="1"/>
+		<parameter key="message_greet" value="Hello |PLAYERNAME|. I can take you to Small Ice."/>
+        <parameter key="travel_destinations" value="small ice,64,422,7,50;"/>
+    </parameters>
+</npc>

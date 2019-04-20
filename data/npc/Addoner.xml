@@ -1,0 +1,4 @@
+<npc name="Addon Items Seller" script="addon.lua" walkinterval="2000" floorchange="0">
+    <health now="150" max="150"/>
+    <look type="134" head="114" body="113" legs="113" feet="113" addons="3" corpse="2212"/>
+</npc>

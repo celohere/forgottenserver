@@ -1,0 +1,8 @@
+<npc name="Roy" script="shoes.lua" floorchange="0" walkinterval="25" access="5" level="1" maglevel="1">
+  <health now="150" max="150"/>
+    <look type="128" head="114" body="88" legs="88" feet="0" addons="3" corpse="2212"/>
+  <parameters>
+    <parameter key="message_greet" value="Hello |PLAYERNAME|. i am specialised in boots" />    
+  </parameters>
+</npc>
+ 

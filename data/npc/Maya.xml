@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<npc name="Maya" script="bows.lua" access="3" lookdir="2" walkinterval="0">
+	<mana now="800" max="800"/>
+	<health now="200" max="200"/>
+<look type="142" head="79" body="118" legs="115" feet="114"/>
+  <parameters>
+  <parameter key="message_greet" value="Welcome |PLAYERNAME|.I sell bow,crossbow,arrow,bolt,power bolt,assassin star,burst arrow,poison arrow,sniper arrow,onyx arrow,piercing bolt,spear,royal spear,hunting spear." /> 
+  <parameter key="module_shop" value="1" /> 
+  <parameter key="shop_sellable" value="crossbow,2455,430;bow,2456,280" /> 
+  <parameter key="shop_buyable" value="crossbow,2455,600;assassin star,7368,200;bow,2456,400;power bolt,2547,10;burst arrow,2546,25;poison arrow,2545,3;sniper arrow,7364,3;onyx arrow,7365,5;piercing bolt,7363,4;hunting spear,3965,15;royal spear,7378,20;bolt,2543,3;arrow,2544,2;spear,2389,5" /> 
+  </parameters>
+  </npc>

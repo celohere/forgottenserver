@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<npc name="Orlan" script="promotion.lua" access="3" lookdir="2" autowalk="4">
+	<mana now="800" max="800"/>
+	<health now="200" max="200"/>
+<look type="133" head="114" body="119" legs="132" feet="114"/>
+	<parameters>
+		<parameter key="message_greet" value="Hello |PLAYERNAME|. I sell promotions."/>
+		<parameter key="message_decline" value="Is |TOTALCOST| gold coins too much for you? Come back when you get enough money!"/>
+	</parameters>
+</npc>

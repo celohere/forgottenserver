@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<npc name="Frodo" script="seller.lua" access="1" lookdir="2" autowalk="25">
+	<mana now="800" max="800"/>
+	<health now="200" max="200"/>
+<look type="134" head="114" body="113" legs="113" feet="113"/>
+	<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="message_greet" value="Hello |PLAYERNAME|. I sell ropes (50gp), shovels (20gp), backpacks of all colors (10gp), fishing rods (100gp), amulet of loss (10k), torches , letters and parcels (2gp). I buy vials (10gp)." />
+		<parameter key="shop_buyable" value="vial,2006,10;flask,2006,10" />
+      	<parameter key="shop_buyable" value="rope,2120,10;shovel,2554,10;rod,2580,50;torch,2050,2;pick,2553,40;machete,2420,30;scythe,2550,30;blue backpack,2002,20;yellow backpack,1999,20;black backpack,2003,20;purple backpack,2001,20;grey backpack,2003,20;red backpack,2000,20;bag,1991,8;watch,2036,15;amulet of loss,2173,15000;backpack,1988,20;parcel,2595,10;label,2599,5;letter,2597,10" />
+	</parameters>
+</npc>

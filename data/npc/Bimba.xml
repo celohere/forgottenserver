@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<npc name="Beatrice" script="loot.lua" autowalk="0" floorchange="0">
+	<health now="100" max="100"/>
+	<look type="136" head="96" body="102" legs="69" feet="95"/>
+<parameters>
+      		<parameter key="module_shop" value="1" />
+      		<parameter key="message_greet" value="Hello, |PLAYERNAME|. Feel welcome to my furniture shop!" />
+                                        <parameter key="message_farewell" value="Good bye, |PLAYERNAME|. Remember that i will always be here if you need anything!" />
+      		<parameter key="shop_buyable" value="green cushioned chair,3904,250;red cushioned chair,3903,250;drawer,3921,70;square table,3910,60;blue round pillow,1686,20;yellow round pillow,1689,20;red round pillow,1687,20;small round table,3911,30;crate,1739,30;box,1738,30" />
+      	</parameters>
+       </npc>
