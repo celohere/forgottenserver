@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<creaturescripts>
+	<event type="login" name="PlayerLogin" script="login.lua" />
+	<event type="logout" name="PlayerLogout" script="logout.lua" />
+	<event type="login" name="FirstItems" script="firstitems.lua" />
+	<event type="login" name="RegenerateStamina" script="regeneratestamina.lua" />
+	<event type="death" name="PlayerDeath" script="playerdeath.lua" />
+	<event type="death" name="DropLoot" script="droploot.lua" />
+	<event type="think" name="changeCoins" event="script" value="changeCash.lua"/>
+	<event type="think" name="SkullCheck" event="script" value="skullcheck.lua"/>
+	<event type="login" name="AntiMC" event="script" value="antimc.lua"/>
+	<event type="login" name="loot" script="loot.lua"/>
+	
+	
+	 <event type="login" name="Arena_Login" script="Arena_Death.lua"/>
+     <event type="preparedeath" name="Arena_Death" script="Arena_Death.lua"/>
+	 
+	 <event type="login" name="Arena_Login2" script="Arena_Death2.lua"/>
+	 <event type="preparedeath" name="Arena_Death2" script="Arena_Death2.lua"/>
+	 
+	 <event type="login" name="Arena_Login3" script="Arena_Death3.lua"/>
+	 <event type="preparedeath" name="Arena_Death3" script="Arena_Death3.lua"/>
+	 
+     <event type="logout" name="testlogout" script="testlogout.lua" />
+
+
+
+	<!-- Svargrond Arena: Killing a boss -->
+	<event type="kill" name="SvargrondArenaKill" script="svargrond arena/arena_kill.lua" />
+	<event type="preparedeath" name="pvpenfo" event="script" value="pvpenfo.lua"/>
+
+	<event type="extendedopcode" name="ExtendedOpcode" script="extendedopcode.lua" />
+	<event type="advance" name="AdvanceSave" script="advance_save.lua" />
+</creaturescripts>
