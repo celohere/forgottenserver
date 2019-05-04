@@ -472,8 +472,6 @@ class Player final : public Creature, public Cylinder
 		bool canSee(const Position& pos) const final;
 		bool canSeeCreature(const Creature* creature) const final;
 
-		bool canWalkthrough(const Creature* creature) const;
-
 		RaceType_t getRace() const final {
 			return RACE_BLOOD;
 		}
