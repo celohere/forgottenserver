@@ -744,19 +744,6 @@ bool Player::canSeeCreature(const Creature* creature) const
 	return true;
 }
 
-bool Player::canWalkthrough(const Creature* creature) const
-{
-	if (group->access || creature->isInGhostMode()) {
-		return true;
-	}
-
-	const Player* player = creature->getPlayer();
-	if (!player) {
-		return true;
-	}
-	return false;
-}
-
 void Player::onReceiveMail() const
 {
 	if (isNearDepotBox()) {
