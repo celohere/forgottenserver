@@ -1,15 +1,16 @@
+fixed bug of runes in full container -- crédits to me --
+fixed monsters walk dashing -- crédits to me --
+ficed crash on login -- crédits to danielsalim1 and mattyx14 --
 fixed stairhope delay (now its working properly on config.lua)
-fixed send parcel to offline players  -- credits to Gesior.pl --
-fixed stackpos -- credits to Nekiro --
-(don't need to apply 'ForceUse' to ladders anymore ,solve the bug of throw a item over a ladder and don't be able to up)
-
-fixed Check that player partner isn't self -- jo3bingham --
-fixed Update premium time on login -- credits to Nekiro --
-fixed client debug when gm or monster spawn on player -- credits Ferrus --
-fixed distance attacks not hitting targets on the same sqm -- credits Anastaciaa --
+fixed send parcel to offline players  -- crédits to Gesior.pl --
+fixed stackpos -- crédits to Nekiro --
+fixed Check that player partner isn't self --crédits to jo3bingham --
+fixed Update premium time on login -- crédits to Nekiro --
+fixed client debug when gm or monster spawn on player -- crédits to Ferrus --
+fixed distance attacks not hitting targets on the same sqm -- crédits to Anastaciaa --
 fixed logout delay when player is disconected
-fixed Unpassable and movable item teleport bug -- credits mattyx14 --
-Moved shared experience formula to Lua -- credits DSpeichert ,edumntg and me --
+fixed Unpassable and movable item teleport bug -- crédits to mattyx14 --
+Moved shared experience formula to Lua -- crédits to DSpeichert ,edumntg and me --
 removed party description onlook ex:Your party has 2 members and 0 pending invitations.
 removed guild online and count members onlook
 removed damage ,heal and experience message to spectators
@@ -19,24 +20,20 @@ changed skill advance message
 added autostack, configurable on config.lua
 added allow fight back, configurable on config.lua
 added loot message, configurable on config.lua 
-added loot channel -- credits to cbrm --
+added loot channel -- crédits to cbrm --
 (if you dont want the loot channel to open everytime a player login, just remove this line on creaturescripts  <event type="login" name="loot" script="loot.lua"/>
 
-added field owner name onlook  -- credits to Steve Albert --
+added field owner name onlook  -- crédits to Steve Albert --
 added magic wall and wild growth counter
-added players can walk through GMs in ghost mode
-added Walkthrough everything Ctrl + Arrow keys -- credits to Printer --
-added classicAttackSpeed, configurable on config.lua -- credits to Mkalo --
-Monster direction fix (monsters standing to your left look to the east and monsters standing to your right look to the west.) -- credits to joseluis2g --
+added players can walk through GMs in ghost mode -- crédits to me --
+added Walkthrough everything Ctrl + Arrow keys -- crédits to Printer --
+added classicAttackSpeed, configurable on config.lua -- crédits to Mkalo --
+Monster direction fix (monsters standing to your left look to the east and monsters standing to your right look to the west.) -- crédits to joseluis2g --
 
 Known Bugs:
 
 *skull in protect zone ,if you throw some field and enter pz ,you will get white skull if someone step in the field
-*crash related to login(i am only able to reproduce this if i login with the host machine): https://otland.net/threads/crash-tfs-1-2-downgraded-by-ninja.258451/#post-2544655
-*runes stack inside full containers bug ,there is a workaround for this , but it's still a bug : https://otland.net/threads/tfs-1-2-runes-on-container.262139/#post-2535403
- (workaround for this bug is : remove attribute key="type" value="rune" from all runes in items.xml ,change the runes properties to stackable in Tibia.SPR with object builder, and reload the atributes of items.otb with some itemeditor)
- 
-*weird monsters walk animation :https://otland.net/threads/monsters-lagging-appear-to-be-dashing.250419/
+
 
 			  
 
