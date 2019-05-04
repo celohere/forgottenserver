@@ -22,13 +22,13 @@ added allow fight back, configurable on config.lua
 added loot message, configurable on config.lua 
 added loot channel -- crédits to cbrm --
 (if you dont want the loot channel to open everytime a player login, just remove this line on creaturescripts  <event type="login" name="loot" script="loot.lua"/>
-
 added field owner name onlook  -- crédits to Steve Albert --
 added magic wall and wild growth counter
 added players can walk through GMs in ghost mode -- crédits to me --
 added Walkthrough everything Ctrl + Arrow keys -- crédits to Printer --
 added classicAttackSpeed, configurable on config.lua -- crédits to Mkalo --
 Monster direction fix (monsters standing to your left look to the east and monsters standing to your right look to the west.) -- crédits to joseluis2g --
+
 
 Known Bugs:
 
