@@ -30,6 +30,7 @@
 #include "iologindata.h"
 #include "talkaction.h"
 #include "spells.h"
+#include "teleport.h"
 #include "configmanager.h"
 #include "server.h"
 #include "globalevent.h"
@@ -1038,8 +1039,22 @@ ReturnValue Game::internalMoveItem(Cylinder* fromCylinder, Cylinder* toCylinder,
 	}
 
 	//destination is the same as the source?
-	if (item == toItem) {
+	if (item == toItem)
 		return RETURNVALUE_NOERROR;    //silently ignore move
+
+	if (toCylinder->getTile()->hasFlag(TILESTATE_TELEPORT))
+	{
+		Teleport* teleport = toCylinder->getTile()->getTeleportItem();
+		Position dest = teleport->getDestPos();
+		if (dest.x != 0 && dest.y != 0) //checks if the portal has a destination set
+		{
+			Tile* tile = map.getTile(dest);
+			if (tile)
+			{
+				if ((tile->hasFlag(TILESTATE_BLOCKSOLID) || tile->getTopCreature()) && item->hasProperty(CONST_PROP_BLOCKSOLID))
+					return RETURNVALUE_NOTPOSSIBLE;
+			}
+		}
 	}
 
 	//check if we can add this item
@@ -2494,7 +2509,7 @@ std::string Game::getTradeErrorDescription(ReturnValue ret, Item* item)
 				ss << " this object.";
 			}
 
-			ss << "\n " << item->getWeightDescription();;
+			ss << "\n " << item->getWeightDescription();
 			return ss.str();
 		} else if (ret == RETURNVALUE_NOTENOUGHROOM || ret == RETURNVALUE_CONTAINERNOTENOUGHROOM) {
 			std::ostringstream ss;
