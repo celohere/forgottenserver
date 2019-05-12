@@ -3675,15 +3675,13 @@
 		<attribute key="weaponType" value="club" />
 		<attribute key="slotType" value="two-handed" />
 	</item>
-	<item id="2453" article="an" name="Sprite Wand">
+	<item id="2453" article="an" name="arcane staff">
 		<attribute key="description" value="It is enchanted with ancient magic that renders a weak staff into a powerful weapon." />
 		<attribute key="weight" value="4000" />
 		<attribute key="defense" value="30" />
 		<attribute key="attack" value="50" />
-		<attribute key="weight" value="2300" />
-		<attribute key="weaponType" value="wand" />
-		<attribute key="shootType" value="energy" />
-		<attribute key="range" value="10" />
+		<attribute key="weaponType" value="club" />
+		<attribute key="slotType" value="two-handed" />
 	</item>
 	<item id="2454" article="a" name="war axe">
 		<attribute key="weight" value="6150" />
