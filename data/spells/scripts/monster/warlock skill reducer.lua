@@ -4,8 +4,8 @@ condition:setParameter(CONDITION_PARAM_SKILL_SHIELDPERCENT, 50)
 condition:setParameter(CONDITION_PARAM_SKILL_MELEEPERCENT, 50)
 
 local combat = Combat()
-combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_ICEAREA)
-combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_ICE)
+combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_ENERGYHIT)
+combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_ENERGY)
 combat:setArea(createCombatArea(AREA_BEAM1))
 combat:setCondition(condition)
 
