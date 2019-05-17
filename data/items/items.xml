@@ -6718,7 +6718,6 @@
 	<item fromid="3158" toid="3165" article="a" name="large stone carving" />
 	<item fromid="3166" toid="3168" article="a" name="carved stone tile" />
 	<item id="3169" article="a" name="carved stone tile">
-		<attribute key="type" value="teleport" />
 	</item>
 	<item fromid="3170" toid="3172" article="a" name="carved stone tile" />
 	<item fromid="3173" toid="3181" name="ornamented floor" />
@@ -9135,7 +9134,6 @@
 	<item fromid="5750" toid="5754" article="an" name="earth pile" />
 	<item id="5755" article="a" name="turtle" />
 	<item id="5756" article="a" name="turtle">
-		<attribute key="type" value="teleport" />
 	</item>
 	<item fromid="5757" toid="5761" article="a" name="turtle" />
 	<item id="5762" article="a" name="dead quara constrictor">
