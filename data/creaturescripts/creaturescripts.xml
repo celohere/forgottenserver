@@ -15,12 +15,6 @@
 	 <event type="login" name="Arena_Login" script="Arena_Death.lua"/>
      <event type="preparedeath" name="Arena_Death" script="Arena_Death.lua"/>
 	 
-	 <event type="login" name="Arena_Login2" script="Arena_Death2.lua"/>
-	 <event type="preparedeath" name="Arena_Death2" script="Arena_Death2.lua"/>
-	 
-	 <event type="login" name="Arena_Login3" script="Arena_Death3.lua"/>
-	 <event type="preparedeath" name="Arena_Death3" script="Arena_Death3.lua"/>
-	 
      <event type="logout" name="testlogout" script="testlogout.lua" />
 
 

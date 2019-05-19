@@ -7,7 +7,6 @@
 	<item id="106" name="grass" />
 	<item id="107" name="rock soil" />
 	<item fromid="108" toid="109" name="flowers" />
-	<item fromid="110" toid="133" name="grass" />
 	<item id="194" name="dirt" />
 	<item id="231" name="sand" />
 	<item id="280" name="earth ground" />
@@ -700,7 +699,7 @@
 	<item id="1499" article="a" name="rush wood">
 		<attribute key="type" value="magicfield" />
 		<attribute key="decayTo" value="0" />
-		<attribute key="duration" value="40" />
+		<attribute key="duration" value="45" />
 		<attribute key="blocking" value="1" />
 	</item>
 	<item id="1500" article="a" name="fire field">
@@ -2654,231 +2653,254 @@
 		<attribute key="weight" value="980" />
 	</item>
 	<item id="2260" article="a" name="blank rune">
+		<attribute key="type" value="rune" />
 		<attribute key="weight" value="0" />
 	</item>
 	<item id="2261" article="a" name="destroy field rune">
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adito grav" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
-
+		<attribute key="charges" value="3" />
 	</item>
 	<item id="2262" article="an" name="energy bomb rune">
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adevo mas vis" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="charges" value="2" />
 	</item>
 	<item fromid="2263" toid="2264" article="a" name="spell rune">
+		<attribute key="type" value="rune" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="2265" article="an" name="intense healing rune">
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adura gran" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="charges" value="1" />
 	</item>
 	<item id="2266" article="an" name="cure poison rune">
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adana pox" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="charges" value="1" />
 	</item>
 	<item id="2267" article="a" name="spell rune">
+		<attribute key="type" value="rune" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="2268" article="a" name="sudden death rune">
-	    <attribute key="description" value="('adori vita vis')They can only be used by players with level 45 and magic level 15 or higher."/>
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adori vita vis" />
 		<attribute key="weight" value="0" />
+		<attribute key="charges" value="1" />
 	</item>
 	<item id="2269" article="a" name="wild growth rune">
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adevo grav vita" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="charges" value="2" />
 	</item>
 	<item id="2270" article="a" name="spell rune">
+		<attribute key="type" value="rune" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="2271" article="an" name="icicle rune">
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adori frigo" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="charges" value="5" />
 	</item>
 	<item id="2272" article="a" name="spell rune">
+		<attribute key="type" value="rune" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="2273" article="an" name="ultimate healing rune">
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adura vita" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="charges" value="1" />
 	</item>
 	<item id="2274" article="an" name="avalanche rune">
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adori mas frigo" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="charges" value="4" />
 	</item>
 	<item fromid="2275" toid="2276" article="a" name="spell rune">
+		<attribute key="type" value="rune" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="2277" article="an" name="energy field rune">
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adevo grav vis" />
 		<attribute key="weight" value="0" />
-        <attribute key="showattributes" value="1" />	</item>
+		<attribute key="charges" value="3" />
+	</item>
 	<item id="2278" article="a" name="paralyze rune">
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adana ani" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="charges" value="1" />
 	</item>
 	<item id="2279" article="an" name="energy wall rune">
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adevo mas grav vis" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="charges" value="4" />
 	</item>
 	<item fromid="2280" toid="2284" article="a" name="spell rune">
+		<attribute key="type" value="rune" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="2285" article="a" name="poison field rune">
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adevo grav pox" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="charges" value="3" />
 	</item>
 	<item id="2286" article="a" name="poison bomb rune">
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adevo mas pox" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="charges" value="2" />
 	</item>
 	<item id="2287" article="a" name="light magic missile rune">
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adori min vis" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="charges" value="10" />
 	</item>
 	<item id="2288" article="a" name="stone shower rune">
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adori mas tera" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="charges" value="4" />
 	</item>
 	<item id="2289" article="a" name="poison wall rune">
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adevo mas grav pox" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="charges" value="4" />
 	</item>
 	<item id="2290" article="a" name="convince creature rune">
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adeta sio" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="charges" value="1" />
 	</item>
 	<item id="2291" article="a" name="chameleon rune">
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adevo ina" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="charges" value="1" />
 	</item>
 	<item id="2292" article="a" name="envenom rune">
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adevo res pox" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="charges" value="1" />
 	</item>
 	<item id="2293" article="a" name="magic wall rune">
-		<attribute key="description" value="('adevo grav tera')They can only be used by players with level 32 and magic level 9 or higher."/>
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adevo grav tera" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="charges" value="3" />
 	</item>
 	<item id="2294" article="a" name="spell rune">
+		<attribute key="type" value="rune" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="2295" article="a" name="holy missile rune">
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adori san" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="charges" value="5" />
 	</item>
 	<item fromid="2296" toid="2300" article="a" name="spell rune">
+		<attribute key="type" value="rune" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="2301" article="a" name="fire field rune">
-		<attribute key="description" value="('adevo grav flam')They can only be used by players with level 15 and magic level 1 or higher."/>
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adevo grav flam" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="charges" value="3" />
 	</item>
 	<item id="2302" article="a" name="fireball rune">
-		<attribute key="description" value="('adori flam')They can only be used by players with level 27 and magic level 4 or higher."/>
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adori flam" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="charges" value="2" />
 	</item>
 	<item id="2303" article="a" name="fire wall rune">
-		<attribute key="description" value="('adevo mas grav flam')They can only be used by players with level 33 and magic level 6 or higher."/>
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adevo mas grav flam" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="charges" value="4" />
 	</item>
 	<item id="2304" article="a" name="great fireball rune">
-		<attribute key="description" value="('adori gran flam')They can only be used by players with level 30 and magic level 4 or higher."/>
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adori gran flam" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="charges" value="2" />
 	</item>
 	<item id="2305" article="a" name="fire bomb rune">
-		<attribute key="description" value="('adevo mas flam')They can only be used by players with level 27 and magic level 5 or higher."/>
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adevo mas flam" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="charges" value="2" />
 	</item>
 	<item fromid="2306" toid="2307" article="a" name="spell rune">
 		<attribute key="type" value="rune" />
 		<attribute key="weight" value="0" />
 	</item>
 	<item id="2308" article="a" name="soulfire rune">
-		<attribute key="description" value="('adevo res flam')They can only be used by players with level 27 and magic level 7 or higher."/>
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adevo res flam" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="charges" value="3" />
 	</item>
 	<item id="2309" article="a" name="spell rune">
+		<attribute key="type" value="rune" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="2310" article="a" name="disintegrate rune">
-		<attribute key="description" value="('adito tera')They can only be used by players with magic level 4 or higher."/>
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adito tera" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="charges" value="3" />
 	</item>
 	<item id="2311" article="a" name="heavy magic missile rune">
-		<attribute key="description" value="('adori gran')They can only be used by players with level 25 and magic level 3 or higher."/>
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adori gran" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="charges" value="5" />
 	</item>
 	<item id="2312" article="a" name="spell rune">
+		<attribute key="type" value="rune" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="2313" article="an" name="explosion rune">
-		<attribute key="description" value="('adevo mas hur')They can only be used by players with magic level 6 or higher."/>
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adevo mas hur" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="charges" value="3" />
 	</item>
 	<item id="2314" article="a" name="spell rune">
+		<attribute key="type" value="rune" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="2315" article="a" name="thunderstorm rune">
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adori mas vis" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="charges" value="4" />
 	</item>
 	<item id="2316" article="an" name="animate dead rune">
-		<attribute key="description" value="('adana mort')They can only be used by players with magic level 4 or higher."/>
+		<attribute key="type" value="rune" />
 		<attribute key="runeSpellName" value="adana mort" />
 		<attribute key="weight" value="0" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="charges" value="1" />
 	</item>
 	<item id="2317" article="a" name="dead human" />
 	<item id="2318" article="a" name="family brooch">
@@ -3520,7 +3542,7 @@
 		<attribute key="weight" value="2300" />
 		<attribute key="weaponType" value="wand" />
 		<attribute key="slotType" value="two-handed" />
-        <attribute key="shootType" value="energy" />
+           <attribute key="shootType" value="energy" />
 		<attribute key="range" value="10" />
 	</item>
 	<item id="2434" article="a" name="dragon hammer">
@@ -3587,6 +3609,7 @@
 		<attribute key="attack" value="49" />
 		<attribute key="weaponType" value="axe" />
 		<attribute key="slotType" value="two-handed" />
+		<attribute key="description" value="A power weapon made only for royal guards of the pharaoh."/>
 	</item>
 	<item id="2444" article="a" name="hammer of wrath">
 		<attribute key="description" value="A giant is said to have forged this hammer to take revenge for the death of his brother." />
@@ -3761,6 +3784,7 @@
 		<attribute key="weight" value="8500" />
 		<attribute key="armor" value="17" />
 		<attribute key="slotType" value="body" />
+		<attribute key="description" value="An enchanted gem glows on the plate armor."/>
 	</item>
 	<item id="2473" article="a" name="viking helmet">
 		<attribute key="weight" value="3900" />
@@ -4531,92 +4555,92 @@
 		<attribute key="slotType" value="head" />
 	</item>
 	<item id="2666" name="meat">
-		<attribute key="weight" value="1300" />
+		<attribute key="weight" value="0" />
 		<attribute key="showcount" value="0" />
 	</item>
 	<item id="2667" article="a" name="fish" plural="fish">
-		<attribute key="weight" value="520" />
+		<attribute key="weight" value="0" />
 	</item>
 	<item id="2668" article="a" name="salmon">
-		<attribute key="weight" value="320" />
+		<attribute key="weight" value="0" />
 		<attribute key="showcount" value="0" />
 	</item>
 	<item id="2669" article="a" name="northern pike">
 		<attribute key="weight" value="830" />
 	</item>
 	<item id="2670" name="shrimp">
-		<attribute key="weight" value="50" />
+		<attribute key="weight" value="0" />
 		<attribute key="showcount" value="0" />
 	</item>
 	<item id="2671" name="ham">
-		<attribute key="weight" value="2000" />
+		<attribute key="weight" value="0" />
 		<attribute key="showcount" value="0" />
 	</item>
 	<item id="2672" name="dragon ham">
 		<attribute key="description" value="It still contains a small part of the power of a dragon." />
-		<attribute key="weight" value="3000" />
+		<attribute key="weight" value="0" />
 		<attribute key="showcount" value="0" />
 	</item>
 	<item id="2673" article="a" name="pear">
 		<attribute key="weight" value="140" />
 	</item>
 	<item id="2674" article="a" name="red apple">
-		<attribute key="weight" value="150" />
+		<attribute key="weight" value="0" />
 	</item>
 	<item id="2675" article="an" name="orange">
-		<attribute key="weight" value="110" />
+		<attribute key="weight" value="0" />
 	</item>
 	<item id="2676" article="a" name="banana">
-		<attribute key="weight" value="180" />
+		<attribute key="weight" value="0" />
 	</item>
 	<item id="2677" article="a" name="blueberry" plural="blueberries">
-		<attribute key="weight" value="20" />
+		<attribute key="weight" value="0" />
 	</item>
 	<item id="2678" article="a" name="coconut">
-		<attribute key="weight" value="480" />
+		<attribute key="weight" value="0" />
 	</item>
 	<item id="2679" article="a" name="cherry" plural="cherries">
-		<attribute key="weight" value="20" />
+		<attribute key="weight" value="0" />
 	</item>
 	<item id="2680" article="a" name="strawberry" plural="strawberries">
-		<attribute key="weight" value="20" />
+		<attribute key="weight" value="0" />
 	</item>
 	<item id="2681" name="grapes" plural="grapes">
-		<attribute key="weight" value="250" />
+		<attribute key="weight" value="0" />
 		<attribute key="showcount" value="0" />
 	</item>
 	<item id="2682" article="a" name="melon">
-		<attribute key="weight" value="950" />
+		<attribute key="weight" value="0" />
 	</item>
 	<item id="2683" article="a" name="pumpkin">
-		<attribute key="weight" value="1350" />
+		<attribute key="weight" value="0" />
 	</item>
 	<item id="2684" article="a" name="carrot">
-		<attribute key="weight" value="160" />
+		<attribute key="weight" value="0" />
 	</item>
 	<item id="2685" article="a" name="tomato" plural="tomatoes">
-		<attribute key="weight" value="100" />
+		<attribute key="weight" value="0" />
 	</item>
 	<item id="2686" article="a" name="corncob">
-		<attribute key="weight" value="350" />
+		<attribute key="weight" value="0" />
 	</item>
 	<item id="2687" article="a" name="cookie">
-		<attribute key="weight" value="10" />
+		<attribute key="weight" value="0" />
 	</item>
 	<item id="2688" article="a" name="candy cane">
-		<attribute key="weight" value="50" />
+		<attribute key="weight" value="0" />
 	</item>
 	<item id="2689" name="bread">
-		<attribute key="weight" value="500" />
+		<attribute key="weight" value="0" />
 	</item>
 	<item id="2690" article="a" name="roll">
-		<attribute key="weight" value="100" />
+		<attribute key="weight" value="0" />
 	</item>
 	<item id="2691" name="brown bread">
-		<attribute key="weight" value="400" />
+		<attribute key="weight" value="0" />
 	</item>
 	<item id="2692" name="flour">
-		<attribute key="weight" value="100" />
+		<attribute key="weight" value="0" />
 	</item>
 	<item id="2693" article="a" name="lump of dough" plural="lumps of dough">
 		<attribute key="weight" value="100" />
@@ -4625,10 +4649,10 @@
 		<attribute key="weight" value="1250" />
 	</item>
 	<item id="2695" article="an" name="egg">
-		<attribute key="weight" value="30" />
+		<attribute key="weight" value="0" />
 	</item>
 	<item id="2696" name="cheese">
-		<attribute key="weight" value="400" />
+		<attribute key="weight" value="0" />
 	</item>
 	<item id="2697" article="a" name="snowy dead tree" />
 	<item id="2698" article="a" name="snowy fir tree" />
@@ -6694,7 +6718,6 @@
 	<item fromid="3158" toid="3165" article="a" name="large stone carving" />
 	<item fromid="3166" toid="3168" article="a" name="carved stone tile" />
 	<item id="3169" article="a" name="carved stone tile">
-		<attribute key="type" value="teleport" />
 	</item>
 	<item fromid="3170" toid="3172" article="a" name="carved stone tile" />
 	<item fromid="3173" toid="3181" name="ornamented floor" />
@@ -7991,14 +8014,6 @@
 		<attribute key="effect" value="greenbubble" />
 		<attribute key="allowpickupable" value="1" />
 	</item>
-	<item id="4756" article="a" name="grass">
-	</item>
-	<item id="4757" article="a" name="rocks">
-	</item>
-	<item id="4758" article="a" name="swamp">
-	</item>
-	<item id="4759" article="a" name="gravel">
-	</item>
 	<item fromid="4760" toid="4783" name="sand" />
 	<item fromid="4784" toid="4795" name="grass" />
 	<item fromid="4796" toid="4819" name="dirt" />
@@ -9119,7 +9134,6 @@
 	<item fromid="5750" toid="5754" article="an" name="earth pile" />
 	<item id="5755" article="a" name="turtle" />
 	<item id="5756" article="a" name="turtle">
-		<attribute key="type" value="teleport" />
 	</item>
 	<item fromid="5757" toid="5761" article="a" name="turtle" />
 	<item id="5762" article="a" name="dead quara constrictor">
@@ -13003,7 +13017,7 @@
 		<attribute key="type" value="magicfield" />
 		<attribute key="replaceable" value="0" />
 		<attribute key="field" value="fire">
-	     <attribute key="damage" value="300" />
+			<attribute key="damage" value="300" />
 		</attribute>
 	</item>
 	<item id="30001" name="water" />
