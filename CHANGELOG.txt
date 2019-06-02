@@ -1,3 +1,4 @@
+fixed the use of lifefluid on hotkeys -- crédits to me --
 fixed fluid wrong message on hotkeys -- crédits to danielsalim1 --
 fixed bug of runes in full container -- crédits to me --
 fixed monsters walk dashing -- crédits to me --
