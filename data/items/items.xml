@@ -13021,13 +13021,13 @@
 		</attribute>
 	</item>
 	<item id="30001" name="water" />
-	<item id="30002" name="blood" />
+	<item id="30002" name="lifefluid" />
 	<item id="30003" name="beer" />
 	<item id="30004" name="slime" />
 	<item id="30005" name="lemonade" />
 	<item id="30006" name="milk" />
 	<item id="30007" name="manafluid" />
-	<item id="30010" name="lifefluid" />
+	<item id="30010" name="blood" />
 	<item id="30011" name="oil" />
 	<item id="30013" name="urine" />
 	<item id="30014" name="coconut milk" />
