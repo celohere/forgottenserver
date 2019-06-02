@@ -13,7 +13,7 @@ npcHandler:addModule(shopModule)
 shopModule:addBuyableItem({'spellbook'}, 2175, 150, 'spellbook')
 shopModule:addBuyableItem({'magic lightwand'}, 2163, 400, 'magic lightwand')
 
-shopModule:addBuyableItem({'lifefluid'}, 2006, 45, 10, 'vial of lifefluid')
+shopModule:addBuyableItem({'lifefluid'}, 2006, 45, 2, 'vial of lifefluid')
 shopModule:addBuyableItem({'manafluid'}, 2006, 50, 7, 'vial of manafluid')
 
 shopModule:addBuyableItem({'intense healing'}, 2265, 95, 1, 'intense healing rune')
