@@ -170,3 +170,5 @@ pip-log.txt
 .*.swp
 .*.swo
 
+cmake-build*
+.idea 
