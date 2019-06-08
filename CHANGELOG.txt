@@ -11,7 +11,7 @@ fixed Update premium time on login -- crédits to Nekiro --
 fixed client debug when gm or monster spawn on player -- crédits to Ferrus --
 fixed distance attacks not hitting targets on the same sqm -- crédits to Anastaciaa --
 fixed logout delay when player is disconected
-fixed Unpassable and movable item teleport bug -- crédits to mattyx14 --
+fixed Unpassable and movable item teleport bug -- crédits to mattyx14 --( removed for now,was causing a crash )
 Moved shared experience formula to Lua -- crédits to DSpeichert ,edumntg and me --
 removed party description onlook ex:Your party has 2 members and 0 pending invitations.
 removed guild online and count members onlook
