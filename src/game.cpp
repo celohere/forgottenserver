@@ -1042,21 +1042,6 @@ ReturnValue Game::internalMoveItem(Cylinder* fromCylinder, Cylinder* toCylinder,
 	if (item == toItem)
 		return RETURNVALUE_NOERROR;    //silently ignore move
 
-	if (toCylinder->getTile()->hasFlag(TILESTATE_TELEPORT))
-	{
-		Teleport* teleport = toCylinder->getTile()->getTeleportItem();
-		Position dest = teleport->getDestPos();
-		if (dest.x != 0 && dest.y != 0) //checks if the portal has a destination set
-		{
-			Tile* tile = map.getTile(dest);
-			if (tile)
-			{
-				if ((tile->hasFlag(TILESTATE_BLOCKSOLID) || tile->getTopCreature()) && item->hasProperty(CONST_PROP_BLOCKSOLID))
-					return RETURNVALUE_NOTPOSSIBLE;
-			}
-		}
-	}
-
 	//check if we can add this item
 	ReturnValue ret = toCylinder->queryAdd(index, *item, count, flags, actor);
 	if (ret == RETURNVALUE_NEEDEXCHANGE) {
