@@ -89,6 +89,7 @@ bool ConfigManager::load()
 	boolean[CLASSIC_ATTACK_SPEED] = getGlobalBoolean(L, "classicAttackSpeed", false);
 	boolean[AUTO_STACK_ITEMS] = getGlobalBoolean(L, "autoStackItems", false);
 	boolean[LOOT_MESSAGE] = getGlobalBoolean(L, "displayLootMessage", false);
+	boolean[REMOVE_WEAPON_AMMO] = getGlobalBoolean(L, "removeWeaponAmmunition", true);
 
 	string[DEFAULT_PRIORITY] = getGlobalString(L, "defaultPriority", "high");
 	string[SERVER_NAME] = getGlobalString(L, "serverName", "");
