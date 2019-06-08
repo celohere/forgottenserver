@@ -19,7 +19,7 @@ removed damage ,heal and experience message to spectators
 changed /clean command ,now cleans protect zones
 changed unjustified kill warning message to red =)
 changed skill advance message
-added auto recharge ammo (arrows an bolts recharges automatically now) -- crédits to Joe Rod and Emilianenko --
+added auto recharge ammo (arrows and bolts recharges automatically now) -- crédits to Joe Rod and Emilianenko --
 added autostack, configurable on config.lua
 added allow fight back, configurable on config.lua
 added loot message, configurable on config.lua 
