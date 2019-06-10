@@ -6,7 +6,7 @@ ficed crash on login -- crédits to danielsalim1 and mattyx14 --
 fixed stairhope delay (now its working properly on config.lua)
 fixed send parcel to offline players  -- crédits to Gesior.pl --
 fixed stackpos -- crédits to Nekiro --
-fixed Check that player partner isn't self --crédits to jo3bingham --
+fixed Check that player partner isn't self -- crédits to jo3bingham --
 fixed Update premium time on login -- crédits to Nekiro --
 fixed client debug when gm or monster spawn on player -- crédits to Ferrus --
 fixed distance attacks not hitting targets on the same sqm -- crédits to Anastaciaa --
@@ -19,6 +19,7 @@ removed damage ,heal and experience message to spectators
 changed /clean command ,now cleans protect zones
 changed unjustified kill warning message to red =)
 changed skill advance message
+added player ban -- crédits to Gesior.pl -- (now the ban for excessive player killing is banning only the player, and not the entire account)
 added auto recharge ammo (arrows and bolts recharges automatically now) -- crédits to Joe Rod and Emilianenko --
 added autostack, configurable on config.lua
 added allow fight back, configurable on config.lua
