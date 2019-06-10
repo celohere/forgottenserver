@@ -119,6 +119,24 @@ bool IOBan::isIpBanned(uint32_t clientip, BanInfo& banInfo)
 	return true;
 }
 
+bool IOBan::isPlayerBanned(uint32_t playerId, BanInfo& banInfo)
+{
+	Database* db = Database::getInstance();
+
+	std::ostringstream query;
+	query << "SELECT `reason`, `expires_at`, `banned_at`, `banned_by`, (SELECT `name` FROM `players` WHERE `id` = `banned_by`) AS `name` FROM `player_bans` WHERE `player_id` = " << playerId << " AND (`expires_at` > " << time(nullptr) << " OR `expires_at` = 0)";
+
+	DBResult_ptr result = db->storeQuery(query.str());
+	if (!result) {
+		return false;
+	}
+
+	banInfo.expiresAt = result->getNumber<int64_t>("expires_at");
+	banInfo.reason = result->getString("reason");
+	banInfo.bannedBy = result->getString("name");
+	return true;
+}
+
 bool IOBan::isPlayerNamelocked(uint32_t playerId)
 {
 	std::ostringstream query;

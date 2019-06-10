@@ -116,6 +116,21 @@ void ProtocolGame::login(const std::string& name, uint32_t accountId, OperatingS
 				disconnectClient(ss.str());
 				return;
 			}
+			
+			if (IOBan::isPlayerBanned(player->getGUID(), banInfo)) {
+				if (banInfo.reason.empty()) {
+					banInfo.reason = "(none)";
+				}
+
+				std::ostringstream ss;
+				if (banInfo.expiresAt > 0) {
+					ss << "Your character has been banned until " << formatDateShort(banInfo.expiresAt) << " by " << banInfo.bannedBy << ".\n\nReason specified:\n" << banInfo.reason;
+				} else {
+					ss << "Your character has been permanently banned by " << banInfo.bannedBy << ".\n\nReason specified:\n" << banInfo.reason;
+				}
+				disconnectClient(ss.str());
+				return;
+			}
 		}
 
 		if (!WaitingList::getInstance()->clientLogin(player)) {
