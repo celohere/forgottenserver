@@ -90,7 +90,7 @@ function onDeath(player, corpse, killer, mostDamageKiller, unjustified, mostDama
 			local kills = math.ceil(skullTime / configManager.getNumber(configKeys.FRAG_TIME))
 			if kills >= killsToBan then
 				local timeNow = os.time()
-                                db.query("INSERT INTO `player_bans ` (`player_id`, `reason`, `banned_at`, `expires_at`, `banned_by`) VALUES (" .. killer:getGuid() .. ", " .. db.escapeString("Excessive Unjustified Player Killing.") .. ", " .. timeNow .. ", " .. timeNow + (killsBanLenght * 86400) .. ", 1)")
+                                db.query("INSERT INTO `player_bans` (`player_id`, `reason`, `banned_at`, `expires_at`, `banned_by`) VALUES (" .. killer:getGuid() .. ", " .. db.escapeString("Excessive Unjustified Player Killing.") .. ", " .. timeNow .. ", " .. timeNow + (killsBanLenght * 86400) .. ", 1)")
 				killer:getPosition():sendMagicEffect(CONST_ME_MAGIC_RED)
 				killer:remove()
 			end
