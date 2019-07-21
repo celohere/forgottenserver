@@ -547,28 +547,23 @@ bool Spell::playerSpellCheck(Player* player) const
 		return false;
 	}
 
-	if (!player->hasFlag(PlayerFlag_HasNoExhaustion)) {
-		bool exhaust = false;
-		if (aggressive) {
-			if (player->hasCondition(CONDITION_EXHAUST_COMBAT)) {
-				exhaust = true;
-			}
-		} else {
-			if (player->hasCondition(CONDITION_EXHAUST_HEAL)) {
-				exhaust = true;
-			}
-		}
+    if (!player->hasFlag(PlayerFlag_HasNoExhaustion)) {
+        bool exhaust = false;
+        if (aggressive) {
+            if (player->hasCondition(CONDITION_EXHAUST_COMBAT) || player->hasCondition(CONDITION_EXHAUST_HEAL)) {
+                exhaust = true;
+            }
+        }
+        if (exhaust) {
+            player->sendCancelMessage(RETURNVALUE_YOUAREEXHAUSTED);
 
-		if (exhaust) {
-			player->sendCancelMessage(RETURNVALUE_YOUAREEXHAUSTED);
+            if (isInstant()) {
+                g_game.addMagicEffect(player->getPosition(), CONST_ME_POFF);
+            }
 
-			if (isInstant()) {
-				g_game.addMagicEffect(player->getPosition(), CONST_ME_POFF);
-			}
-
-			return false;
-		}
-	}
+            return false;
+        }
+    }
 
 	if (player->getLevel() < level) {
 		player->sendCancelMessage(RETURNVALUE_NOTENOUGHLEVEL);
@@ -749,10 +744,8 @@ void Spell::postCastSpell(Player* player, bool finishedCast /*= true*/, bool pay
 	if (finishedCast) {
 		if (!player->hasFlag(PlayerFlag_HasNoExhaustion)) {
 			if (cooldown > 0) {
-				if (aggressive) {
-					player->addCombatExhaust(cooldown);
-				} else {
-					player->addHealExhaust(cooldown);
+				Condition* condition = Condition::createCondition(CONDITIONID_DEFAULT, (aggressive ? CONDITION_EXHAUST_COMBAT : CONDITION_EXHAUST_HEAL), cooldown);
+				player->addCondition(condition);
 				}
 			}
 
@@ -938,11 +931,8 @@ bool InstantSpell::playerCastInstant(Player* player, std::string& param)
 			if (!target || target->getHealth() <= 0) {
 				if (!casterTargetOrDirection) {
 					if (cooldown > 0) {
-						if (aggressive) {
-							player->addCombatExhaust(cooldown);
-						} else {
-							player->addHealExhaust(cooldown);
-						}
+						Condition* condition = Condition::createCondition(CONDITIONID_DEFAULT, (aggressive ? CONDITION_EXHAUST_COMBAT : CONDITION_EXHAUST_HEAL), cooldown);
+						player->addCondition(condition);
 					}
 
 					player->sendCancelMessage(ret);
@@ -995,12 +985,9 @@ bool InstantSpell::playerCastInstant(Player* player, std::string& param)
 
 			if (ret != RETURNVALUE_NOERROR) {
 				if (cooldown > 0) {
-					if (aggressive) {
-						player->addCombatExhaust(cooldown);
-					} else {
-						player->addHealExhaust(cooldown);
+					Condition* condition = Condition::createCondition(CONDITIONID_DEFAULT, (aggressive ? CONDITION_EXHAUST_COMBAT : CONDITION_EXHAUST_HEAL), cooldown);
+					player->addCondition(condition);
 					}
-				}
 
 				player->sendCancelMessage(ret);
 				g_game.addMagicEffect(player->getPosition(), CONST_ME_POFF);
