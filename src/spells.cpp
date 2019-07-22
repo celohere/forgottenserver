@@ -542,27 +542,22 @@ bool Spell::playerSpellCheck(Player* player) const
 		return false;
 	}
 
-	if (aggressive && !player->hasFlag(PlayerFlag_IgnoreProtectionZone) && player->getZone() == ZONE_PROTECTION) {
-		player->sendCancelMessage(RETURNVALUE_ACTIONNOTPERMITTEDINPROTECTIONZONE);
-		return false;
+	if (!player->hasFlag(PlayerFlag_HasNoExhaustion)) {
+		if (aggressive && !player->hasFlag(PlayerFlag_IgnoreProtectionZone) && player->getZone() == ZONE_PROTECTION) {
+			player->sendCancelMessage(RETURNVALUE_ACTIONNOTPERMITTEDINPROTECTIONZONE);
+			return false;
+		}
+
+		if (player->hasCondition(CONDITION_EXHAUST_COMBAT) || player->hasCondition(CONDITION_EXHAUST_HEAL)) {
+			player->sendCancelMessage(RETURNVALUE_YOUAREEXHAUSTED);
+
+			if (isInstant()) {
+				g_game.addMagicEffect(player->getPosition(), CONST_ME_POFF);
+			}
+
+			return false;
+		}
 	}
-
-    if (!player->hasFlag(PlayerFlag_HasNoExhaustion)) {
-        if (aggressive) {
-            if (player->hasCondition(CONDITION_EXHAUST_COMBAT) || player->hasCondition(CONDITION_EXHAUST_HEAL)) {
-                exhaust = true;
-            }
-        }
-        if (exhaust) {
-            player->sendCancelMessage(RETURNVALUE_YOUAREEXHAUSTED);
-
-            if (isInstant()) {
-                g_game.addMagicEffect(player->getPosition(), CONST_ME_POFF);
-            }
-
-            return false;
-        }
-    }
 
 	if (player->getLevel() < level) {
 		player->sendCancelMessage(RETURNVALUE_NOTENOUGHLEVEL);
