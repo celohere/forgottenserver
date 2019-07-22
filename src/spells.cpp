@@ -749,7 +749,6 @@ void Spell::postCastSpell(Player* player, bool finishedCast /*= true*/, bool pay
 				}
 			}
 		}
-	}
 
 	if (payCost) {
 		Spell::postCastSpell(player, getManaCost(player), getSoulCost());
