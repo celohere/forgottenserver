@@ -1,16 +1,17 @@
 local combat = Combat()
 combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_EARTHDAMAGE)
-combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_STONES)
-combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_EARTH)
+combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_GREEN_RINGS)
+combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_POISON)
 
-function onGetFormulaValues(player, level, maglevel)
-	local min = (level / 5) + (maglevel * 0.8) + 5
-	local max = (level / 5) + (maglevel * 1.6) + 10
-	return -min, -max
-end
+local condition = Condition(CONDITION_POISON)
+condition:setParameter(CONDITION_PARAM_DELAYED, 1)
+condition:addDamage(3, 10000, -5)
+condition:addDamage(4, 10000, -4)
+condition:addDamage(6, 10000, -3)
+condition:addDamage(9, 10000, -2)
+condition:addDamage(12, 10000, -1)
+combat:setCondition(condition)
 
-combat:setCallback(CALLBACK_PARAM_LEVELMAGICVALUE, "onGetFormulaValues")
-
-function onCastSpell(creature, variant, isHotkey)
-	return combat:execute(creature, variant)
+function onCastSpell(creature, var)
+	return combat:execute(creature, var)
 end
