@@ -48,11 +48,11 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
 			elseif item.type == 7 then
 				player:addMana(math.random(50, 150))
-				fromPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)
+				doSendMagicEffect(toPosition,CONST_ME_MAGIC_BLUE)
 
 			elseif item.type == 2 then
 				player:addHealth(60)
-				fromPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)
+				doSendMagicEffect(toPosition,CONST_ME_MAGIC_BLUE)
 			end
 
 			player:say(fluidMessage[item.type] or "Gulp.", TALKTYPE_MONSTER_SAY)
