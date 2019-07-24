@@ -91,6 +91,9 @@ class Weapon : public Event
 		uint32_t getReqMagLv() const {
 			return magLevel;
 		}
+		bool hasExhaustion() const {
+			return exhaustion != 0;
+		}
 		bool isPremium() const {
 			return premium;
 		}
@@ -124,6 +127,7 @@ class Weapon : public Event
 		uint8_t breakChance;
 		bool enabled;
 		bool premium;
+		uint32_t exhaustion;
 		bool wieldUnproperly;
 
 	private:

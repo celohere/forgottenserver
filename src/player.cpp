@@ -1186,6 +1186,9 @@ void Player::onCreatureMove(Creature* creature, const Tile* newTile, const Posit
 	if (teleport || oldPos.z != newPos.z) {
 		int32_t ticks = g_config.getNumber(ConfigManager::STAIRHOP_DELAY);
 		if (ticks > 0) {
+			addCombatExhaust(ticks);
+			addWeaponExhaust(ticks);
+
 			if (Condition* condition = Condition::createCondition(CONDITIONID_DEFAULT, CONDITION_EXHAUST_COMBAT, ticks, 0)) {
 				addCondition(condition);
 			}
@@ -1987,6 +1990,12 @@ Item* Player::getCorpse(Creature* _lastHitCreature, Creature* mostDamageCreature
 		corpse->setSpecialDescription(ss.str());
 	}
 	return corpse;
+}
+
+void Player::addWeaponExhaust(uint32_t ticks)
+{
+	Condition* condition = Condition::createCondition(CONDITIONID_DEFAULT, CONDITION_EXHAUST_WEAPON, ticks, 0);
+	addCondition(condition);
 }
 
 void Player::addCombatExhaust(uint32_t ticks)
