@@ -1,5 +1,5 @@
 function onLogin(player)
-	local loginStr = "Welcome to " .. configManager.getString(configKeys.SERVER_NAME) .. "! Say !buypremium to buy premmy days"
+    local loginStr = "Welcome to " .. configManager.getString(configKeys.SERVER_NAME) .. "! " .. configManager.getString(configKeys.MOTD) .. "."
 	if player:getLastLoginSaved() <= 0 then
 		loginStr = loginStr .. " Please choose your outfit."
 		player:sendOutfitWindow()
