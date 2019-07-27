@@ -1188,13 +1188,12 @@ void Player::onCreatureMove(Creature* creature, const Tile* newTile, const Posit
 		if (ticks > 0) {
 			addCombatExhaust(ticks);
 			addWeaponExhaust(ticks);
-
-			if (Condition* condition = Condition::createCondition(CONDITIONID_DEFAULT, CONDITION_EXHAUST_COMBAT, ticks, 0)) {
+			
+			if (Condition* condition = Condition::createCondition(CONDITIONID_DEFAULT, CONDITION_PACIFIED, ticks, 0))
 				addCondition(condition);
 			}
 		}
 	}
-}
 
 //container
 void Player::onAddContainerItem(const Item* item)
