@@ -1,3 +1,4 @@
+Fixed hotkeys message again(was showing wrong number of runes) -- crédits to danielsalim1 --
 fixed the use of lifefluid on hotkeys -- crédits to me --
 fixed fluid wrong message on hotkeys -- crédits to danielsalim1 --
 fixed bug of runes in full container -- crédits to me --
