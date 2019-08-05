@@ -1,5 +1,5 @@
 local config = {
-	heal = false,
+	heal = true,
 	save = true,
 	effect = false
 }
