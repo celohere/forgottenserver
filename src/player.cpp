@@ -1547,7 +1547,6 @@ void Player::addExperience(Creature* source, uint64_t exp, bool sendText/* = fal
 		setBaseSpeed(getBaseSpeed());
 
 		g_game.changeSpeed(this, 0);
-		g_game.addCreatureHealth(this);
 
 		if (party) {
 			party->updateSharedExperience();
