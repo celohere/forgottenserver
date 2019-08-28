@@ -64,7 +64,7 @@ if NpcHandler == nil then
 		keywordHandler = nil,
 		focuses = nil,
 		talkStart = nil,
-		idleTime = 120,
+		idleTime = 60,
 		talkRadius = 3,
 		talkDelayTime = 1, -- Seconds to delay outgoing messages.
 		talkDelay = nil,
@@ -460,8 +460,12 @@ if NpcHandler == nil then
 					if focus ~= nil then
 						if not self:isInRange(focus) then
 							self:onWalkAway(focus)
-						elseif self.talkStart[focus] ~= nil and (os.time() - self.talkStart[focus]) > self.idleTime then
-							self:unGreet(focus)
+					elseif((os.time() - self.talkStart) > self.idleTime) then 
+                       if self.queue:greetNext() then
+                            self.talkStart = self.talkStart + self.idleTime
+                        else
+                            self:unGreet(self.focuses)
+                        end		
 						else
 							self:updateFocus()
 						end
