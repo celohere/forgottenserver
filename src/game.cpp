@@ -2895,6 +2895,10 @@ void Game::playerSay(uint32_t playerId, uint16_t channelId, SpeakClasses type,
 	}
 
 	player->resetIdleTime();
+	
+	if (playerSaySpell(player, type, text)) {
+		return;
+	}
 
 	uint32_t muteTime = player->isMuted();
 	if (muteTime > 0) {
@@ -2905,10 +2909,6 @@ void Game::playerSay(uint32_t playerId, uint16_t channelId, SpeakClasses type,
 	}
 
 	if (playerSayCommand(player, text)) {
-		return;
-	}
-
-	if (playerSaySpell(player, type, text)) {
 		return;
 	}
 
