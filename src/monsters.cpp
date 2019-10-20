@@ -123,7 +123,6 @@ void MonsterType::createLoot(Container* corpse)
 	Player* owner = g_game.getPlayerByID(corpse->getCorpseOwner());
 	if (!owner || owner->getStaminaMinutes() > 840) {
 
-
 		int goldCoins = 0;
 		int platinumCoins = 0;
 
