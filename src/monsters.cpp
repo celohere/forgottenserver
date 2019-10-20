@@ -122,6 +122,14 @@ void MonsterType::createLoot(Container* corpse)
 
 	Player* owner = g_game.getPlayerByID(corpse->getCorpseOwner());
 	if (!owner || owner->getStaminaMinutes() > 840) {
+
+
+		int goldCoins = 0;
+		int platinumCoins = 0;
+
+		std::ostringstream ss;
+		ss << "Loot of " << nameDescription << ": ";
+
 		for (auto it = lootItems.rbegin(), end = lootItems.rend(); it != end; ++it) {
 			auto itemList = createLootItem(*it);
 			if (itemList.empty()) {
@@ -129,6 +137,18 @@ void MonsterType::createLoot(Container* corpse)
 			}
 
 			for (Item* item : itemList) {
+
+				//auto loot gold coin and platinum coin
+				if (item->getID() == 2148 || item->getID() == 2152) {
+					if (item->getID() == 2148) {
+						goldCoins = item->getItemCount();
+					}
+					if (item->getID() == 2152) {
+						platinumCoins = item->getItemCount();
+					}
+					g_game.internalPlayerAddItem(owner, item, true, CONST_SLOT_WHEREEVER);
+				}
+
 				//check containers
 				if (Container* container = item->getContainer()) {
 					if (!createLootContainer(container, *it)) {
@@ -137,15 +157,36 @@ void MonsterType::createLoot(Container* corpse)
 					}
 				}
 
-				if (g_game.internalAddItem(corpse, item) != RETURNVALUE_NOERROR) {
-					corpse->internalAddThing(item);
+				//changed for auto loot
+				if (item->getID() != 2148 && item->getID() != 2152) {
+					if (g_game.internalAddItem(corpse, item) != RETURNVALUE_NOERROR) {
+						corpse->internalAddThing(item);
+					}
 				}
 			}
 		}
 
 		if (owner && g_config.getBoolean(ConfigManager::LOOT_MESSAGE)) {
-			std::ostringstream ss;
-			ss << "Loot of " << nameDescription << ": " << corpse->getContentDescription();
+
+			if (goldCoins > 0) {
+				if (goldCoins == 1) {
+					ss << goldCoins << " gold coin, ";
+				}
+				else if (goldCoins > 1) {
+					ss << goldCoins << " gold coins, ";
+				}
+			}
+
+			if (platinumCoins > 0) {
+				if (platinumCoins == 1) {
+					ss << platinumCoins << " platinum coin, ";
+				}
+				else if (platinumCoins > 1) {
+					ss << platinumCoins << " platinum coins, ";
+				}
+			}
+
+			ss << corpse->getContentDescription();
 
 			if (owner->getParty()) {
 				owner->getParty()->broadcastPartyLoot(ss.str());
