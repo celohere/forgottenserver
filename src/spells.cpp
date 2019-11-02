@@ -84,8 +84,7 @@ TalkActionResult_t Spells::playerSaySpell(Player* player, std::string& words)
 			}
 		}
 	}
-
-
+	
 	if (instantSpell->playerCastInstant(player, param)) {
 		words = str_words.substr(0, spellLen);
 
@@ -220,7 +219,6 @@ InstantSpell* Spells::getInstantSpell(const std::string& words)
 	}
 	return nullptr;
 }
-
 
 uint32_t Spells::getInstantSpellCount(const Player* player) const
 {
