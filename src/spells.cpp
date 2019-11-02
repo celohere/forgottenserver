@@ -57,39 +57,40 @@ TalkActionResult_t Spells::playerSaySpell(Player* player, std::string& words)
 	}
 
 	std::string param;
+	size_t spellLen = instantSpell->getWords().length();
+	size_t paramLen = str_words.length() - spellLen;
+	std::string paramText = str_words.substr(spellLen, paramLen);
+	if (!paramText.empty() && paramText.front() == ' ') {
+		size_t loc1 = paramText.find('"', 1);
+		if (loc1 != std::string::npos) {
+			size_t loc2 = paramText.find('"', loc1 + 1);
+			if (loc2 == std::string::npos) {
+				loc2 = paramText.length();
+			}
+			else if (paramText.find_last_not_of(' ') != loc2) {
+				return TALKACTION_CONTINUE;
+			}
 
-	if (instantSpell->getHasParam()) {
-		size_t spellLen = instantSpell->getWords().length();
-		size_t paramLen = str_words.length() - spellLen;
-		std::string paramText = str_words.substr(spellLen, paramLen);
-		if (!paramText.empty() && paramText.front() == ' ') {
-			size_t loc1 = paramText.find('"', 1);
-			if (loc1 != std::string::npos) {
-				size_t loc2 = paramText.find('"', loc1 + 1);
-				if (loc2 == std::string::npos) {
-					loc2 = paramText.length();
-				} else if (paramText.find_last_not_of(' ') != loc2) {
-					return TALKACTION_CONTINUE;
-				}
-
-				param = paramText.substr(loc1 + 1, loc2 - loc1 - 1);
-			} else {
-				trimString(paramText);
-				loc1 = paramText.find(' ', 0);
-				if (loc1 == std::string::npos) {
-					param = paramText;
-				} else {
-					return TALKACTION_CONTINUE;
-				}
+			param = paramText.substr(loc1 + 1, loc2 - loc1 - 1);
+		}
+		else {
+			trimString(paramText);
+			loc1 = paramText.find(' ', 0);
+			if (loc1 == std::string::npos) {
+				param = paramText;
+			}
+			else {
+				return TALKACTION_CONTINUE;
 			}
 		}
 	}
 
-	if (instantSpell->playerCastInstant(player, param)) {
-		words = instantSpell->getWords();
 
-		if (instantSpell->getHasParam() && !param.empty()) {
-			words += " \"" + param + "\"";
+	if (instantSpell->playerCastInstant(player, param)) {
+		words = str_words.substr(0, spellLen);
+
+		if (!param.empty()) {
+			words += " \"" + param.substr(0, 30);
 		}
 
 		return TALKACTION_BREAK;
@@ -208,9 +209,6 @@ InstantSpell* Spells::getInstantSpell(const std::string& words)
 	if (result) {
 		const std::string& resultWords = result->getWords();
 		if (words.length() > resultWords.length()) {
-			if (!result->getHasParam()) {
-				return nullptr;
-			}
 
 			size_t spellLen = resultWords.length();
 			size_t paramLen = words.length() - spellLen;
@@ -222,6 +220,7 @@ InstantSpell* Spells::getInstantSpell(const std::string& words)
 	}
 	return nullptr;
 }
+
 
 uint32_t Spells::getInstantSpellCount(const Player* player) const
 {
