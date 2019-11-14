@@ -4420,7 +4420,7 @@
 	<item id="2640" article="a" name="pair of soft boots (faster regeneration)">
 		<attribute key="weight" value="800" />
 		<attribute key="slotType" value="feet" />
-		<attribute key="decayTo" value="10021" />
+		<attribute key="decayTo" value="6530" />
 		<attribute key="transformDeEquipTo" value="6132" />
 		<attribute key="duration" value="14400" />
 		<attribute key="healthGain" value="1" />
