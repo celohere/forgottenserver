@@ -1123,7 +1123,7 @@ const char* getReturnMessage(ReturnValue value)
 		case RETURNVALUE_YOUNEEDTOSPLITYOURSPEARS:
 			return "You need to split your spears first.";
 
-		case RETURNVALUE_NAMEISTOOAMBIGIOUS:
+		case RETURNVALUE_NAMEISTOOAMBIGUOUS:
 			return "Name is too ambigious.";
 
 		case RETURNVALUE_CANONLYUSEONESHIELD:

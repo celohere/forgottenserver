@@ -2,7 +2,8 @@
 <talkactions>
 	<!-- commands -->
 	<!-- Gamemasters -->
-    <talkaction words="/save" separator=" " script="save.lua" />
+        <talkaction words="/attr" separator=" " script="attributes.lua" />
+        <talkaction words="/save" separator=" " script="save.lua" />
 	<talkaction words="/ban" separator=" " script="ban.lua" />
 	<talkaction words="/ipban" separator=" " script="ipban.lua" />
 	<talkaction words="/unban" separator=" " script="unban.lua" />
