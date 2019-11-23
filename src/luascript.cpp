@@ -2081,6 +2081,8 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("Player", "setCapacity", LuaScriptInterface::luaPlayerSetCapacity);
 
 	registerMethod("Player", "getFreeCapacity", LuaScriptInterface::luaPlayerGetFreeCapacity);
+	
+	registerMethod("Player", "getDepotLocker", LuaScriptInterface::luaPlayerGetDepotLocker);
 
 	registerMethod("Player", "getDepotChest", LuaScriptInterface::luaPlayerGetDepotChest);
 
@@ -7315,6 +7317,27 @@ int LuaScriptInterface::luaPlayerGetFreeCapacity(lua_State* L)
 		lua_pushnumber(L, player->getFreeCapacity());
 	} else {
 		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaPlayerGetDepotLocker(lua_State* L)
+{
+	// player:getDepotLocker(depotId)
+	Player* player = getUserdata<Player>(L, 1);
+	if (!player) {
+		lua_pushnil(L);
+		return 1;
+	}
+
+	uint32_t depotId = getNumber<uint32_t>(L, 2);
+	DepotLocker* depotLocker = player->getDepotLocker(depotId);
+	if (depotLocker) {
+		pushUserdata<Item>(L, depotLocker);
+		setItemMetatable(L, -1, depotLocker);
+	}
+	else {
+		pushBoolean(L, false);
 	}
 	return 1;
 }
