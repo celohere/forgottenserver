@@ -1166,49 +1166,41 @@
 		<attribute key="type" value="bed" />
 		<attribute key="partnerDirection" value="south" />
 		<attribute key="maleSleeper" value="1762" />
-		<attribute key="femaleSleeper" value="7778" />
 	</item>
 	<item id="1755" article="a" name="bed">
 		<attribute key="type" value="bed" />
 		<attribute key="partnerDirection" value="north" />
 		<attribute key="maleSleeper" value="1763" />
-		<attribute key="femaleSleeper" value="8075" />
 	</item>
 	<item id="1756" article="a" name="cot">
 		<attribute key="type" value="bed" />
 		<attribute key="partnerDirection" value="east" />
 		<attribute key="maleSleeper" value="1768" />
-		<attribute key="femaleSleeper" value="7783" />
 	</item>
 	<item id="1757" article="a" name="cot">
 		<attribute key="type" value="bed" />
 		<attribute key="partnerDirection" value="west" />
 		<attribute key="maleSleeper" value="1769" />
-		<attribute key="femaleSleeper" value="7784" />
 	</item>
 	<item id="1758" article="a" name="cot">
 		<attribute key="type" value="bed" />
 		<attribute key="partnerDirection" value="south" />
 		<attribute key="maleSleeper" value="1766" />
-		<attribute key="femaleSleeper" value="7781" />
 	</item>
 	<item id="1759" article="a" name="cot">
 		<attribute key="type" value="bed" />
 		<attribute key="partnerDirection" value="north" />
 		<attribute key="maleSleeper" value="1767" />
-		<attribute key="femaleSleeper" value="7782" />
 	</item>
 	<item id="1760" article="a" name="bed">
 		<attribute key="type" value="bed" />
 		<attribute key="partnerDirection" value="east" />
 		<attribute key="maleSleeper" value="1764" />
-		<attribute key="femaleSleeper" value="7779" />
 	</item>
 	<item id="1761" article="a" name="bed">
 		<attribute key="type" value="bed" />
 		<attribute key="partnerDirection" value="west" />
 		<attribute key="maleSleeper" value="1765" />
-		<attribute key="femaleSleeper" value="7780" />
 	</item>
 	<item id="1762" article="a" name="bed">
 		<attribute key="type" value="bed" />
@@ -8721,7 +8713,6 @@
 		<attribute key="type" value="bed" />
 		<attribute key="partnerDirection" value="west" />
 		<attribute key="maleSleeper" value="5499" />
-		<attribute key="femaleSleeper" value="5499" />
 	</item>
 	<item id="5502" article="a" name="straw mat">
 		<attribute key="type" value="bed" />
