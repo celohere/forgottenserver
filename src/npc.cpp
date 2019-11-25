@@ -103,7 +103,7 @@ void Npc::reset()
 	walkTicks = 1500;
 	floorChange = false;
 	attackable = false;
-	ignoreHeight = true;
+	ignoreHeight = false;
 	focusCreature = 0;
 
 	delete npcEventHandler;
