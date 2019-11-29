@@ -188,6 +188,8 @@ void Game::saveGameState()
 	}
 
 	Map::save();
+	
+        g_databaseTasks.flush();
 
 	if (gameState == GAME_STATE_MAINTAIN) {
 		setGameState(GAME_STATE_NORMAL);
