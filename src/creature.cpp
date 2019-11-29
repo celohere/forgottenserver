@@ -1408,8 +1408,7 @@ int64_t Creature::getStepDuration() const
 		if (groundSpeed == 0) {
 			groundSpeed = 150;
 		}
-	}
-	else {
+	} else {
 		groundSpeed = 150;
 	}
 
