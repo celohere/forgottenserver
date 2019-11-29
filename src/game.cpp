@@ -1041,8 +1041,9 @@ ReturnValue Game::internalMoveItem(Cylinder* fromCylinder, Cylinder* toCylinder,
 	}
 
 	//destination is the same as the source?
-	if (item == toItem)
+	if (item == toItem) {
 		return RETURNVALUE_NOERROR;    //silently ignore move
+	}
 
 	//check if we can add this item
 	ReturnValue ret = toCylinder->queryAdd(index, *item, count, flags, actor);
