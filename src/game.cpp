@@ -188,6 +188,8 @@ void Game::saveGameState()
 	}
 
 	Map::save();
+	
+        g_databaseTasks.flush();
 
 	if (gameState == GAME_STATE_MAINTAIN) {
 		setGameState(GAME_STATE_NORMAL);
@@ -1039,8 +1041,9 @@ ReturnValue Game::internalMoveItem(Cylinder* fromCylinder, Cylinder* toCylinder,
 	}
 
 	//destination is the same as the source?
-	if (item == toItem)
+	if (item == toItem) {
 		return RETURNVALUE_NOERROR;    //silently ignore move
+	}
 
 	//check if we can add this item
 	ReturnValue ret = toCylinder->queryAdd(index, *item, count, flags, actor);
