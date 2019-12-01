@@ -3388,8 +3388,8 @@ void Game::combatGetTypeInfo(CombatType_t combatType, Creature* target, TextColo
 		}
 
 		case COMBAT_ENERGYDAMAGE: {
-			color = TEXTCOLOR_PURPLE;
-			effect = CONST_ME_ENERGYHIT;
+			color = TEXTCOLOR_TEAL;
+	                effect = CONST_ME_ENERGYHIT;
 			break;
 		}
 
