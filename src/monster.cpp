@@ -1246,6 +1246,16 @@ bool Monster::getDanceStep(const Position& creaturePos, Direction& dir,
 			}
 		}
 	}
+	
+	if (dirList.empty()) {
+		// extra dancing
+		for (uint8_t i = 0; i < 3; i++) {
+			dir = static_cast<Direction>(i);
+			if (canWalkTo(creaturePos, dir)) {
+				dirList.push_back(dir);
+			}
+		}
+	}
 
 	if (!dirList.empty()) {
 		std::shuffle(dirList.begin(), dirList.end(), getRandomGenerator());
