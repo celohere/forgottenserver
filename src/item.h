@@ -708,7 +708,7 @@ class Item : virtual public Thing
 			loadedFromMap = value;
 		}
 		bool isCleanable() const {
-			return !loadedFromMap && canRemove() && isPickupable() && !hasAttribute(ITEM_ATTRIBUTE_UNIQUEID) && !hasAttribute(ITEM_ATTRIBUTE_ACTIONID);
+			return !loadedFromMap && canRemove() && !hasAttribute(ITEM_ATTRIBUTE_UNIQUEID) && !hasAttribute(ITEM_ATTRIBUTE_ACTIONID);
 		}
 
 		ItemAttributes* getAttributes() {
