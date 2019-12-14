@@ -288,8 +288,7 @@ bool Chat::load()
 					channel.canJoinEvent = scriptInterface.getEvent("canJoin");
 					channel.onJoinEvent = scriptInterface.getEvent("onJoin");
 					channel.onLeaveEvent = scriptInterface.getEvent("onLeave");
-				}
-				else {
+				} else {
 					std::cout << "[Warning - Chat::load] Can not load script: " << scriptAttribute.as_string() << std::endl;
 				}
 			}
