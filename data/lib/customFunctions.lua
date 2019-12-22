@@ -3,6 +3,10 @@ function isValidMoney(money)
 	return isNumber(money) and money > 0 and money < 4294967296
 end
 
+function titleCase(str)
+    return (str:gsub("^%l", string.upper))
+end
+
 function getMoneyCount(string)
 	local b, e = string:find("%d+")
 	local money = b and e and tonumber(string:sub(b, e)) or -1
