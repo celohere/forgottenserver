@@ -13,6 +13,7 @@ stairJumpExhaustion = 800
 experienceByKillingPlayers = false
 expFromPlayersLevelRange = 75
 allowFightBack = "false"
+stopAttackingAtExit = "false"
 
 -- Connection Config
 -- NOTE: maxPlayers set to 0 means no limit

@@ -826,6 +826,8 @@ void Player::sendPing()
 		} else {
 			hasLostConnection = true;
 		}
+		if (!g_config.getBoolean(ConfigManager::STOP_ATTACK_AT_EXIT))
+			setAttackedCreature(nullptr);
 	}
 
 	int64_t noPongTime = timeNow - lastPong;

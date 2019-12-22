@@ -47,7 +47,8 @@ class ConfigManager
 			CLASSIC_ATTACK_SPEED,
 			AUTO_STACK_ITEMS,
 			LOOT_MESSAGE,
-                        REMOVE_WEAPON_AMMO,
+			REMOVE_WEAPON_AMMO,
+			STOP_ATTACK_AT_EXIT,
 			
 			LAST_BOOLEAN_CONFIG /* this must be the last one */
 		};
