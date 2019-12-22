@@ -213,24 +213,24 @@
 	</instant>
 
 	<!-- Attack Runes -->
-	<rune group="attack" name="Poison Field" id="2285" allowfaruse="1" charges="3" lvl="14" maglv="0" exhaustion="2000" blocktype="solid" script="attack/poison field.lua"/>
-	<rune group="attack" name="Poison Bomb" id="2286" allowfaruse="1" charges="2" lvl="25" maglv="4" exhaustion="2000" blocktype="solid" script="attack/poison bomb.lua"/>
-	<rune group="attack" name="Poison Wall" id="2289" allowfaruse="1" charges="4" lvl="29" maglv="5" exhaustion="2000" blocktype="solid" script="attack/poison wall.lua"/>
-	<rune group="attack" name="Fire Field" id="2301" allowfaruse="1" charges="3" lvl="15" maglv="1" exhaustion="2000" blocktype="solid" script="attack/fire field.lua"/>
-	<rune group="attack" name="Firebomb" id="2305" allowfaruse="1" charges="2" lvl="27" maglv="5" exhaustion="2000" blocktype="solid" script="attack/fire bomb.lua"/>
-	<rune group="attack" name="Fire Wall" id="2303" allowfaruse="1" charges="4" lvl="33" maglv="6" exhaustion="2000" blocktype="solid" script="attack/fire wall.lua"/>
-	<rune group="attack" name="Soulfire" id="2308" allowfaruse="1" charges="3" lvl="27" maglv="7" exhaustion="2000" needtarget="1" blocktype="solid" script="attack/soul fire.lua"/>
-	<rune group="attack" name="Fireball" id="2302" allowfaruse="1" charges="2" lvl="27" maglv="4" exhaustion="2000" needtarget="1" blocktype="solid" script="attack/fireball.lua"/>
-	<rune group="attack" name="Great Fireball" id="2304" allowfaruse="1" charges="2" lvl="30" maglv="4" exhaustion="2000" blocktype="solid" script="attack/great fireball.lua"/>
-	<rune group="attack" name="Energy Field" id="2277" allowfaruse="1" charges="3" lvl="18" maglv="3" exhaustion="2000" blocktype="solid" script="attack/energy field.lua"/>
-	<rune group="attack" name="Energybomb" id="2262" allowfaruse="1" charges="2" lvl="37" maglv="10" exhaustion="2000" blocktype="solid" script="attack/energy bomb.lua"/>
-	<rune group="attack" name="Energy Wall" id="2279" allowfaruse="1" charges="4" lvl="41" maglv="9" exhaustion="2000" blocktype="solid" script="attack/energy wall.lua"/>
-	<rune group="attack" name="Light Magic Missile" id="2287" allowfaruse="1" charges="5" lvl="15" exhaustion="2000" maglv="0" needtarget="1" blocktype="solid" script="attack/light magic missile.lua"/>
-	<rune group="attack" name="Heavy Magic Missile" id="2311" allowfaruse="1" charges="5" lvl="25" exhaustion="2000" maglv="3" needtarget="1" blocktype="solid" script="attack/heavy magic missile.lua"/>
-	<rune group="attack" name="Explosion" id="2313" allowfaruse="1" charges="3" lvl="31" maglv="6" exhaustion="2000" blocktype="solid" script="attack/explosion.lua"/>
-	<rune group="attack" name="Sudden Death" id="2268" allowfaruse="1" charges="1" lvl="45" maglv="15" exhaustion="2000" needtarget="1" blocktype="solid" script="attack/sudden death.lua"/>
-	<rune group="attack" name="Envenom" id="2292" allowfaruse="1" charges="1" lvl="21" maglv="4" exhaustion="2000" needtarget="1" script="attack/envenom.lua"/>
-	<rune group="attack" name="Magic Wall" id="2293" allowfaruse="1" charges="3" lvl="32" maglv="9" exhaustion="2000" blocktype="all" script="support/magic wall rune.lua"/>
+	<rune group="attack" name="Poison Field" id="2285" allowfaruse="1" charges="3" maglv="0" exhaustion="2000" blocktype="solid" script="attack/poison field.lua"/>
+	<rune group="attack" name="Poison Bomb" id="2286" allowfaruse="1" charges="2" maglv="4" exhaustion="2000" blocktype="solid" script="attack/poison bomb.lua"/>
+	<rune group="attack" name="Poison Wall" id="2289" allowfaruse="1" charges="4" maglv="5" exhaustion="2000" blocktype="solid" script="attack/poison wall.lua"/>
+	<rune group="attack" name="Fire Field" id="2301" allowfaruse="1" charges="3" maglv="1" exhaustion="2000" blocktype="solid" script="attack/fire field.lua"/>
+	<rune group="attack" name="Firebomb" id="2305" allowfaruse="1" charges="2" maglv="5" exhaustion="2000" blocktype="solid" script="attack/fire bomb.lua"/>
+	<rune group="attack" name="Fire Wall" id="2303" allowfaruse="1" charges="4" maglv="6" exhaustion="2000" blocktype="solid" script="attack/fire wall.lua"/>
+	<rune group="attack" name="Soulfire" id="2308" allowfaruse="1" charges="3" maglv="7" exhaustion="2000" needtarget="1" blocktype="solid" script="attack/soul fire.lua"/>
+	<rune group="attack" name="Fireball" id="2302" allowfaruse="1" charges="2" maglv="4" exhaustion="2000" needtarget="1" blocktype="solid" script="attack/fireball.lua"/>
+	<rune group="attack" name="Great Fireball" id="2304" allowfaruse="1" charges="2" maglv="4" exhaustion="2000" blocktype="solid" script="attack/great fireball.lua"/>
+	<rune group="attack" name="Energy Field" id="2277" allowfaruse="1" charges="3" maglv="3" exhaustion="2000" blocktype="solid" script="attack/energy field.lua"/>
+	<rune group="attack" name="Energybomb" id="2262" allowfaruse="1" charges="2" maglv="10" exhaustion="2000" blocktype="solid" script="attack/energy bomb.lua"/>
+	<rune group="attack" name="Energy Wall" id="2279" allowfaruse="1" charges="4" maglv="9" exhaustion="2000" blocktype="solid" script="attack/energy wall.lua"/>
+	<rune group="attack" name="Light Magic Missile" id="2287" allowfaruse="1" charges="5" exhaustion="2000" maglv="0" needtarget="1" blocktype="solid" script="attack/light magic missile.lua"/>
+	<rune group="attack" name="Heavy Magic Missile" id="2311" allowfaruse="1" charges="5" exhaustion="2000" maglv="3" needtarget="1" blocktype="solid" script="attack/heavy magic missile.lua"/>
+	<rune group="attack" name="Explosion" id="2313" allowfaruse="1" charges="3" maglv="6" exhaustion="2000" blocktype="solid" script="attack/explosion.lua"/>
+	<rune group="attack" name="Sudden Death" id="2268" allowfaruse="1" charges="1" maglv="15" exhaustion="2000" needtarget="1" blocktype="solid" script="attack/sudden death.lua"/>
+	<rune group="attack" name="Envenom" id="2292" allowfaruse="1" charges="1" maglv="4" exhaustion="2000" needtarget="1" script="attack/envenom.lua"/>
+	<rune group="attack" name="Magic Wall" id="2293" allowfaruse="1" charges="3" maglv="9" exhaustion="2000" blocktype="all" script="support/magic wall rune.lua"/>
 
 	<!-- Healing Runes -->
 	<rune group="healing" name="Antidote Rune" id="2266" allowfaruse="1" charges="1" lvl="15" maglv="0" exhaustion="2000" aggressive="0" needtarget="1" blocktype="solid" script="healing/cure poison rune.lua"/>
