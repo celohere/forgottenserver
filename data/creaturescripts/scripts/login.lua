@@ -14,8 +14,8 @@ function onLogin(player)
 
 	local playerId = player:getId()
 
-local time = 10 -- 10 seconds cooldown until they can logout
-setPlayerStorageValue(cid, 3333, os.time()+time)
+        local time = 10 -- 10 seconds cooldown until they can logout
+        setPlayerStorageValue(cid, 3333, os.time()+time)
 
 	-- Stamina
 	nextUseStaminaTime[player.uid] = 0
