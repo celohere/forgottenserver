@@ -125,12 +125,6 @@ function pushThing(thing)
 	return t
 end
 
-function doTargetCombatHealth(...) return doTargetCombat(...) end
-function doAreaCombatHealth(...) return doAreaCombat(...) end
-function doTargetCombatMana(cid, target, min, max, effect) return doTargetCombat(cid, target, COMBAT_MANADRAIN, min, max, effect) end
-function doAreaCombatMana(cid, pos, area, min, max, effect) return doAreaCombat(cid, COMBAT_MANADRAIN, pos, area, min, max, effect) end
-
-
 createCombatObject = Combat
 setCombatArea = Combat.setArea
 setCombatCallback = Combat.setCallback
