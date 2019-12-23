@@ -7521,6 +7521,7 @@ int LuaScriptInterface::luaPlayerAddManaSpent(lua_State* L)
 	}
 	return 1;
 }
+
 int LuaScriptInterface::luaPlayerGetBaseMaxHealth(lua_State* L)
 {
 	// player:getBaseMaxHealth()
