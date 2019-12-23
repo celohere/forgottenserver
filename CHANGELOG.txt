@@ -1,7 +1,8 @@
 Added stopAttackingAtExit in config.lua
 Added server save when close the .exe
-added summons corpse(not in the master branch)
-added autoloot gold coins(not in the master branch)
+Added old school exhausted (not in the master branch)
+added summons corpse (not in the master branch)
+added autoloot gold coins (not in the master branch)
 Fixed max summons bug
 Fixed visual bug in beds
 Updated actions 
