@@ -693,7 +693,7 @@ bool Map::getPathMatching(const Creature& creature, Position targetPos, std::for
 			} else {
 				//Does not exist in the open/closed list, create a new node
 				neighborNode = nodes.createOpenNode(n, pos.x, pos.y, newf,
-					((std::abs(targetPos.x - pos.x) + std::abs(targetPos.y - pos.y)) * 10)
+					((std::abs(targetPos.x - pos.x) + std::abs(targetPos.y - pos.y)) * 15)
 				);				if (!neighborNode) {
 					if (found) {
 						break;
