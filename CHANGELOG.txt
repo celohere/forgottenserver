@@ -1,3 +1,15 @@
+Added stopAttackingAtExit in config.lua
+Added server save when close the .exe
+added summons corpse(not in the master branch)
+added autoloot gold coins(not in the master branch)
+Fixed max summons bug
+Fixed visual bug in beds
+Updated actions 
+Updated depotlocker(now are counting all items inside locker not just inside depot)
+updated some text collors
+Changed /clean command to clean corpses(not in the master branch)
+
+
 Fixed hotkeys message again(was showing wrong number of runes) -- crédits to danielsalim1 --
 fixed the use of lifefluid on hotkeys -- crédits to me --
 fixed fluid wrong message on hotkeys -- crédits to danielsalim1 --
