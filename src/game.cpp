@@ -30,7 +30,6 @@
 #include "iologindata.h"
 #include "talkaction.h"
 #include "spells.h"
-#include "teleport.h"
 #include "configmanager.h"
 #include "server.h"
 #include "globalevent.h"
@@ -4277,7 +4276,7 @@ void Game::playerEnableSharedPartyExperience(uint32_t playerId, bool sharedExpAc
 	}
 
 	Party* party = player->getParty();
-	if (!party || player->hasCondition(CONDITION_INFIGHT)) {
+	if (!party || (player->hasCondition(CONDITION_INFIGHT) && player->getZone() != ZONE_PROTECTION)) {
 		return;
 	}
 
