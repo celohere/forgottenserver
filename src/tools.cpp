@@ -1124,7 +1124,7 @@ const char* getReturnMessage(ReturnValue value)
 			return "You need to split your spears first.";
 
 		case RETURNVALUE_NAMEISTOOAMBIGUOUS:
-			return "Name is too ambigious.";
+			return "Name is too ambiguous.";
 
 		case RETURNVALUE_CANONLYUSEONESHIELD:
 			return "You may use only one shield.";
