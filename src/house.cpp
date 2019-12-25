@@ -105,17 +105,13 @@ void House::setOwner(uint32_t guid, bool updateDatabase/* = true*/, Player* play
 		time_t currentTime = time(nullptr);
 		if (strRentPeriod == "yearly") {
 			currentTime += 24 * 60 * 60 * 365;
-		}
-		else if (strRentPeriod == "monthly") {
+		} else if (strRentPeriod == "monthly") {
 			currentTime += 24 * 60 * 60 * 30;
-		}
-		else if (strRentPeriod == "weekly") {
+		} else if (strRentPeriod == "weekly") {
 			currentTime += 24 * 60 * 60 * 7;
-		}
-		else if (strRentPeriod == "daily") {
+		} else if (strRentPeriod == "daily") {
 			currentTime += 24 * 60 * 60;
-		}
-		else {
+		} else {
 			currentTime = 0;
 		}
 
