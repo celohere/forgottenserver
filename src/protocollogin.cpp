@@ -59,7 +59,7 @@ void ProtocolLogin::getCharacterList(uint32_t accountName, const std::string& pa
 
 	Account account;
 	if (!IOLoginData::loginserverAuthentication(accountName, password, account)) {
-		disconnectClient("Account name or password is not correct.");
+		disconnectClient("Account number or password is not correct.");
 		return;
 	}
 
@@ -174,7 +174,7 @@ void ProtocolLogin::onRecvFirstMessage(NetworkMessage& msg)
 	}
 
 	if (accountName == 0) {
-		disconnectClient("Invalid account name.");
+		disconnectClient("Invalid account number.");
 		return;
 	}
 
