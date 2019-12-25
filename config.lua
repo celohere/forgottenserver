@@ -41,6 +41,7 @@ deathLosePercent = -1
 -- NOTE: set housePriceEachSQM to -1 to disable the ingame buy house functionality
 housePriceEachSQM = 1000
 houseRentPeriod = "never"
+houseAntiTrash = false
 
 -- Item Usage
 timeBetweenActions = 150
