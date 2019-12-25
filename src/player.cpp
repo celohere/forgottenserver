@@ -841,6 +841,7 @@ void Player::sendPing()
 				client->logout(true, true);
 			} else {
 				g_game.removeCreature(this, true);
+				g_game.addMagicEffect(getPosition(), CONST_ME_POFF);
 			}
 		}
 	}
@@ -2063,6 +2064,12 @@ void Player::notifyStatusChange(Player* loginPlayer, VipStatus_t status)
 	}
 
 	client->sendUpdatedVIPStatus(loginPlayer->guid, status);
+
+	if (status == VIPSTATUS_ONLINE) {
+		client->sendTextMessage(TextMessage(MESSAGE_STATUS_SMALL, loginPlayer->getName() + " has logged in."));
+	} else if (status == VIPSTATUS_OFFLINE) {
+		client->sendTextMessage(TextMessage(MESSAGE_STATUS_SMALL, loginPlayer->getName() + " has logged out."));
+	}
 }
 
 bool Player::removeVIP(uint32_t vipGuid)
@@ -3004,8 +3011,7 @@ void Player::doAttacking(uint32_t)
 		if (weapon) {
 			if (!weapon->interruptSwing()) {
 				result = weapon->useWeapon(this, tool, attackedCreature);
-			}
-			else if (!classicSpeed && !canDoAction()) {
+			} else if (!classicSpeed && !canDoAction()) {
 				delay = getNextActionTime();
 			} else {
 				result = weapon->useWeapon(this, tool, attackedCreature);
@@ -3224,8 +3230,7 @@ void Player::onAttackedCreature(Creature* target)
 		if (getSkull() == SKULL_NONE && getSkullClient(targetPlayer) == SKULL_YELLOW) {
 			addAttacked(targetPlayer);
 			targetPlayer->sendCreatureSkull(this);
-		}
-		else {
+		} else {
 			if ((!targetPlayer->hasAttacked(this)) || (!g_config.getBoolean(ConfigManager::ALLOW_FIGHT_BACK))) {
 				if (!pzLocked && g_game.getWorldType() != WORLD_TYPE_PVP_ENFORCED) {
 					pzLocked = true;
@@ -3387,6 +3392,20 @@ bool Player::isImmune(ConditionType_t type) const
 bool Player::isAttackable() const
 {
 	return !hasFlag(PlayerFlag_CannotBeAttacked);
+}
+
+bool Player::lastHitIsPlayer(Creature* _lastHitCreature)
+{
+	if (!_lastHitCreature) {
+		return false;
+	}
+
+	if (_lastHitCreature->getPlayer()) {
+		return true;
+	}
+
+	Creature* lastHitMaster = _lastHitCreature->getMaster();
+	return lastHitMaster && lastHitMaster->getPlayer();
 }
 
 void Player::changeHealth(int32_t healthChange, bool sendHealthChange/* = true*/)

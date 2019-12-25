@@ -66,20 +66,17 @@ TalkActionResult_t Spells::playerSaySpell(Player* player, std::string& words)
 			size_t loc2 = paramText.find('"', loc1 + 1);
 			if (loc2 == std::string::npos) {
 				loc2 = paramText.length();
-			}
-			else if (paramText.find_last_not_of(' ') != loc2) {
+			} else if (paramText.find_last_not_of(' ') != loc2) {
 				return TALKACTION_CONTINUE;
 			}
 
 			param = paramText.substr(loc1 + 1, loc2 - loc1 - 1);
-		}
-		else {
+		} else {
 			trimString(paramText);
 			loc1 = paramText.find(' ', 0);
 			if (loc1 == std::string::npos) {
 				param = paramText;
-			}
-			else {
+			} else {
 				return TALKACTION_CONTINUE;
 			}
 		}

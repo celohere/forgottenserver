@@ -738,7 +738,7 @@ bool Creature::dropCorpse(Creature* _lastHitCreature, Creature* mostDamageCreatu
 		Item* splash;
 		switch (getRace()) {
 			case RACE_VENOM:
-				splash = Item::CreateItem(ITEM_FULLSPLASH, FLUID_SLIME);
+				splash = Item::CreateItem(ITEM_FULLSPLASH, FLUID_GREEN);
 				break;
 
 			case RACE_BLOOD:
