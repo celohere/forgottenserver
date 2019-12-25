@@ -77,8 +77,6 @@ Item* Item::CreateItem(const uint16_t _type, uint16_t _count /*= 0*/)
 			newItem = new Item(6132, _count);
 		} else if (it.id == 6301) {
 			newItem = new Item(6300, _count);
-		} else if (it.id == 18528) {
-			newItem = new Item(18408, _count);
 		} else {
 			newItem = new Item(_type, _count);
 		}
@@ -1304,7 +1302,7 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance,
 	if (it.showDuration) {
 		if (item && item->hasAttribute(ITEM_ATTRIBUTE_DURATION)) {
 			uint32_t duration = item->getDuration() / 1000;
-			s << " that will expire in ";
+			s << " that has energy for ";
 
 			if (duration >= 86400) {
 				uint16_t days = duration / 86400;
