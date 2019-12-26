@@ -1,13 +1,15 @@
 Added stopAttackingAtExit in config.lua
 Added server save when close the .exe
 Added old school exhausted (not in the master branch)
-added summons corpse (not in the master branch)
-added autoloot gold coins (not in the master branch)
+Added summons corpse (not in the master branch)
+Added autoloot gold coins (not in the master branch)
 Fixed max summons bug
 Fixed visual bug in beds
+Removed level requirement from runes
+Cleaned the datapack
 Updated actions 
 Updated depotlocker(now are counting all items inside locker not just inside depot)
-updated some text collors
+Updated some text collors
 Changed /clean command to clean corpses(not in the master branch)
 
 
