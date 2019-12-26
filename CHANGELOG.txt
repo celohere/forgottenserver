@@ -10,6 +10,7 @@ Cleaned the datapack
 Updated actions 
 Updated depotlocker(now are counting all items inside locker not just inside depot)
 Updated some text collors
+Changed the map for Yurots map
 Changed /clean command to clean corpses(not in the master branch)
 
 
