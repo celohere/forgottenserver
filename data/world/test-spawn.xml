@@ -1,0 +1,1557 @@
+<?xml version="1.0"?>
+<spawns>
+	<spawn centerx="123" centery="56" centerz="2" radius="1" />
+	<spawn centerx="127" centery="49" centerz="4" radius="1">
+		<npc name="Orlan" x="0" y="0" z="4" spawntime="60" />
+	</spawn>
+	<spawn centerx="130" centery="53" centerz="4" radius="1" />
+	<spawn centerx="108" centery="66" centerz="4" radius="5">
+		<monster name="Elf Arcanist" x="-1" y="-3" z="4" spawntime="60" />
+		<monster name="Elf Arcanist" x="-1" y="-2" z="4" spawntime="60" />
+		<monster name="Elf Arcanist" x="1" y="-2" z="4" spawntime="60" />
+		<monster name="Elf Arcanist" x="-1" y="0" z="4" spawntime="60" />
+		<monster name="Elf Arcanist" x="1" y="0" z="4" spawntime="60" />
+		<monster name="Elf Arcanist" x="-1" y="1" z="4" spawntime="60" />
+	</spawn>
+	<spawn centerx="141" centery="89" centerz="4" radius="5">
+		<monster name="warlock" x="0" y="0" z="4" spawntime="60" />
+	</spawn>
+	<spawn centerx="140" centery="143" centerz="4" radius="15">
+		<monster name="orc leader" x="2" y="0" z="4" spawntime="30" />
+		<monster name="orc berserker" x="-15" y="1" z="4" spawntime="10" />
+		<monster name="orc leader" x="-14" y="1" z="4" spawntime="10" />
+		<monster name="orc leader" x="0" y="1" z="4" spawntime="60" />
+		<monster name="orc leader" x="3" y="1" z="4" spawntime="30" />
+		<monster name="orc leader" x="-13" y="2" z="4" spawntime="10" />
+	</spawn>
+	<spawn centerx="124" centery="144" centerz="4" radius="15" />
+	<spawn centerx="129" centery="51" centerz="5" radius="1">
+		<npc name="Athan" x="0" y="0" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="144" centery="54" centerz="5" radius="1">
+		<npc name="Maya" x="0" y="0" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="161" centery="54" centerz="5" radius="8">
+		<monster name="Training Monk" x="-3" y="-1" z="5" spawntime="60" />
+		<monster name="Training Monk" x="1" y="-1" z="5" spawntime="60" />
+		<monster name="Training Monk" x="-3" y="1" z="5" spawntime="60" />
+		<monster name="Training Monk" x="1" y="1" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="108" centery="65" centerz="5" radius="5">
+		<monster name="Elf Scout" x="-1" y="-1" z="5" spawntime="60" />
+		<monster name="Elf Scout" x="1" y="-1" z="5" spawntime="60" />
+		<monster name="Elf Scout" x="-1" y="1" z="5" spawntime="60" />
+		<monster name="Elf Arcanist" x="1" y="1" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="115" centery="79" centerz="5" radius="8">
+		<monster name="stone golem" x="-6" y="-4" z="5" spawntime="60" />
+		<monster name="stone golem" x="-6" y="3" z="5" spawntime="60" />
+		<monster name="stone golem" x="3" y="4" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="152" centery="81" centerz="5" radius="5">
+		<monster name="crocodile" x="-2" y="-1" z="5" spawntime="60" />
+		<monster name="crocodile" x="1" y="0" z="5" spawntime="60" />
+		<monster name="crocodile" x="0" y="4" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="141" centery="89" centerz="5" radius="5">
+		<monster name="black knight" x="-1" y="-1" z="5" spawntime="60" />
+		<monster name="black knight" x="0" y="0" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="113" centery="90" centerz="5" radius="8">
+		<monster name="stone golem" x="1" y="-2" z="5" spawntime="60" />
+		<monster name="stone golem" x="4" y="3" z="5" spawntime="60" />
+		<monster name="stone golem" x="0" y="8" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="102" centery="106" centerz="5" radius="5">
+		<monster name="giant spider" x="0" y="-1" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="169" centery="118" centerz="5" radius="7">
+		<monster name="goblin" x="0" y="-5" z="5" spawntime="60" />
+		<monster name="dworc voodoomaster" x="2" y="-5" z="5" spawntime="60" />
+		<monster name="goblin" x="-1" y="-3" z="5" spawntime="60" />
+		<monster name="dworc venomsniper" x="2" y="-3" z="5" spawntime="60" />
+		<monster name="dworc venomsniper" x="-1" y="-2" z="5" spawntime="60" />
+		<monster name="goblin" x="1" y="-2" z="5" spawntime="60" />
+		<monster name="dworc venomsniper" x="1" y="-1" z="5" spawntime="60" />
+		<monster name="goblin" x="-1" y="0" z="5" spawntime="60" />
+		<monster name="goblin" x="2" y="0" z="5" spawntime="60" />
+		<monster name="dworc venomsniper" x="-1" y="1" z="5" spawntime="60" />
+		<monster name="goblin" x="1" y="2" z="5" spawntime="60" />
+		<monster name="goblin" x="-1" y="4" z="5" spawntime="60" />
+		<monster name="dworc voodoomaster" x="1" y="4" z="5" spawntime="60" />
+		<monster name="dworc venomsniper" x="0" y="5" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="146" centery="137" centerz="5" radius="15">
+		<monster name="orc warrior" x="0" y="-3" z="5" spawntime="60" />
+		<monster name="orc warrior" x="1" y="-3" z="5" spawntime="60" />
+		<monster name="orc warrior" x="2" y="-2" z="5" spawntime="60" />
+		<monster name="orc berserker" x="1" y="0" z="5" spawntime="10" />
+		<monster name="orc warrior" x="2" y="1" z="5" spawntime="10" />
+		<monster name="orc warrior" x="3" y="4" z="5" spawntime="60" />
+		<monster name="orc leader" x="-7" y="5" z="5" spawntime="60" />
+		<monster name="orc warrior" x="3" y="5" z="5" spawntime="60" />
+		<monster name="orc warlord" x="-9" y="6" z="5" spawntime="60" />
+		<monster name="orc warlord" x="-6" y="6" z="5" spawntime="60" />
+		<monster name="orc warrior" x="3" y="6" z="5" spawntime="60" />
+		<monster name="orc warrior" x="3" y="7" z="5" spawntime="60" />
+		<monster name="orc warrior" x="3" y="8" z="5" spawntime="60" />
+		<monster name="orc warrior" x="3" y="10" z="5" spawntime="60" />
+		<monster name="orc warrior" x="3" y="13" z="5" spawntime="60" />
+		<monster name="orc warrior" x="2" y="14" z="5" spawntime="60" />
+		<monster name="orc warrior" x="2" y="15" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="123" centery="144" centerz="5" radius="15">
+		<monster name="orc berserker" x="-8" y="-9" z="5" spawntime="60" />
+		<monster name="orc berserker" x="-6" y="-9" z="5" spawntime="60" />
+		<monster name="orc warrior" x="-7" y="-8" z="5" spawntime="60" />
+		<monster name="orc warrior" x="-7" y="-5" z="5" spawntime="60" />
+		<monster name="orc warrior" x="-8" y="-2" z="5" spawntime="60" />
+		<monster name="orc warrior" x="-7" y="0" z="5" spawntime="60" />
+		<monster name="orc shaman" x="1" y="0" z="5" spawntime="10" />
+		<monster name="orc leader" x="2" y="0" z="5" spawntime="10" />
+		<monster name="orc warrior" x="-8" y="1" z="5" spawntime="60" />
+		<monster name="orc leader" x="3" y="1" z="5" spawntime="10" />
+		<monster name="orc warrior" x="-8" y="2" z="5" spawntime="60" />
+		<monster name="orc warrior" x="-7" y="3" z="5" spawntime="60" />
+		<monster name="orc warrior" x="-8" y="5" z="5" spawntime="60" />
+		<monster name="orc berserker" x="-7" y="10" z="5" spawntime="10" />
+		<monster name="orc warlord" x="-6" y="10" z="5" spawntime="60" />
+		<monster name="orc warrior" x="-5" y="11" z="5" spawntime="10" />
+		<monster name="orc warrior" x="0" y="11" z="5" spawntime="60" />
+		<monster name="orc warrior" x="6" y="11" z="5" spawntime="60" />
+		<monster name="orc warrior" x="11" y="11" z="5" spawntime="60" />
+		<monster name="orc warrior" x="14" y="11" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="86" centery="150" centerz="5" radius="5">
+		<monster name="dragon lord" x="1" y="-2" z="5" spawntime="60" />
+		<monster name="dragon lord" x="-1" y="-1" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="115" centery="155" centerz="5" radius="15" />
+	<spawn centerx="237" centery="155" centerz="5" radius="5">
+		<monster name="bat" x="1" y="1" z="5" spawntime="60" />
+		<monster name="bat" x="2" y="1" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="221" centery="156" centerz="5" radius="10">
+		<monster name="Mahrdis" x="-1" y="-1" z="5" spawntime="60" />
+		<monster name="Dipthrah" x="1" y="-1" z="5" spawntime="60" />
+		<monster name="Lich" x="-1" y="0" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="140" centery="162" centerz="5" radius="15">
+		<monster name="orc warrior" x="8" y="-9" z="5" spawntime="60" />
+		<monster name="orc warlord" x="8" y="-8" z="5" spawntime="60" />
+		<monster name="orc warrior" x="2" y="-7" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="128" centery="33" centerz="6" radius="2">
+		<monster name="Training Monk" x="0" y="-1" z="6" spawntime="60" />
+		<monster name="Training Monk" x="1" y="-1" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="253" centery="36" centerz="6" radius="7">
+		<monster name="Yeti" x="4" y="-3" z="6" spawntime="60" />
+		<monster name="Yeti" x="3" y="5" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="129" centery="50" centerz="6" radius="1">
+		<npc name="Dark Rodo" x="-1" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="145" centery="50" centerz="6" radius="1">
+		<npc name="Soya" x="0" y="1" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="61" centery="58" centerz="6" radius="7">
+		<monster name="witch" x="-2" y="0" z="6" spawntime="20" />
+		<monster name="vampire" x="-3" y="5" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="108" centery="65" centerz="6" radius="5">
+		<monster name="Elf" x="-1" y="-1" z="6" spawntime="60" />
+		<monster name="Elf" x="1" y="-1" z="6" spawntime="60" />
+		<monster name="Elf Scout" x="0" y="0" z="6" spawntime="60" />
+		<monster name="Elf Scout" x="-1" y="1" z="6" spawntime="60" />
+		<monster name="Elf" x="1" y="1" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="102" centery="71" centerz="6" radius="5">
+		<monster name="Elf Scout" x="0" y="0" z="6" spawntime="60" />
+		<monster name="Elf Scout" x="3" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="114" centery="71" centerz="6" radius="5">
+		<monster name="Elf Scout" x="-3" y="0" z="6" spawntime="60" />
+		<monster name="Elf Scout" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="127" centery="78" centerz="6" radius="5">
+		<monster name="cyclops" x="-3" y="-1" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="122" centery="85" centerz="6" radius="5">
+		<monster name="cyclops" x="-2" y="3" z="6" spawntime="15" />
+	</spawn>
+	<spawn centerx="150" centery="86" centerz="6" radius="16">
+		<monster name="troll" x="-6" y="-6" z="6" spawntime="60" />
+		<monster name="minotaur" x="2" y="-6" z="6" spawntime="60" />
+		<monster name="swamp troll" x="8" y="-6" z="6" spawntime="60" />
+		<monster name="minotaur" x="12" y="-6" z="6" spawntime="60" />
+		<monster name="troll" x="-5" y="-5" z="6" spawntime="60" />
+		<monster name="troll" x="0" y="-5" z="6" spawntime="60" />
+		<monster name="minotaur" x="4" y="-5" z="6" spawntime="60" />
+		<monster name="troll" x="9" y="-5" z="6" spawntime="60" />
+		<monster name="minotaur" x="10" y="-5" z="6" spawntime="60" />
+		<monster name="troll" x="-8" y="-4" z="6" spawntime="60" />
+		<monster name="troll" x="-1" y="-4" z="6" spawntime="60" />
+		<monster name="troll" x="9" y="-4" z="6" spawntime="60" />
+		<monster name="troll" x="-7" y="-3" z="6" spawntime="60" />
+		<monster name="troll" x="-4" y="-2" z="6" spawntime="10" />
+		<monster name="troll" x="-2" y="-2" z="6" spawntime="10" />
+		<monster name="swamp troll" x="3" y="-2" z="6" spawntime="60" />
+		<monster name="troll" x="-2" y="-1" z="6" spawntime="10" />
+		<monster name="troll" x="2" y="-1" z="6" spawntime="60" />
+		<monster name="troll" x="8" y="-1" z="6" spawntime="60" />
+		<monster name="swamp troll" x="10" y="-1" z="6" spawntime="60" />
+		<monster name="troll" x="0" y="0" z="6" spawntime="10" />
+		<monster name="troll" x="2" y="0" z="6" spawntime="10" />
+		<monster name="troll" x="8" y="0" z="6" spawntime="60" />
+		<monster name="troll" x="0" y="2" z="6" spawntime="10" />
+		<monster name="crocodile" x="11" y="2" z="6" spawntime="60" />
+		<monster name="minotaur archer" x="-9" y="3" z="6" spawntime="60" />
+		<monster name="minotaur mage" x="-4" y="4" z="6" spawntime="60" />
+		<monster name="minotaur mage" x="-10" y="5" z="6" spawntime="60" />
+		<monster name="stone golem" x="-5" y="6" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="113" centery="87" centerz="6" radius="5">
+		<monster name="cyclops" x="-3" y="-1" z="6" spawntime="60" />
+		<monster name="cyclops" x="1" y="-1" z="6" spawntime="60" />
+		<monster name="cyclops" x="-2" y="4" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="108" centery="94" centerz="6" radius="5">
+		<monster name="cyclops" x="1" y="3" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="121" centery="94" centerz="6" radius="5">
+		<monster name="cyclops" x="4" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="116" centery="100" centerz="6" radius="5">
+		<monster name="cyclops" x="0" y="0" z="6" spawntime="10" />
+	</spawn>
+	<spawn centerx="104" centery="108" centerz="6" radius="10">
+		<monster name="cyclops" x="0" y="0" z="6" spawntime="60" />
+		<monster name="cyclops" x="-2" y="5" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="168" centery="117" centerz="6" radius="7">
+		<monster name="goblin" x="1" y="-3" z="6" spawntime="60" />
+		<monster name="dworc venomsniper" x="1" y="-2" z="6" spawntime="60" />
+		<monster name="dworc venomsniper" x="-3" y="-1" z="6" spawntime="60" />
+		<monster name="goblin" x="2" y="-1" z="6" spawntime="60" />
+		<monster name="goblin" x="-4" y="0" z="6" spawntime="60" />
+		<monster name="goblin" x="0" y="2" z="6" spawntime="60" />
+		<monster name="dworc venomsniper" x="2" y="2" z="6" spawntime="60" />
+		<monster name="dworc venomsniper" x="-3" y="3" z="6" spawntime="60" />
+		<monster name="goblin" x="2" y="3" z="6" spawntime="60" />
+		<monster name="goblin" x="-7" y="4" z="6" spawntime="60" />
+		<monster name="dworc venomsniper" x="-6" y="4" z="6" spawntime="60" />
+		<monster name="goblin" x="-5" y="4" z="6" spawntime="60" />
+		<monster name="goblin" x="1" y="5" z="6" spawntime="60" />
+		<monster name="dworc venomsniper" x="-7" y="6" z="6" spawntime="60" />
+		<monster name="goblin" x="-3" y="6" z="6" spawntime="60" />
+		<monster name="goblin" x="-7" y="7" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="160" centery="123" centerz="6" radius="7">
+		<monster name="goblin" x="-1" y="-2" z="6" spawntime="60" />
+		<monster name="dworc venomsniper" x="0" y="-2" z="6" spawntime="60" />
+		<monster name="dworc venomsniper" x="-3" y="-1" z="6" spawntime="60" />
+		<monster name="goblin" x="-5" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="115" centery="137" centerz="6" radius="15">
+		<monster name="orc shaman" x="0" y="-3" z="6" spawntime="10" />
+		<monster name="orc warrior" x="2" y="-3" z="6" spawntime="60" />
+		<monster name="orc warrior" x="5" y="-3" z="6" spawntime="60" />
+		<monster name="orc rider" x="8" y="-2" z="6" spawntime="60" />
+		<monster name="orc warrior" x="10" y="-2" z="6" spawntime="10" />
+		<monster name="orc warrior" x="2" y="0" z="6" spawntime="10" />
+		<monster name="orc warrior" x="7" y="0" z="6" spawntime="60" />
+		<monster name="orc warrior" x="3" y="1" z="6" spawntime="10" />
+		<monster name="orc warrior" x="5" y="1" z="6" spawntime="60" />
+		<monster name="orc rider" x="12" y="1" z="6" spawntime="60" />
+		<monster name="orc warrior" x="14" y="1" z="6" spawntime="10" />
+		<monster name="orc warrior" x="10" y="2" z="6" spawntime="10" />
+		<monster name="orc shaman" x="0" y="3" z="6" spawntime="60" />
+		<monster name="orc warrior" x="3" y="4" z="6" spawntime="60" />
+		<monster name="orc warrior" x="6" y="4" z="6" spawntime="60" />
+		<monster name="orc warrior" x="12" y="5" z="6" spawntime="10" />
+		<monster name="orc shaman" x="14" y="5" z="6" spawntime="10" />
+		<monster name="orc warrior" x="5" y="6" z="6" spawntime="60" />
+		<monster name="orc warrior" x="11" y="6" z="6" spawntime="60" />
+		<monster name="orc warrior" x="7" y="7" z="6" spawntime="60" />
+		<monster name="orc shaman" x="0" y="8" z="6" spawntime="60" />
+		<monster name="orc warrior" x="3" y="8" z="6" spawntime="60" />
+		<monster name="orc warrior" x="5" y="8" z="6" spawntime="60" />
+		<monster name="orc warrior" x="9" y="8" z="6" spawntime="10" />
+		<monster name="orc warrior" x="11" y="8" z="6" spawntime="60" />
+		<monster name="orc warrior" x="14" y="8" z="6" spawntime="10" />
+		<monster name="orc warrior" x="3" y="11" z="6" spawntime="60" />
+		<monster name="orc berserker" x="8" y="11" z="6" spawntime="60" />
+		<monster name="orc warrior" x="11" y="11" z="6" spawntime="60" />
+		<monster name="orc berserker" x="0" y="12" z="6" spawntime="60" />
+		<monster name="orc warrior" x="5" y="13" z="6" spawntime="60" />
+		<monster name="orc warrior" x="8" y="13" z="6" spawntime="10" />
+		<monster name="orc berserker" x="11" y="13" z="6" spawntime="60" />
+		<monster name="orc warrior" x="13" y="13" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="128" centery="137" centerz="6" radius="15">
+		<monster name="orc shaman" x="13" y="-3" z="6" spawntime="10" />
+		<monster name="orc warrior" x="11" y="-2" z="6" spawntime="60" />
+		<monster name="orc warrior" x="15" y="-2" z="6" spawntime="60" />
+		<monster name="orc warrior" x="3" y="-1" z="6" spawntime="10" />
+		<monster name="orc warrior" x="7" y="0" z="6" spawntime="60" />
+		<monster name="orc warrior" x="4" y="1" z="6" spawntime="10" />
+		<monster name="orc warrior" x="10" y="1" z="6" spawntime="60" />
+		<monster name="orc warrior" x="13" y="1" z="6" spawntime="60" />
+		<monster name="orc warrior" x="3" y="3" z="6" spawntime="60" />
+		<monster name="orc berserker" x="13" y="4" z="6" spawntime="60" />
+		<monster name="orc warrior" x="5" y="5" z="6" spawntime="10" />
+		<monster name="orc warlord" x="12" y="5" z="6" spawntime="60" />
+		<monster name="orc berserker" x="15" y="5" z="6" spawntime="60" />
+		<monster name="orc warlord" x="10" y="6" z="6" spawntime="60" />
+		<monster name="orc shaman" x="13" y="6" z="6" spawntime="60" />
+		<monster name="orc warrior" x="3" y="8" z="6" spawntime="10" />
+		<monster name="orc shaman" x="13" y="8" z="6" spawntime="60" />
+		<monster name="orc shaman" x="15" y="8" z="6" spawntime="60" />
+		<monster name="orc rider" x="5" y="10" z="6" spawntime="60" />
+		<monster name="orc rider" x="10" y="11" z="6" spawntime="60" />
+		<monster name="orc warrior" x="13" y="11" z="6" spawntime="60" />
+		<monster name="orc shaman" x="15" y="11" z="6" spawntime="10" />
+		<monster name="orc warrior" x="3" y="12" z="6" spawntime="60" />
+		<monster name="orc warrior" x="7" y="12" z="6" spawntime="60" />
+		<monster name="orc warrior" x="11" y="13" z="6" spawntime="60" />
+		<monster name="orc berserker" x="5" y="14" z="6" spawntime="60" />
+		<monster name="orc warrior" x="8" y="14" z="6" spawntime="60" />
+		<monster name="orc warrior" x="14" y="15" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="146" centery="137" centerz="6" radius="15">
+		<monster name="orc shaman" x="1" y="-3" z="6" spawntime="10" />
+		<monster name="orc warrior" x="2" y="0" z="6" spawntime="10" />
+		<monster name="orc warrior" x="3" y="1" z="6" spawntime="10" />
+		<monster name="orc rider" x="-2" y="2" z="6" spawntime="60" />
+		<monster name="orc warrior" x="3" y="6" z="6" spawntime="60" />
+		<monster name="orc warrior" x="2" y="10" z="6" spawntime="10" />
+		<monster name="orc warrior" x="-1" y="12" z="6" spawntime="60" />
+		<monster name="orc warrior" x="-2" y="14" z="6" spawntime="60" />
+		<monster name="orc warrior" x="1" y="15" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="131" centery="142" centerz="6" radius="15">
+		<monster name="orc berserker" x="-14" y="11" z="6" spawntime="60" />
+		<monster name="orc warrior" x="-10" y="11" z="6" spawntime="60" />
+		<monster name="orc warrior" x="-7" y="11" z="6" spawntime="60" />
+		<monster name="orc warrior" x="-4" y="11" z="6" spawntime="60" />
+		<monster name="orc warrior" x="8" y="11" z="6" spawntime="60" />
+		<monster name="orc shaman" x="-14" y="13" z="6" spawntime="10" />
+		<monster name="orc warrior" x="-11" y="13" z="6" spawntime="10" />
+		<monster name="orc warrior" x="-7" y="13" z="6" spawntime="10" />
+		<monster name="orc berserker" x="-1" y="13" z="6" spawntime="60" />
+		<monster name="orc berserker" x="7" y="13" z="6" spawntime="60" />
+		<monster name="orc shaman" x="13" y="13" z="6" spawntime="10" />
+	</spawn>
+	<spawn centerx="85" centery="149" centerz="6" radius="5">
+		<monster name="dragon" x="-1" y="-1" z="6" spawntime="60" />
+		<monster name="dragon lord" x="-1" y="1" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="140" centery="150" centerz="6" radius="15">
+		<monster name="orc warrior" x="9" y="5" z="6" spawntime="10" />
+	</spawn>
+	<spawn centerx="122" centery="151" centerz="6" radius="15" />
+	<spawn centerx="241" centery="154" centerz="6" radius="10">
+		<monster name="lizard templar" x="-1" y="-2" z="6" spawntime="60" />
+		<monster name="lizard templar" x="0" y="-1" z="6" spawntime="60" />
+		<monster name="lizard templar" x="3" y="-1" z="6" spawntime="60" />
+		<monster name="lizard templar" x="5" y="2" z="6" spawntime="60" />
+		<monster name="lizard templar" x="7" y="2" z="6" spawntime="60" />
+		<monster name="lizard templar" x="-6" y="3" z="6" spawntime="60" />
+		<monster name="lizard templar" x="-3" y="4" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="116" centery="155" centerz="6" radius="15" />
+	<spawn centerx="147" centery="155" centerz="6" radius="15" />
+	<spawn centerx="221" centery="155" centerz="6" radius="10">
+		<monster name="Rahemos" x="-4" y="-2" z="6" spawntime="60" />
+		<monster name="Rahemos" x="-2" y="-2" z="6" spawntime="60" />
+		<monster name="ancient scarab" x="0" y="-2" z="6" spawntime="60" />
+		<monster name="ancient scarab" x="1" y="-2" z="6" spawntime="60" />
+		<monster name="ancient scarab" x="2" y="-2" z="6" spawntime="60" />
+		<monster name="Rahemos" x="-3" y="-1" z="6" spawntime="60" />
+		<monster name="ancient scarab" x="0" y="-1" z="6" spawntime="60" />
+		<monster name="Dipthrah" x="3" y="-1" z="6" spawntime="60" />
+		<monster name="Rahemos" x="-4" y="1" z="6" spawntime="60" />
+		<monster name="Omruc" x="-2" y="1" z="6" spawntime="60" />
+		<monster name="Lich" x="-1" y="2" z="6" spawntime="60" />
+		<monster name="Thalas" x="1" y="2" z="6" spawntime="60" />
+		<monster name="Thalas" x="-4" y="3" z="6" spawntime="60" />
+		<monster name="Lich" x="-1" y="3" z="6" spawntime="60" />
+		<monster name="Dipthrah" x="1" y="3" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="90" centery="194" centerz="6" radius="5">
+		<monster name="wolf" x="-1" y="-2" z="6" spawntime="60" />
+		<monster name="wolf" x="3" y="2" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="91" centery="202" centerz="6" radius="5">
+		<monster name="wolf" x="-2" y="-2" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="193" centery="25" centerz="7" radius="3">
+		<monster name="pig" x="3" y="0" z="7" spawntime="60" />
+		<monster name="pig" x="-2" y="1" z="7" spawntime="60" />
+		<monster name="pig" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="129" centery="30" centerz="7" radius="1" />
+	<spawn centerx="48" centery="31" centerz="7" radius="5">
+		<monster name="demon skeleton" x="-4" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="229" centery="31" centerz="7" radius="10">
+		<monster name="frost troll" x="-9" y="-3" z="7" spawntime="60" />
+		<monster name="winter wolf" x="-3" y="-1" z="7" spawntime="60" />
+		<monster name="frost troll" x="-10" y="0" z="7" spawntime="60" />
+		<monster name="frost troll" x="1" y="0" z="7" spawntime="60" />
+		<monster name="polar bear" x="-7" y="1" z="7" spawntime="60" />
+		<monster name="winter wolf" x="8" y="1" z="7" spawntime="60" />
+		<monster name="winter wolf" x="9" y="1" z="7" spawntime="60" />
+		<monster name="polar bear" x="8" y="2" z="7" spawntime="60" />
+		<monster name="polar bear" x="1" y="3" z="7" spawntime="60" />
+		<monster name="frost troll" x="4" y="3" z="7" spawntime="60" />
+		<monster name="winter wolf" x="1" y="4" z="7" spawntime="60" />
+		<monster name="frost troll" x="8" y="4" z="7" spawntime="60" />
+		<monster name="winter wolf" x="6" y="6" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="82" centery="36" centerz="7" radius="5">
+		<monster name="minotaur guard" x="2" y="-2" z="7" spawntime="60" />
+		<monster name="minotaur guard" x="-4" y="-1" z="7" spawntime="60" />
+		<monster name="minotaur guard" x="0" y="2" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="107" centery="36" centerz="7" radius="14">
+		<monster name="minotaur" x="-9" y="5" z="7" spawntime="60" />
+		<monster name="minotaur" x="2" y="5" z="7" spawntime="60" />
+		<monster name="minotaur" x="-1" y="6" z="7" spawntime="60" />
+		<monster name="minotaur guard" x="-5" y="8" z="7" spawntime="60" />
+		<monster name="minotaur" x="6" y="9" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="91" centery="37" centerz="7" radius="5">
+		<monster name="minotaur guard" x="0" y="-2" z="7" spawntime="60" />
+		<monster name="minotaur guard" x="-2" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="252" centery="38" centerz="7" radius="10">
+		<monster name="frost troll" x="-3" y="-8" z="7" spawntime="60" />
+		<monster name="frost troll" x="3" y="-8" z="7" spawntime="60" />
+		<monster name="winter wolf" x="-3" y="-5" z="7" spawntime="60" />
+		<monster name="winter wolf" x="-6" y="-4" z="7" spawntime="60" />
+		<monster name="polar bear" x="-5" y="-4" z="7" spawntime="60" />
+		<monster name="frost troll" x="2" y="-2" z="7" spawntime="60" />
+		<monster name="polar bear" x="-6" y="-1" z="7" spawntime="60" />
+		<monster name="winter wolf" x="2" y="-1" z="7" spawntime="60" />
+		<monster name="frost troll" x="-7" y="1" z="7" spawntime="60" />
+		<monster name="polar bear" x="0" y="1" z="7" spawntime="60" />
+		<monster name="winter wolf" x="-6" y="3" z="7" spawntime="60" />
+		<monster name="frost troll" x="-7" y="6" z="7" spawntime="60" />
+		<monster name="polar bear" x="-4" y="7" z="7" spawntime="60" />
+		<monster name="winter wolf" x="3" y="8" z="7" spawntime="60" />
+		<monster name="frost troll" x="-2" y="9" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="38" centery="40" centerz="7" radius="5">
+		<monster name="demon skeleton" x="0" y="4" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="155" centery="44" centerz="7" radius="5">
+		<monster name="Parrot" x="0" y="-1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="173" centery="46" centerz="7" radius="1">
+		<npc name="Lola" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="127" centery="49" centerz="7" radius="1">
+		<npc name="Lector" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="145" centery="49" centerz="7" radius="1">
+		<npc name="Frodo" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="127" centery="56" centerz="7" radius="1">
+		<npc name="AOL" x="1" y="-1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="107" centery="61" centerz="7" radius="5">
+		<monster name="Elf" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Elf" x="-2" y="0" z="7" spawntime="60" />
+		<monster name="Elf" x="4" y="1" z="7" spawntime="60" />
+		<monster name="Elf Scout" x="-3" y="2" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="64" centery="68" centerz="7" radius="12">
+		<monster name="demon skeleton" x="-3" y="-9" z="7" spawntime="60" />
+		<monster name="demon skeleton" x="8" y="-8" z="7" spawntime="60" />
+		<monster name="demon skeleton" x="-11" y="-2" z="7" spawntime="40" />
+		<monster name="demon skeleton" x="-8" y="8" z="7" spawntime="60" />
+		<monster name="demon skeleton" x="5" y="8" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="105" centery="68" centerz="7" radius="5">
+		<monster name="Elf" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Elf Scout" x="2" y="0" z="7" spawntime="60" />
+		<monster name="Elf" x="0" y="5" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="113" centery="69" centerz="7" radius="5">
+		<monster name="Elf" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Elf" x="-2" y="3" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="207" centery="71" centerz="7" radius="1">
+		<npc name="Dark Rodo" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="116" centery="80" centerz="7" radius="5">
+		<monster name="tarantula" x="-3" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="208" centery="80" centerz="7" radius="1">
+		<npc name="Seller" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="164" centery="81" centerz="7" radius="5">
+		<monster name="minotaur" x="-3" y="-2" z="7" spawntime="60" />
+		<monster name="minotaur" x="3" y="-1" z="7" spawntime="60" />
+		<monster name="minotaur" x="-5" y="4" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="241" centery="81" centerz="7" radius="9">
+		<monster name="scarab" x="0" y="-5" z="7" spawntime="60" />
+		<monster name="scarab" x="-6" y="-4" z="7" spawntime="60" />
+		<monster name="scarab" x="4" y="-1" z="7" spawntime="60" />
+		<monster name="scarab" x="-5" y="2" z="7" spawntime="60" />
+		<monster name="scarab" x="-1" y="6" z="7" spawntime="60" />
+		<monster name="scarab" x="6" y="8" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="227" centery="84" centerz="7" radius="6">
+		<monster name="lion" x="-2" y="-4" z="7" spawntime="60" />
+		<monster name="hyaena" x="3" y="-1" z="7" spawntime="60" />
+		<monster name="lion" x="-3" y="4" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="146" centery="86" centerz="7" radius="16">
+		<monster name="minotaur" x="11" y="-6" z="7" spawntime="60" />
+		<monster name="troll" x="-2" y="-5" z="7" spawntime="20" />
+		<monster name="minotaur" x="4" y="-5" z="7" spawntime="60" />
+		<monster name="minotaur" x="6" y="-4" z="7" spawntime="60" />
+		<monster name="minotaur" x="11" y="-3" z="7" spawntime="60" />
+		<monster name="minotaur" x="5" y="-1" z="7" spawntime="60" />
+		<monster name="troll" x="9" y="-1" z="7" spawntime="40" />
+		<monster name="minotaur" x="3" y="0" z="7" spawntime="60" />
+		<monster name="minotaur" x="11" y="0" z="7" spawntime="60" />
+		<monster name="troll" x="5" y="1" z="7" spawntime="20" />
+		<monster name="troll" x="-2" y="2" z="7" spawntime="20" />
+		<monster name="troll" x="-1" y="2" z="7" spawntime="40" />
+		<monster name="troll" x="-3" y="6" z="7" spawntime="60" />
+		<monster name="stalker" x="-6" y="14" z="7" spawntime="60" />
+		<monster name="goblin" x="0" y="16" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="93" centery="93" centerz="7" radius="5">
+		<monster name="giant spider" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="247" centery="99" centerz="7" radius="10">
+		<monster name="scarab" x="4" y="-6" z="7" spawntime="60" />
+		<monster name="scarab" x="-6" y="-4" z="7" spawntime="60" />
+		<monster name="scarab" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="scarab" x="-10" y="0" z="7" spawntime="60" />
+		<monster name="scarab" x="8" y="1" z="7" spawntime="60" />
+		<monster name="scarab" x="-7" y="3" z="7" spawntime="60" />
+		<monster name="scarab" x="1" y="7" z="7" spawntime="60" />
+		<monster name="scarab" x="-10" y="9" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="126" centery="102" centerz="7" radius="20">
+		<monster name="tarantula" x="-4" y="-18" z="7" spawntime="60" />
+		<monster name="tarantula" x="-11" y="-13" z="7" spawntime="60" />
+		<monster name="tarantula" x="-3" y="-10" z="7" spawntime="60" />
+		<monster name="tarantula" x="-9" y="-5" z="7" spawntime="60" />
+		<monster name="tarantula" x="-18" y="-3" z="7" spawntime="60" />
+		<monster name="ghoul" x="2" y="-3" z="7" spawntime="60" />
+		<monster name="ghoul" x="-2" y="-2" z="7" spawntime="60" />
+		<monster name="dragon" x="-16" y="0" z="7" spawntime="60" />
+		<monster name="ghoul" x="3" y="0" z="7" spawntime="25" />
+		<monster name="ghoul" x="-2" y="2" z="7" spawntime="25" />
+		<monster name="ghoul" x="0" y="2" z="7" spawntime="25" />
+		<monster name="dragon" x="-17" y="11" z="7" spawntime="60" />
+		<monster name="flamingo" x="6" y="15" z="7" spawntime="60" />
+		<monster name="dragon" x="-19" y="16" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="32" centery="108" centerz="7" radius="5">
+		<monster name="elder beholder" x="2" y="-3" z="7" spawntime="60" />
+		<monster name="elder beholder" x="-2" y="2" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="81" centery="108" centerz="7" radius="2">
+		<monster name="giant spider" x="-1" y="-1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="102" centery="109" centerz="7" radius="5">
+		<monster name="dragon" x="-4" y="-1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="231" centery="113" centerz="7" radius="10">
+		<monster name="scarab" x="0" y="-10" z="7" spawntime="60" />
+		<monster name="scarab" x="-4" y="-5" z="7" spawntime="60" />
+		<monster name="scarab" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="scarab" x="8" y="2" z="7" spawntime="60" />
+		<monster name="scarab" x="-6" y="3" z="7" spawntime="60" />
+		<monster name="scarab" x="1" y="6" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="253" centery="114" centerz="7" radius="5">
+		<monster name="ancient scarab" x="3" y="3" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="30" centery="117" centerz="7" radius="5">
+		<monster name="hydra" x="-1" y="2" z="7" spawntime="60" />
+		<monster name="kongra" x="3" y="2" z="7" spawntime="60" />
+		<monster name="kongra" x="-3" y="3" z="7" spawntime="60" />
+		<monster name="kongra" x="-1" y="5" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="167" centery="117" centerz="7" radius="7">
+		<monster name="goblin" x="-1" y="-3" z="7" spawntime="60" />
+		<monster name="goblin" x="3" y="-3" z="7" spawntime="60" />
+		<monster name="dworc venomsniper" x="-3" y="-1" z="7" spawntime="60" />
+		<monster name="goblin" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="goblin" x="-3" y="1" z="7" spawntime="60" />
+		<monster name="dworc venomsniper" x="3" y="1" z="7" spawntime="60" />
+		<monster name="dworc venomsniper" x="3" y="3" z="7" spawntime="60" />
+		<monster name="dworc venomsniper" x="-2" y="5" z="7" spawntime="60" />
+		<monster name="goblin" x="1" y="6" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="59" centery="119" centerz="7" radius="5">
+		<monster name="giant spider" x="-2" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="95" centery="120" centerz="7" radius="2">
+		<monster name="giant spider" x="1" y="-1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="106" centery="120" centerz="7" radius="10">
+		<monster name="dragon" x="-4" y="10" z="7" spawntime="25" />
+	</spawn>
+	<spawn centerx="160" centery="122" centerz="7" radius="7">
+		<monster name="dworc venomsniper" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="dworc venomsniper" x="-5" y="0" z="7" spawntime="60" />
+		<monster name="goblin" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="goblin" x="-6" y="2" z="7" spawntime="60" />
+		<monster name="goblin" x="-2" y="2" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="33" centery="125" centerz="7" radius="5">
+		<monster name="kongra" x="5" y="-1" z="7" spawntime="60" />
+		<monster name="kongra" x="-4" y="2" z="7" spawntime="60" />
+		<monster name="kongra" x="0" y="5" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="40" centery="127" centerz="7" radius="5">
+		<monster name="Deathslicer" x="2" y="-1" z="7" spawntime="60" />
+		<monster name="Deathslicer" x="2" y="3" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="103" centery="131" centerz="7" radius="5" />
+	<spawn centerx="63" centery="133" centerz="7" radius="5">
+		<monster name="giant spider" x="-2" y="2" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="79" centery="133" centerz="7" radius="3">
+		<monster name="giant spider" x="0" y="-1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="192" centery="137" centerz="7" radius="5">
+		<monster name="elephant" x="0" y="-4" z="7" spawntime="60" direction="2" />
+		<monster name="elephant" x="-3" y="1" z="7" spawntime="60" direction="2" />
+		<monster name="elephant" x="2" y="3" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="93" centery="140" centerz="7" radius="13">
+		<monster name="dragon" x="0" y="-2" z="7" spawntime="60" />
+		<monster name="dragon" x="-12" y="3" z="7" spawntime="60" />
+		<monster name="dragon" x="3" y="8" z="7" spawntime="60" />
+		<monster name="dragon" x="-9" y="10" z="7" spawntime="60" />
+		<monster name="dragon" x="-6" y="10" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="128" centery="140" centerz="7" radius="5">
+		<monster name="orc berserker" x="-2" y="0" z="7" spawntime="60" />
+		<monster name="orc leader" x="5" y="0" z="7" spawntime="60" />
+		<monster name="orc shaman" x="1" y="1" z="7" spawntime="60" />
+		<monster name="orc shaman" x="-3" y="4" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="206" centery="144" centerz="7" radius="10">
+		<monster name="elephant" x="0" y="-6" z="7" spawntime="60" direction="2" />
+		<monster name="spit nettle" x="-6" y="-3" z="7" spawntime="60" direction="2" />
+		<monster name="spit nettle" x="2" y="-1" z="7" spawntime="60" direction="2" />
+		<monster name="elephant" x="-4" y="0" z="7" spawntime="60" direction="2" />
+		<monster name="elephant" x="6" y="1" z="7" spawntime="60" direction="2" />
+		<monster name="elephant" x="0" y="4" z="7" spawntime="60" direction="2" />
+		<monster name="efreet" x="9" y="9" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="135" centery="149" centerz="7" radius="5">
+		<monster name="orc leader" x="0" y="-5" z="7" spawntime="60" />
+		<monster name="orc leader" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="orc berserker" x="0" y="4" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="190" centery="149" centerz="7" radius="5">
+		<monster name="crab" x="-2" y="-4" z="7" spawntime="60" direction="2" />
+		<monster name="crab" x="1" y="-3" z="7" spawntime="60" direction="2" />
+		<monster name="crab" x="4" y="-3" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="89" centery="150" centerz="7" radius="5" />
+	<spawn centerx="129" centery="151" centerz="7" radius="5">
+		<monster name="orc leader" x="0" y="-4" z="7" spawntime="60" />
+		<monster name="orc warlord" x="-5" y="3" z="7" spawntime="60" />
+		<monster name="orc warlord" x="-1" y="4" z="7" spawntime="60" />
+		<monster name="orc shaman" x="2" y="4" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="122" centery="154" centerz="7" radius="5">
+		<monster name="orc warlord" x="-1" y="-2" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="221" centery="154" centerz="7" radius="10">
+		<monster name="elephant" x="2" y="-8" z="7" spawntime="60" />
+		<monster name="elephant" x="6" y="-7" z="7" spawntime="60" />
+		<monster name="Rahemos" x="-3" y="-3" z="7" spawntime="60" />
+		<monster name="Dipthrah" x="-1" y="-3" z="7" spawntime="60" />
+		<monster name="Rahemos" x="2" y="-3" z="7" spawntime="60" />
+		<monster name="Vashresamun" x="-3" y="-2" z="7" spawntime="60" />
+		<monster name="Thalas" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="Thalas" x="2" y="-2" z="7" spawntime="60" />
+		<monster name="efreet" x="-3" y="0" z="7" spawntime="60" />
+		<monster name="marid" x="-2" y="0" z="7" spawntime="60" />
+		<monster name="Thalas" x="2" y="0" z="7" spawntime="60" />
+		<monster name="ancient scarab" x="4" y="0" z="7" spawntime="60" />
+		<monster name="ancient scarab" x="5" y="0" z="7" spawntime="60" />
+		<monster name="marid" x="0" y="1" z="7" spawntime="60" />
+		<monster name="Thalas" x="2" y="1" z="7" spawntime="60" />
+		<monster name="ancient scarab" x="4" y="1" z="7" spawntime="60" />
+		<monster name="ancient scarab" x="5" y="1" z="7" spawntime="60" />
+		<monster name="ancient scarab" x="-5" y="2" z="7" spawntime="60" />
+		<monster name="ancient scarab" x="-3" y="2" z="7" spawntime="60" />
+		<monster name="efreet" x="0" y="2" z="7" spawntime="60" />
+		<monster name="Dipthrah" x="-6" y="3" z="7" spawntime="60" />
+		<monster name="ancient scarab" x="-5" y="3" z="7" spawntime="60" />
+		<monster name="ancient scarab" x="-2" y="3" z="7" spawntime="60" />
+		<monster name="marid" x="0" y="3" z="7" spawntime="60" />
+		<monster name="Rahemos" x="4" y="3" z="7" spawntime="60" />
+		<monster name="Rahemos" x="-5" y="5" z="7" spawntime="60" />
+		<monster name="Thalas" x="-2" y="5" z="7" spawntime="60" />
+		<monster name="Thalas" x="-5" y="6" z="7" spawntime="60" />
+		<monster name="Rahemos" x="-2" y="6" z="7" spawntime="60" />
+		<monster name="Thalas" x="3" y="6" z="7" spawntime="60" />
+		<monster name="Thalas" x="4" y="6" z="7" spawntime="60" />
+		<monster name="sibang" x="-10" y="9" z="7" spawntime="60" />
+		<monster name="merlkin" x="-8" y="10" z="7" spawntime="60" />
+		<monster name="merlkin" x="1" y="10" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="254" centery="154" centerz="7" radius="5">
+		<monster name="tarantula" x="-1" y="-4" z="7" spawntime="60" />
+		<monster name="tarantula" x="1" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="240" centery="155" centerz="7" radius="10">
+		<monster name="lizard templar" x="1" y="-3" z="7" spawntime="60" />
+		<monster name="lizard templar" x="-1" y="-2" z="7" spawntime="60" />
+		<monster name="lizard templar" x="4" y="-2" z="7" spawntime="60" />
+		<monster name="lizard templar" x="-5" y="-1" z="7" spawntime="60" />
+		<monster name="lizard templar" x="7" y="1" z="7" spawntime="60" />
+		<monster name="lizard templar" x="-6" y="2" z="7" spawntime="60" />
+		<monster name="elephant" x="-4" y="8" z="7" spawntime="60" />
+		<monster name="tarantula" x="9" y="9" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="201" centery="156" centerz="7" radius="5">
+		<monster name="tarantula" x="4" y="-1" z="7" spawntime="60" />
+		<monster name="elephant" x="-3" y="4" z="7" spawntime="60" />
+		<monster name="elephant" x="4" y="5" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="190" centery="160" centerz="7" radius="5">
+		<monster name="crocodile" x="-4" y="-2" z="7" spawntime="60" />
+		<monster name="crocodile" x="-2" y="-1" z="7" spawntime="60" />
+		<monster name="crocodile" x="2" y="0" z="7" spawntime="60" />
+		<monster name="crocodile" x="-2" y="2" z="7" spawntime="60" />
+		<monster name="crocodile" x="0" y="2" z="7" spawntime="60" />
+		<monster name="crocodile" x="4" y="2" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="253" centery="162" centerz="7" radius="5">
+		<monster name="tarantula" x="0" y="-2" z="7" spawntime="60" />
+		<monster name="tarantula" x="2" y="2" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="207" centery="163" centerz="7" radius="5">
+		<monster name="kongra" x="2" y="-1" z="7" spawntime="60" />
+		<monster name="sibang" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="sibang" x="0" y="2" z="7" spawntime="60" />
+		<monster name="sibang" x="2" y="2" z="7" spawntime="60" />
+		<monster name="merlkin" x="4" y="3" z="7" spawntime="60" />
+		<monster name="sibang" x="5" y="4" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="216" centery="167" centerz="7" radius="5">
+		<monster name="sibang" x="1" y="-2" z="7" spawntime="60" />
+		<monster name="merlkin" x="-2" y="0" z="7" spawntime="60" />
+		<monster name="kongra" x="1" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="237" centery="167" centerz="7" radius="5">
+		<monster name="tarantula" x="3" y="0" z="7" spawntime="60" />
+		<monster name="tarantula" x="1" y="2" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="222" centery="168" centerz="7" radius="5">
+		<monster name="elephant" x="4" y="-3" z="7" spawntime="60" />
+		<monster name="merlkin" x="0" y="-1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="76" centery="191" centerz="7" radius="5">
+		<monster name="rabbit" x="5" y="-2" z="7" spawntime="60" />
+		<monster name="skeleton" x="-3" y="-1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="82" centery="193" centerz="7" radius="5">
+		<monster name="rabbit" x="2" y="2" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="68" centery="194" centerz="7" radius="5">
+		<monster name="skeleton" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="skeleton" x="-4" y="5" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="89" centery="194" centerz="7" radius="5">
+		<monster name="wolf" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="wolf" x="2" y="0" z="7" spawntime="60" />
+		<monster name="wolf" x="-1" y="5" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="75" centery="200" centerz="7" radius="5">
+		<monster name="rabbit" x="2" y="3" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="90" centery="200" centerz="7" radius="5">
+		<monster name="wolf" x="2" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="67" centery="203" centerz="7" radius="5" />
+	<spawn centerx="70" centery="211" centerz="7" radius="5">
+		<monster name="rabbit" x="3" y="-4" z="7" spawntime="60" />
+		<monster name="rabbit" x="-4" y="-2" z="7" spawntime="60" />
+		<monster name="rabbit" x="-4" y="1" z="7" spawntime="60" />
+		<monster name="rabbit" x="3" y="4" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="86" centery="219" centerz="7" radius="5">
+		<monster name="rabbit" x="4" y="-2" z="7" spawntime="60" />
+		<monster name="rabbit" x="0" y="1" z="7" spawntime="60" />
+		<monster name="rabbit" x="-4" y="3" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="243" centery="22" centerz="8" radius="5">
+		<monster name="Yeti" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="204" centery="28" centerz="8" radius="5">
+		<monster name="frost troll" x="-3" y="-1" z="8" spawntime="60" />
+		<monster name="winter wolf" x="3" y="-1" z="8" spawntime="60" />
+		<monster name="frost troll" x="5" y="0" z="8" spawntime="60" />
+		<monster name="winter wolf" x="-3" y="1" z="8" spawntime="60" />
+		<monster name="frost troll" x="-1" y="1" z="8" spawntime="60" />
+		<monster name="winter wolf" x="3" y="1" z="8" spawntime="60" />
+		<monster name="winter wolf" x="-3" y="2" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="262" centery="28" centerz="8" radius="5">
+		<monster name="Yeti" x="1" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="151" centery="31" centerz="8" radius="5">
+		<monster name="bug" x="0" y="-1" z="8" spawntime="60" />
+		<monster name="spider" x="2" y="-1" z="8" spawntime="60" />
+		<monster name="bug" x="2" y="1" z="8" spawntime="60" />
+		<monster name="spider" x="-1" y="3" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="118" centery="35" centerz="8" radius="4">
+		<monster name="bug" x="0" y="0" z="8" spawntime="10" />
+		<monster name="bug" x="1" y="0" z="8" spawntime="10" />
+		<monster name="spider" x="0" y="4" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="242" centery="36" centerz="8" radius="5">
+		<monster name="Yeti" x="-1" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="103" centery="37" centerz="8" radius="5">
+		<monster name="rotworm" x="-1" y="1" z="8" spawntime="60" />
+		<monster name="rotworm" x="4" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="95" centery="38" centerz="8" radius="5">
+		<monster name="rotworm" x="1" y="-1" z="8" spawntime="60" />
+		<monster name="rotworm" x="1" y="5" z="8" spawntime="60" />
+		<monster name="rotworm" x="5" y="5" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="161" centery="40" centerz="8" radius="5">
+		<monster name="bug" x="1" y="-1" z="8" spawntime="60" />
+		<monster name="bug" x="-2" y="0" z="8" spawntime="60" />
+		<monster name="spider" x="3" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="118" centery="41" centerz="8" radius="4">
+		<monster name="bug" x="0" y="0" z="8" spawntime="10" />
+		<monster name="bug" x="3" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="128" centery="41" centerz="8" radius="4">
+		<monster name="bug" x="-1" y="-1" z="8" spawntime="60" />
+		<monster name="bug" x="0" y="0" z="8" spawntime="10" />
+		<monster name="bug" x="3" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="138" centery="41" centerz="8" radius="4">
+		<monster name="spider" x="1" y="-3" z="8" spawntime="60" />
+		<monster name="bug" x="0" y="0" z="8" spawntime="10" />
+	</spawn>
+	<spawn centerx="149" centery="41" centerz="8" radius="5">
+		<monster name="bug" x="2" y="0" z="8" spawntime="60" />
+		<monster name="spider" x="-4" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="255" centery="44" centerz="8" radius="5">
+		<monster name="Yeti" x="1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="97" centery="45" centerz="8" radius="5">
+		<monster name="rotworm" x="0" y="4" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="108" centery="45" centerz="8" radius="5">
+		<monster name="rotworm" x="0" y="-2" z="8" spawntime="60" />
+		<monster name="rotworm" x="-1" y="2" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="140" centery="48" centerz="8" radius="4">
+		<monster name="spider" x="-1" y="-1" z="8" spawntime="60" />
+		<monster name="bug" x="0" y="0" z="8" spawntime="10" />
+		<monster name="spider" x="3" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="126" centery="51" centerz="8" radius="4">
+		<monster name="spider" x="1" y="-2" z="8" spawntime="60" />
+		<monster name="bug" x="0" y="0" z="8" spawntime="10" />
+	</spawn>
+	<spawn centerx="101" centery="52" centerz="8" radius="5">
+		<monster name="rotworm" x="4" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="118" centery="52" centerz="8" radius="4">
+		<monster name="bug" x="3" y="-1" z="8" spawntime="60" />
+		<monster name="slime" x="0" y="0" z="8" spawntime="10" />
+		<monster name="spider" x="1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="112" centery="53" centerz="8" radius="5">
+		<monster name="rotworm" x="-2" y="0" z="8" spawntime="60" />
+		<monster name="rotworm" x="1" y="2" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="37" centery="54" centerz="8" radius="5">
+		<monster name="skeleton" x="2" y="-5" z="8" spawntime="60" />
+		<monster name="skeleton" x="0" y="-4" z="8" spawntime="60" />
+		<monster name="ghoul" x="-1" y="-3" z="8" spawntime="60" />
+		<monster name="demon skeleton" x="0" y="0" z="8" spawntime="60" />
+		<monster name="ghoul" x="0" y="3" z="8" spawntime="60" />
+		<monster name="skeleton" x="-1" y="4" z="8" spawntime="60" />
+		<monster name="ghoul" x="1" y="4" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="166" centery="55" centerz="8" radius="8">
+		<monster name="orc spearman" x="0" y="-4" z="8" spawntime="60" />
+		<monster name="wasp" x="-3" y="-2" z="8" spawntime="60" />
+		<monster name="wasp" x="-4" y="-1" z="8" spawntime="60" />
+		<monster name="wasp" x="2" y="-1" z="8" spawntime="60" />
+		<monster name="wasp" x="-8" y="0" z="8" spawntime="60" />
+		<monster name="wasp" x="-1" y="1" z="8" spawntime="60" />
+		<monster name="wasp" x="4" y="1" z="8" spawntime="60" />
+		<monster name="wasp" x="2" y="2" z="8" spawntime="60" />
+		<monster name="rotworm" x="-8" y="4" z="8" spawntime="60" />
+		<monster name="rotworm" x="0" y="4" z="8" spawntime="60" />
+		<monster name="rotworm" x="-2" y="8" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="151" centery="61" centerz="8" radius="8">
+		<monster name="rotworm" x="-5" y="-3" z="8" spawntime="60" />
+		<monster name="rotworm" x="1" y="-2" z="8" spawntime="60" />
+		<monster name="rotworm" x="-1" y="4" z="8" spawntime="60" />
+		<monster name="rotworm" x="-6" y="7" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="96" centery="62" centerz="8" radius="5">
+		<monster name="rotworm" x="0" y="-3" z="8" spawntime="60" />
+		<monster name="rotworm" x="0" y="0" z="8" spawntime="60" />
+		<monster name="rotworm" x="2" y="4" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="108" centery="62" centerz="8" radius="5">
+		<monster name="rotworm" x="4" y="-3" z="8" spawntime="60" />
+		<monster name="rotworm" x="-2" y="0" z="8" spawntime="60" />
+		<monster name="rotworm" x="3" y="5" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="120" centery="63" centerz="8" radius="5">
+		<monster name="rotworm" x="-5" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="133" centery="63" centerz="8" radius="7">
+		<monster name="rotworm" x="4" y="-5" z="8" spawntime="60" />
+		<monster name="rotworm" x="-2" y="-1" z="8" spawntime="60" />
+		<monster name="rotworm" x="0" y="2" z="8" spawntime="60" />
+		<monster name="rotworm" x="4" y="6" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="163" centery="65" centerz="8" radius="5">
+		<monster name="rotworm" x="-3" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="113" centery="67" centerz="8" radius="5">
+		<monster name="rotworm" x="3" y="3" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="104" centery="69" centerz="8" radius="5">
+		<monster name="rotworm" x="2" y="-1" z="8" spawntime="60" />
+		<monster name="rotworm" x="-1" y="4" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="144" centery="69" centerz="8" radius="7">
+		<monster name="rotworm" x="-2" y="-5" z="8" spawntime="60" />
+		<monster name="rotworm" x="-3" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="72" centery="70" centerz="8" radius="20">
+		<monster name="demon skeleton" x="3" y="-11" z="8" spawntime="60" />
+		<monster name="demon skeleton" x="16" y="-10" z="8" spawntime="60" />
+		<monster name="demon skeleton" x="0" y="-7" z="8" spawntime="60" />
+		<monster name="demon skeleton" x="5" y="-7" z="8" spawntime="60" />
+		<monster name="demon skeleton" x="-12" y="-6" z="8" spawntime="60" />
+		<monster name="demon skeleton" x="1" y="0" z="8" spawntime="60" />
+		<monster name="demon skeleton" x="-6" y="1" z="8" spawntime="20" />
+		<monster name="demon skeleton" x="-12" y="7" z="8" spawntime="60" />
+		<monster name="demon skeleton" x="13" y="7" z="8" spawntime="20" />
+		<monster name="demon skeleton" x="15" y="7" z="8" spawntime="20" />
+		<monster name="demon skeleton" x="-7" y="10" z="8" spawntime="60" />
+		<monster name="demon skeleton" x="-4" y="10" z="8" spawntime="20" />
+		<monster name="demon skeleton" x="5" y="10" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="187" centery="72" centerz="8" radius="8">
+		<monster name="fire elemental" x="0" y="-4" z="8" spawntime="60" />
+		<monster name="fire elemental" x="6" y="-4" z="8" spawntime="60" />
+		<monster name="fire elemental" x="-6" y="0" z="8" spawntime="60" />
+		<monster name="fire elemental" x="-4" y="0" z="8" spawntime="60" />
+		<monster name="dragon lord" x="5" y="0" z="8" spawntime="60" />
+		<monster name="fire elemental" x="-5" y="1" z="8" spawntime="60" />
+		<monster name="dragon lord" x="7" y="1" z="8" spawntime="60" />
+		<monster name="fire elemental" x="-6" y="3" z="8" spawntime="60" />
+		<monster name="fire elemental" x="0" y="4" z="8" spawntime="60" />
+		<monster name="fire elemental" x="6" y="4" z="8" spawntime="60" />
+		<monster name="fire elemental" x="-8" y="7" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="199" centery="73" centerz="8" radius="5">
+		<monster name="fire elemental" x="0" y="-5" z="8" spawntime="60" />
+		<monster name="fire elemental" x="-1" y="0" z="8" spawntime="60" />
+		<monster name="banshee" x="3" y="0" z="8" spawntime="60" />
+		<monster name="banshee" x="4" y="0" z="8" spawntime="60" />
+		<monster name="fire elemental" x="0" y="3" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="214" centery="73" centerz="8" radius="5">
+		<monster name="fire elemental" x="1" y="-3" z="8" spawntime="60" />
+		<monster name="fire elemental" x="-2" y="-2" z="8" spawntime="60" />
+		<monster name="Demon" x="0" y="-2" z="8" spawntime="60" />
+		<monster name="fire elemental" x="-3" y="0" z="8" spawntime="60" />
+		<monster name="Demon" x="3" y="1" z="8" spawntime="60" />
+		<monster name="fire elemental" x="-2" y="2" z="8" spawntime="60" />
+		<monster name="Demon" x="0" y="3" z="8" spawntime="60" />
+		<monster name="fire elemental" x="2" y="4" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="97" centery="74" centerz="8" radius="5">
+		<monster name="rotworm" x="-1" y="-3" z="8" spawntime="60" />
+		<monster name="rotworm" x="1" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="116" centery="74" centerz="8" radius="5">
+		<monster name="rotworm" x="-1" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="107" centery="75" centerz="8" radius="5">
+		<monster name="rotworm" x="3" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="181" centery="75" centerz="8" radius="8">
+		<monster name="fire elemental" x="-4" y="-6" z="8" spawntime="60" />
+		<monster name="fire elemental" x="-6" y="-2" z="8" spawntime="60" />
+		<monster name="fire elemental" x="-5" y="8" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="147" centery="85" centerz="8" radius="12">
+		<monster name="vampire" x="-3" y="-4" z="8" spawntime="60" />
+		<monster name="fire elemental" x="9" y="-1" z="8" spawntime="60" />
+		<monster name="fire elemental" x="5" y="0" z="8" spawntime="60" />
+		<monster name="fire elemental" x="12" y="0" z="8" spawntime="60" />
+		<monster name="fire devil" x="-2" y="4" z="8" spawntime="60" />
+		<monster name="ghoul" x="-6" y="12" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="176" centery="85" centerz="8" radius="5">
+		<monster name="Demon" x="0" y="0" z="8" spawntime="60" />
+		<monster name="fire elemental" x="0" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="253" centery="88" centerz="8" radius="5">
+		<monster name="crypt shambler" x="1" y="-1" z="8" spawntime="60" />
+		<monster name="crypt shambler" x="-3" y="3" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="275" centery="88" centerz="8" radius="5">
+		<monster name="crypt shambler" x="0" y="2" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="250" centery="97" centerz="8" radius="5">
+		<monster name="crypt shambler" x="1" y="0" z="8" spawntime="60" />
+		<monster name="crypt shambler" x="-3" y="1" z="8" spawntime="60" />
+		<monster name="crypt shambler" x="5" y="1" z="8" spawntime="60" />
+		<monster name="crypt shambler" x="-1" y="2" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="257" centery="97" centerz="8" radius="5">
+		<monster name="crypt shambler" x="5" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="274" centery="97" centerz="8" radius="5">
+		<monster name="crypt shambler" x="-1" y="-3" z="8" spawntime="60" />
+		<monster name="crypt shambler" x="-5" y="-1" z="8" spawntime="60" />
+		<monster name="crypt shambler" x="-3" y="2" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="236" centery="98" centerz="8" radius="5">
+		<monster name="crypt shambler" x="-2" y="-1" z="8" spawntime="60" />
+		<monster name="crypt shambler" x="-4" y="0" z="8" spawntime="60" />
+		<monster name="crypt shambler" x="5" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="266" centery="98" centerz="8" radius="5">
+		<monster name="crypt shambler" x="2" y="3" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="134" centery="99" centerz="8" radius="8">
+		<monster name="ghoul" x="-7" y="-2" z="8" spawntime="60" />
+		<monster name="ghoul" x="-1" y="-2" z="8" spawntime="60" />
+		<monster name="ghoul" x="-4" y="0" z="8" spawntime="60" />
+		<monster name="ghoul" x="4" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="182" centery="99" centerz="8" radius="5">
+		<monster name="behemoth" x="-1" y="-1" z="8" spawntime="60" />
+		<monster name="behemoth" x="0" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="274" centery="106" centerz="8" radius="5">
+		<monster name="crypt shambler" x="2" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="232" centery="108" centerz="8" radius="5">
+		<monster name="crypt shambler" x="-1" y="-3" z="8" spawntime="60" />
+		<monster name="Bone Beast" x="5" y="-1" z="8" spawntime="60" />
+		<monster name="Bone Beast" x="-2" y="0" z="8" spawntime="60" />
+		<monster name="Bone Beast" x="2" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="238" centery="108" centerz="8" radius="5" />
+	<spawn centerx="250" centery="108" centerz="8" radius="5">
+		<monster name="crypt shambler" x="1" y="-2" z="8" spawntime="60" />
+		<monster name="crypt shambler" x="-2" y="-1" z="8" spawntime="60" />
+		<monster name="crypt shambler" x="3" y="0" z="8" spawntime="60" />
+		<monster name="crypt shambler" x="1" y="2" z="8" spawntime="60" />
+		<monster name="crypt shambler" x="0" y="4" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="222" centery="110" centerz="8" radius="5">
+		<monster name="Bone Beast" x="1" y="-3" z="8" spawntime="60" />
+		<monster name="Bone Beast" x="0" y="3" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="146" centery="113" centerz="8" radius="5">
+		<monster name="demon skeleton" x="2" y="-1" z="8" spawntime="60" />
+		<monster name="necromancer" x="-2" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="188" centery="113" centerz="8" radius="5">
+		<monster name="behemoth" x="-3" y="-2" z="8" spawntime="60" />
+		<monster name="behemoth" x="-2" y="1" z="8" spawntime="60" />
+		<monster name="behemoth" x="-2" y="3" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="85" centery="116" centerz="8" radius="5">
+		<monster name="necromancer" x="1" y="-2" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="217" centery="120" centerz="8" radius="5">
+		<monster name="Bone Beast" x="1" y="-2" z="8" spawntime="60" />
+		<monster name="Bone Beast" x="-2" y="3" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="109" centery="125" centerz="8" radius="5">
+		<monster name="dragon" x="-3" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="142" centery="125" centerz="8" radius="5">
+		<monster name="dwarf" x="3" y="-2" z="8" spawntime="60" />
+		<monster name="dwarf" x="-2" y="-1" z="8" spawntime="60" />
+		<monster name="dwarf" x="-2" y="3" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="151" centery="125" centerz="8" radius="5">
+		<monster name="dwarf" x="4" y="-2" z="8" spawntime="60" />
+		<monster name="dwarf" x="2" y="-1" z="8" spawntime="60" />
+		<monster name="dwarf" x="-3" y="1" z="8" spawntime="60" />
+		<monster name="dwarf" x="3" y="4" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="238" centery="126" centerz="8" radius="10">
+		<monster name="ghost" x="-5" y="-1" z="8" spawntime="60" />
+		<monster name="ghost" x="-1" y="-1" z="8" spawntime="60" />
+		<monster name="ghost" x="1" y="-1" z="8" spawntime="60" />
+		<monster name="Bone Beast" x="3" y="-1" z="8" spawntime="60" />
+		<monster name="skeleton" x="-5" y="0" z="8" spawntime="60" />
+		<monster name="demon skeleton" x="-4" y="0" z="8" spawntime="60" />
+		<monster name="demon skeleton" x="-3" y="0" z="8" spawntime="60" />
+		<monster name="demon skeleton" x="-2" y="0" z="8" spawntime="60" />
+		<monster name="ghost" x="-5" y="1" z="8" spawntime="60" />
+		<monster name="demon skeleton" x="-5" y="2" z="8" spawntime="60" />
+		<monster name="skeleton" x="-2" y="2" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="134" centery="127" centerz="8" radius="5">
+		<monster name="dwarf soldier" x="-4" y="-2" z="8" spawntime="60" />
+		<monster name="dwarf" x="2" y="-1" z="8" spawntime="60" />
+		<monster name="dwarf soldier" x="-3" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="91" centery="130" centerz="8" radius="5">
+		<monster name="hero" x="0" y="-3" z="8" spawntime="60" />
+		<monster name="hero" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="158" centery="132" centerz="8" radius="5">
+		<monster name="dwarf" x="3" y="0" z="8" spawntime="60" />
+		<monster name="dwarf" x="-2" y="3" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="176" centery="132" centerz="8" radius="5">
+		<monster name="fire elemental" x="0" y="-5" z="8" spawntime="60" />
+		<monster name="Demon" x="2" y="-4" z="8" spawntime="60" />
+		<monster name="fire elemental" x="-2" y="-2" z="8" spawntime="60" />
+		<monster name="fire elemental" x="2" y="-2" z="8" spawntime="60" />
+		<monster name="Demon" x="-1" y="0" z="8" spawntime="60" />
+		<monster name="fire elemental" x="-2" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="64" centery="137" centerz="8" radius="5">
+		<monster name="dragon lord" x="-3" y="0" z="8" spawntime="60" />
+		<monster name="dragon lord" x="-3" y="2" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="141" centery="152" centerz="8" radius="5">
+		<monster name="orc berserker" x="-3" y="-2" z="8" spawntime="60" />
+		<monster name="orc berserker" x="0" y="-2" z="8" spawntime="60" />
+		<monster name="orc warlord" x="3" y="-2" z="8" spawntime="60" />
+		<monster name="orc warlord" x="-3" y="1" z="8" spawntime="60" />
+		<monster name="orc berserker" x="2" y="1" z="8" spawntime="60" />
+		<monster name="orc berserker" x="4" y="2" z="8" spawntime="60" />
+		<monster name="orc leader" x="-3" y="4" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="90" centery="156" centerz="8" radius="10">
+		<monster name="dragon lord" x="3" y="3" z="8" spawntime="60" />
+		<monster name="rat" x="-6" y="6" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="221" centery="156" centerz="8" radius="10">
+		<monster name="Rahemos" x="-6" y="-8" z="8" spawntime="60" />
+		<monster name="Omruc" x="-5" y="-8" z="8" spawntime="60" />
+		<monster name="efreet" x="-2" y="-8" z="8" spawntime="60" />
+		<monster name="marid" x="-1" y="-8" z="8" spawntime="60" />
+		<monster name="marid" x="2" y="-8" z="8" spawntime="60" />
+		<monster name="marid" x="3" y="-8" z="8" spawntime="60" />
+		<monster name="Rahemos" x="5" y="-8" z="8" spawntime="60" />
+		<monster name="Rahemos" x="6" y="-8" z="8" spawntime="60" />
+		<monster name="Ashmunrah" x="-7" y="-7" z="8" spawntime="60" />
+		<monster name="Mahrdis" x="-6" y="-7" z="8" spawntime="60" />
+		<monster name="Dipthrah" x="-7" y="-6" z="8" spawntime="60" />
+		<monster name="Thalas" x="-6" y="-6" z="8" spawntime="60" />
+		<monster name="morguthis" x="-5" y="-6" z="8" spawntime="60" />
+		<monster name="ancient scarab" x="2" y="-6" z="8" spawntime="60" />
+		<monster name="ancient scarab" x="3" y="-6" z="8" spawntime="60" />
+		<monster name="Mahrdis" x="0" y="-5" z="8" spawntime="60" />
+		<monster name="Dipthrah" x="1" y="-5" z="8" spawntime="60" />
+		<monster name="Thalas" x="-6" y="-4" z="8" spawntime="60" />
+		<monster name="Dipthrah" x="-5" y="-4" z="8" spawntime="60" />
+		<monster name="efreet" x="-2" y="-4" z="8" spawntime="60" />
+		<monster name="ancient scarab" x="3" y="-4" z="8" spawntime="60" />
+		<monster name="ancient scarab" x="4" y="-4" z="8" spawntime="60" />
+		<monster name="Omruc" x="6" y="-4" z="8" spawntime="60" />
+		<monster name="Rahemos" x="7" y="-4" z="8" spawntime="60" />
+		<monster name="efreet" x="-2" y="-3" z="8" spawntime="60" />
+		<monster name="Omruc" x="0" y="-3" z="8" spawntime="60" />
+		<monster name="Lich" x="-7" y="-2" z="8" spawntime="60" />
+		<monster name="Lich" x="-6" y="-2" z="8" spawntime="60" />
+		<monster name="Dipthrah" x="2" y="-2" z="8" spawntime="60" />
+		<monster name="Ashmunrah" x="3" y="-2" z="8" spawntime="60" />
+		<monster name="morguthis" x="-2" y="-1" z="8" spawntime="60" />
+		<monster name="Lich" x="-7" y="0" z="8" spawntime="60" />
+		<monster name="Lich" x="-5" y="0" z="8" spawntime="60" />
+		<monster name="Lich" x="-4" y="0" z="8" spawntime="60" />
+		<monster name="Thalas" x="-2" y="0" z="8" spawntime="60" />
+		<monster name="Thalas" x="2" y="0" z="8" spawntime="60" />
+		<monster name="Ashmunrah" x="3" y="0" z="8" spawntime="60" />
+		<monster name="Ashmunrah" x="6" y="0" z="8" spawntime="60" />
+		<monster name="Omruc" x="7" y="0" z="8" spawntime="60" />
+		<monster name="Lich" x="-7" y="1" z="8" spawntime="60" />
+		<monster name="Dipthrah" x="7" y="1" z="8" spawntime="60" />
+		<monster name="ancient scarab" x="-5" y="2" z="8" spawntime="60" />
+		<monster name="ancient scarab" x="-1" y="2" z="8" spawntime="60" />
+		<monster name="ancient scarab" x="4" y="2" z="8" spawntime="60" />
+		<monster name="ancient scarab" x="5" y="2" z="8" spawntime="60" />
+		<monster name="Lich" x="-7" y="3" z="8" spawntime="60" />
+		<monster name="ancient scarab" x="-5" y="3" z="8" spawntime="60" />
+		<monster name="ancient scarab" x="-1" y="3" z="8" spawntime="60" />
+		<monster name="ancient scarab" x="-7" y="5" z="8" spawntime="60" />
+		<monster name="ancient scarab" x="-6" y="5" z="8" spawntime="60" />
+		<monster name="ancient scarab" x="-3" y="5" z="8" spawntime="60" />
+		<monster name="ancient scarab" x="-2" y="5" z="8" spawntime="60" />
+		<monster name="ancient scarab" x="1" y="5" z="8" spawntime="60" />
+		<monster name="ancient scarab" x="2" y="5" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="63" centery="157" centerz="8" radius="20">
+		<monster name="dragon lord" x="12" y="-13" z="8" spawntime="60" />
+		<monster name="dragon lord" x="2" y="-2" z="8" spawntime="60" />
+		<monster name="rat" x="10" y="3" z="8" spawntime="60" />
+		<monster name="rat" x="16" y="3" z="8" spawntime="60" />
+		<monster name="dragon lord" x="-8" y="6" z="8" spawntime="60" />
+		<monster name="rat" x="11" y="8" z="8" spawntime="60" />
+		<monster name="dragon lord" x="-5" y="9" z="8" spawntime="60" />
+		<monster name="rat" x="12" y="15" z="8" spawntime="60" />
+		<monster name="rat" x="17" y="18" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="124" centery="158" centerz="8" radius="5">
+		<monster name="orc warlord" x="2" y="-4" z="8" spawntime="60" />
+		<monster name="orc rider" x="-2" y="-1" z="8" spawntime="60" />
+		<monster name="orc rider" x="1" y="1" z="8" spawntime="60" />
+		<monster name="orc leader" x="4" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="155" centery="160" centerz="8" radius="5">
+		<monster name="orc warlord" x="-4" y="-1" z="8" spawntime="60" />
+		<monster name="orc warlord" x="1" y="-1" z="8" spawntime="60" />
+		<monster name="orc berserker" x="-1" y="0" z="8" spawntime="60" />
+		<monster name="orc berserker" x="1" y="2" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="86" centery="167" centerz="8" radius="5">
+		<monster name="rat" x="0" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="138" centery="167" centerz="8" radius="5">
+		<monster name="orc warlord" x="0" y="-5" z="8" spawntime="60" />
+		<monster name="orc berserker" x="-2" y="-2" z="8" spawntime="60" />
+		<monster name="orc warlord" x="-5" y="0" z="8" spawntime="60" />
+		<monster name="orc leader" x="5" y="0" z="8" spawntime="60" />
+		<monster name="orc warlord" x="3" y="2" z="8" spawntime="60" />
+		<monster name="orc berserker" x="0" y="4" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="219" centery="174" centerz="8" radius="8">
+		<monster name="hydra" x="3" y="-5" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="95" centery="176" centerz="8" radius="5">
+		<monster name="rat" x="0" y="3" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="76" centery="177" centerz="8" radius="5">
+		<monster name="rat" x="0" y="1" z="8" spawntime="60" />
+		<monster name="rat" x="0" y="5" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="101" centery="178" centerz="8" radius="5">
+		<monster name="cave rat" x="4" y="2" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="89" centery="179" centerz="8" radius="5">
+		<monster name="rat" x="-2" y="-4" z="8" spawntime="60" />
+		<monster name="rat" x="-3" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="110" centery="184" centerz="8" radius="5">
+		<monster name="cave rat" x="-1" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="82" centery="186" centerz="8" radius="5">
+		<monster name="rat" x="2" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="95" centery="187" centerz="8" radius="5">
+		<monster name="cave rat" x="4" y="-3" z="8" spawntime="60" />
+		<monster name="rat" x="-1" y="1" z="8" spawntime="60" />
+		<monster name="rat" x="-5" y="4" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="221" centery="187" centerz="8" radius="5">
+		<monster name="hydra" x="1" y="-4" z="8" spawntime="60" />
+		<monster name="hydra" x="3" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="75" centery="188" centerz="8" radius="5">
+		<monster name="rat" x="1" y="3" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="89" centery="192" centerz="8" radius="5" />
+	<spawn centerx="225" centery="195" centerz="8" radius="5">
+		<monster name="hydra" x="0" y="-2" z="8" spawntime="60" />
+		<monster name="hydra" x="-1" y="2" z="8" spawntime="60" />
+		<monster name="hydra" x="2" y="3" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="76" centery="198" centerz="8" radius="5">
+		<monster name="rat" x="5" y="0" z="8" spawntime="60" />
+		<monster name="rat" x="0" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="83" centery="198" centerz="8" radius="5">
+		<monster name="rat" x="0" y="-4" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="93" centery="198" centerz="8" radius="5">
+		<monster name="rat" x="2" y="-1" z="8" spawntime="60" />
+		<monster name="rat" x="-4" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="149" centery="37" centerz="9" radius="10">
+		<monster name="slime" x="2" y="-7" z="9" spawntime="60" />
+		<monster name="slime" x="-2" y="-3" z="9" spawntime="60" />
+		<monster name="slime" x="4" y="5" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="159" centery="67" centerz="9" radius="10">
+		<monster name="vampire" x="-6" y="0" z="9" spawntime="60" />
+		<monster name="vampire" x="-1" y="5" z="9" spawntime="60" />
+		<monster name="vampire" x="4" y="5" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="130" centery="70" centerz="9" radius="6">
+		<monster name="vampire" x="-5" y="-2" z="9" spawntime="60" />
+		<monster name="vampire" x="-6" y="0" z="9" spawntime="60" />
+		<monster name="vampire" x="6" y="4" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="139" centery="82" centerz="9" radius="10">
+		<monster name="hero" x="-2" y="-3" z="9" spawntime="60" />
+		<monster name="hero" x="-1" y="-2" z="9" spawntime="60" />
+		<monster name="vampire" x="3" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="159" centery="82" centerz="9" radius="10">
+		<monster name="hero" x="1" y="-3" z="9" spawntime="60" />
+		<monster name="hero" x="3" y="-3" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="147" centery="100" centerz="9" radius="8">
+		<monster name="hero" x="-2" y="4" z="9" spawntime="60" />
+		<monster name="hero" x="2" y="4" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="103" centery="115" centerz="9" radius="5">
+		<monster name="dwarf guard" x="-1" y="-1" z="9" spawntime="60" />
+		<monster name="dwarf guard" x="4" y="1" z="9" spawntime="60" />
+		<monster name="dwarf guard" x="4" y="4" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="111" centery="120" centerz="9" radius="5">
+		<monster name="dwarf guard" x="2" y="0" z="9" spawntime="60" />
+		<monster name="dwarf guard" x="-2" y="4" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="145" centery="120" centerz="9" radius="10">
+		<monster name="hero" x="-1" y="0" z="9" spawntime="60" />
+		<monster name="hero" x="1" y="0" z="9" spawntime="60" />
+		<monster name="fire devil" x="4" y="1" z="9" spawntime="60" />
+		<monster name="necromancer" x="-1" y="2" z="9" spawntime="20" />
+		<monster name="necromancer" x="-3" y="4" z="9" spawntime="250" />
+		<monster name="necromancer" x="-3" y="6" z="9" spawntime="250" />
+		<monster name="necromancer" x="7" y="6" z="9" spawntime="25" />
+		<monster name="priestess" x="6" y="8" z="9" spawntime="60" />
+		<monster name="fire devil" x="-6" y="9" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="114" centery="125" centerz="9" radius="5">
+		<monster name="dwarf guard" x="4" y="-1" z="9" spawntime="60" />
+		<monster name="dwarf guard" x="-2" y="3" z="9" spawntime="60" />
+		<monster name="dwarf soldier" x="2" y="4" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="237" centery="125" centerz="9" radius="10">
+		<monster name="vampire" x="-1" y="-1" z="9" spawntime="60" />
+		<monster name="ghost" x="0" y="-1" z="9" spawntime="60" />
+		<monster name="Lich" x="-4" y="0" z="9" spawntime="60" />
+		<monster name="vampire" x="-2" y="0" z="9" spawntime="60" />
+		<monster name="ghost" x="2" y="0" z="9" spawntime="60" />
+		<monster name="ghost" x="3" y="0" z="9" spawntime="60" />
+		<monster name="Lich" x="-5" y="1" z="9" spawntime="60" />
+		<monster name="vampire" x="-2" y="1" z="9" spawntime="60" />
+		<monster name="ghost" x="4" y="1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="141" centery="126" centerz="9" radius="10">
+		<monster name="dwarf soldier" x="-9" y="1" z="9" spawntime="60" />
+		<monster name="fire devil" x="9" y="8" z="9" spawntime="60" />
+		<monster name="fire devil" x="2" y="9" z="9" spawntime="60" />
+		<monster name="fire devil" x="7" y="9" z="9" spawntime="60" />
+		<monster name="fire devil" x="1" y="10" z="9" spawntime="60" />
+		<monster name="fire devil" x="3" y="10" z="9" spawntime="60" />
+		<monster name="fire devil" x="6" y="10" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="151" centery="126" centerz="9" radius="10">
+		<monster name="fire devil" x="1" y="5" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="120" centery="127" centerz="9" radius="5">
+		<monster name="dwarf soldier" x="0" y="-5" z="9" spawntime="60" />
+		<monster name="dwarf soldier" x="5" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="181" centery="127" centerz="9" radius="20">
+		<monster name="fire elemental" x="3" y="-9" z="9" spawntime="60" />
+		<monster name="Demon" x="5" y="-9" z="9" spawntime="60" />
+		<monster name="fire elemental" x="6" y="-9" z="9" spawntime="60" />
+		<monster name="fire elemental" x="2" y="-7" z="9" spawntime="60" />
+		<monster name="Demon" x="1" y="-5" z="9" spawntime="60" />
+		<monster name="fire elemental" x="1" y="-3" z="9" spawntime="60" />
+		<monster name="behemoth" x="0" y="-1" z="9" spawntime="60" />
+		<monster name="behemoth" x="2" y="1" z="9" spawntime="60" />
+		<monster name="behemoth" x="0" y="3" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="182" centery="129" centerz="9" radius="5" />
+	<spawn centerx="145" centery="135" centerz="9" radius="5" />
+	<spawn centerx="207" centery="136" centerz="9" radius="5">
+		<monster name="Deathslicer" x="-2" y="-2" z="9" spawntime="60" />
+		<monster name="Deathslicer" x="2" y="-2" z="9" spawntime="60" />
+		<monster name="gargoyle" x="-1" y="3" z="9" spawntime="60" />
+		<monster name="gargoyle" x="2" y="3" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="213" centery="147" centerz="9" radius="5">
+		<monster name="gargoyle" x="1" y="-1" z="9" spawntime="60" />
+		<monster name="gargoyle" x="2" y="0" z="9" spawntime="60" />
+		<monster name="gargoyle" x="1" y="1" z="9" spawntime="60" />
+		<monster name="gargoyle" x="2" y="2" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="63" centery="150" centerz="9" radius="20">
+		<monster name="dragon lord" x="0" y="-1" z="9" spawntime="60" />
+		<monster name="dragon lord" x="4" y="0" z="9" spawntime="60" />
+		<monster name="fire devil" x="-2" y="3" z="9" spawntime="60" />
+		<monster name="dragon lord" x="-5" y="4" z="9" spawntime="60" />
+		<monster name="dragon lord" x="15" y="13" z="9" spawntime="60" />
+		<monster name="fire devil" x="2" y="14" z="9" spawntime="60" />
+		<monster name="dragon lord" x="5" y="14" z="9" spawntime="60" />
+		<monster name="fire devil" x="-19" y="16" z="9" spawntime="60" />
+		<monster name="dragon lord" x="-10" y="16" z="9" spawntime="60" />
+		<monster name="dragon lord" x="17" y="18" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="161" centery="158" centerz="9" radius="10">
+		<monster name="orc warlord" x="-3" y="-6" z="9" spawntime="60" />
+		<monster name="orc warlord" x="-1" y="-6" z="9" spawntime="60" />
+		<monster name="orc warlord" x="3" y="-6" z="9" spawntime="60" />
+		<monster name="orc shaman" x="6" y="-6" z="9" spawntime="60" />
+		<monster name="orc berserker" x="4" y="-5" z="9" spawntime="60" />
+		<monster name="orc shaman" x="-6" y="-4" z="9" spawntime="60" />
+		<monster name="orc warlord" x="-4" y="-4" z="9" spawntime="60" />
+		<monster name="orc berserker" x="-2" y="-4" z="9" spawntime="60" />
+		<monster name="orc berserker" x="2" y="-4" z="9" spawntime="60" />
+		<monster name="orc berserker" x="5" y="-4" z="9" spawntime="60" />
+		<monster name="orc berserker" x="1" y="-3" z="9" spawntime="60" />
+		<monster name="orc warlord" x="4" y="-3" z="9" spawntime="60" />
+		<monster name="orc warlord" x="6" y="-3" z="9" spawntime="60" />
+		<monster name="orc berserker" x="-6" y="-2" z="9" spawntime="60" />
+		<monster name="orc warlord" x="-4" y="-2" z="9" spawntime="60" />
+		<monster name="orc berserker" x="-1" y="-2" z="9" spawntime="60" />
+		<monster name="orc berserker" x="4" y="-1" z="9" spawntime="60" />
+		<monster name="orc berserker" x="-7" y="0" z="9" spawntime="60" />
+		<monster name="orc warlord" x="-4" y="0" z="9" spawntime="60" />
+		<monster name="orc berserker" x="-2" y="0" z="9" spawntime="60" />
+		<monster name="orc berserker" x="2" y="0" z="9" spawntime="60" />
+		<monster name="orc berserker" x="0" y="1" z="9" spawntime="60" />
+		<monster name="orc warlord" x="4" y="1" z="9" spawntime="60" />
+		<monster name="orc shaman" x="6" y="1" z="9" spawntime="60" />
+		<monster name="orc warlord" x="-7" y="2" z="9" spawntime="60" />
+		<monster name="orc berserker" x="-4" y="2" z="9" spawntime="60" />
+		<monster name="orc berserker" x="-2" y="2" z="9" spawntime="60" />
+		<monster name="orc warlord" x="2" y="2" z="9" spawntime="60" />
+		<monster name="orc warlord" x="-5" y="3" z="9" spawntime="60" />
+		<monster name="orc warlord" x="-1" y="3" z="9" spawntime="60" />
+		<monster name="orc berserker" x="1" y="3" z="9" spawntime="60" />
+		<monster name="orc berserker" x="6" y="3" z="9" spawntime="60" />
+		<monster name="orc shaman" x="-7" y="5" z="9" spawntime="60" />
+		<monster name="orc warlord" x="-2" y="5" z="9" spawntime="60" />
+		<monster name="orc shaman" x="2" y="5" z="9" spawntime="60" />
+		<monster name="orc shaman" x="6" y="5" z="9" spawntime="60" />
+		<monster name="orc shaman" x="-5" y="6" z="9" spawntime="60" />
+		<monster name="orc shaman" x="-2" y="6" z="9" spawntime="60" />
+		<monster name="orc shaman" x="1" y="6" z="9" spawntime="60" />
+		<monster name="orc shaman" x="4" y="6" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="207" centery="160" centerz="9" radius="10">
+		<monster name="ancient scarab" x="-4" y="-7" z="9" spawntime="60" />
+		<monster name="Bone Beast" x="-6" y="-6" z="9" spawntime="60" />
+		<monster name="Bone Beast" x="-1" y="-6" z="9" spawntime="60" />
+		<monster name="efreet" x="2" y="-6" z="9" spawntime="60" />
+		<monster name="Bone Beast" x="7" y="-6" z="9" spawntime="60" />
+		<monster name="cobra" x="6" y="-4" z="9" spawntime="60" />
+		<monster name="marid" x="-5" y="-3" z="9" spawntime="60" />
+		<monster name="cobra" x="-4" y="-3" z="9" spawntime="60" />
+		<monster name="cobra" x="0" y="-2" z="9" spawntime="60" />
+		<monster name="green djinn" x="5" y="-2" z="9" spawntime="60" />
+		<monster name="ancient scarab" x="-7" y="0" z="9" spawntime="60" />
+		<monster name="ancient scarab" x="8" y="0" z="9" spawntime="60" />
+		<monster name="green djinn" x="-5" y="1" z="9" spawntime="60" />
+		<monster name="green djinn" x="2" y="1" z="9" spawntime="60" />
+		<monster name="cobra" x="-4" y="2" z="9" spawntime="60" />
+		<monster name="Rahemos" x="0" y="2" z="9" spawntime="60" />
+		<monster name="Mahrdis" x="1" y="2" z="9" spawntime="60" />
+		<monster name="cobra" x="-1" y="3" z="9" spawntime="60" />
+		<monster name="Lich" x="6" y="3" z="9" spawntime="60" />
+		<monster name="Lich" x="-6" y="4" z="9" spawntime="60" />
+		<monster name="Lich" x="-3" y="4" z="9" spawntime="60" />
+		<monster name="Lich" x="5" y="4" z="9" spawntime="60" />
+		<monster name="Elf Arcanist" x="-7" y="7" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="78" centery="166" centerz="9" radius="5" />
+	<spawn centerx="34" centery="168" centerz="9" radius="10">
+		<monster name="dragon lord" x="1" y="0" z="9" spawntime="60" />
+		<monster name="dragon lord" x="-1" y="4" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="52" centery="184" centerz="9" radius="20">
+		<monster name="dragon lord" x="5" y="-9" z="9" spawntime="60" />
+		<monster name="fire devil" x="4" y="-7" z="9" spawntime="60" />
+		<monster name="dragon lord" x="1" y="-1" z="9" spawntime="60" />
+		<monster name="dragon lord" x="-2" y="1" z="9" spawntime="60" />
+		<monster name="dragon lord" x="-2" y="2" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="81" centery="94" centerz="10" radius="10">
+		<monster name="dwarf geomancer" x="-4" y="-1" z="10" spawntime="60" />
+		<monster name="banshee" x="-8" y="0" z="10" spawntime="60" />
+		<monster name="dwarf guard" x="7" y="0" z="10" spawntime="60" />
+		<monster name="banshee" x="-7" y="1" z="10" spawntime="60" />
+		<monster name="dwarf geomancer" x="-2" y="1" z="10" spawntime="60" />
+		<monster name="dwarf guard" x="-7" y="5" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="109" centery="96" centerz="10" radius="15">
+		<monster name="dwarf guard" x="-9" y="-3" z="10" spawntime="60" />
+		<monster name="dwarf guard" x="-15" y="-2" z="10" spawntime="60" />
+		<monster name="dwarf guard" x="-3" y="-1" z="10" spawntime="60" />
+		<monster name="dwarf guard" x="2" y="0" z="10" spawntime="60" />
+		<monster name="dwarf guard" x="-14" y="5" z="10" spawntime="60" />
+		<monster name="dwarf guard" x="2" y="7" z="10" spawntime="60" />
+		<monster name="dwarf guard" x="6" y="11" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="94" centery="105" centerz="10" radius="15">
+		<monster name="dwarf guard" x="-15" y="0" z="10" spawntime="60" />
+		<monster name="dwarf guard" x="-8" y="0" z="10" spawntime="60" />
+		<monster name="dwarf guard" x="1" y="12" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="194" centery="118" centerz="10" radius="5">
+		<monster name="Demon" x="-3" y="-2" z="10" spawntime="60" />
+		<monster name="Demon" x="-1" y="-2" z="10" spawntime="60" />
+		<monster name="Demon" x="-5" y="0" z="10" spawntime="60" />
+		<monster name="Demon" x="1" y="0" z="10" spawntime="60" />
+		<monster name="Demon" x="2" y="0" z="10" spawntime="60" />
+		<monster name="Demon" x="-2" y="2" z="10" spawntime="60" />
+		<monster name="Demon" x="0" y="2" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="77" centery="123" centerz="10" radius="15">
+		<monster name="dwarf guard" x="-3" y="-12" z="10" spawntime="60" />
+		<monster name="dwarf guard" x="-4" y="-5" z="10" spawntime="60" />
+		<monster name="dwarf guard" x="3" y="0" z="10" spawntime="60" />
+		<monster name="dwarf guard" x="10" y="0" z="10" spawntime="60" />
+		<monster name="dwarf guard" x="-2" y="1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="237" centery="125" centerz="10" radius="5">
+		<monster name="Thalas" x="-2" y="-2" z="10" spawntime="60" />
+		<monster name="Rahemos" x="-3" y="-1" z="10" spawntime="60" />
+		<monster name="skeleton" x="0" y="-1" z="10" spawntime="60" />
+		<monster name="demon skeleton" x="1" y="-1" z="10" spawntime="60" />
+		<monster name="demon skeleton" x="2" y="-1" z="10" spawntime="60" />
+		<monster name="skeleton" x="0" y="0" z="10" spawntime="60" />
+		<monster name="demon skeleton" x="0" y="1" z="10" spawntime="60" />
+		<monster name="demon skeleton" x="1" y="1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="111" centery="126" centerz="10" radius="15">
+		<monster name="dwarf guard" x="0" y="-13" z="10" spawntime="60" />
+		<monster name="dwarf guard" x="3" y="-8" z="10" spawntime="60" />
+		<monster name="dwarf guard" x="0" y="-6" z="10" spawntime="60" />
+		<monster name="dwarf guard" x="-13" y="1" z="10" spawntime="60" />
+		<monster name="dwarf guard" x="-4" y="2" z="10" spawntime="60" />
+		<monster name="dwarf guard" x="2" y="3" z="10" spawntime="60" />
+	</spawn>
+</spawns>
