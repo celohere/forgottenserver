@@ -51,11 +51,10 @@ function onLogin(player)
 	end
 
 	-- Events
-     player:registerEvent("pvpenfo")
-     player:registerEvent("logoutdelay")
+	player:registerEvent("pvpenfo")
+	player:registerEvent("logoutdelay")
 	player:registerEvent("PlayerDeath")
 	player:registerEvent("DropLoot")
-	player:registerEvent("SvargrondArenaKill")
 	player:registerEvent("broadcast_deaths")
 	player:registerEvent("loot")
 	return true
