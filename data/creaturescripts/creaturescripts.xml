@@ -8,19 +8,13 @@
 	<event type="death" name="DropLoot" script="droploot.lua" />
 	<event type="think" name="changeCoins" event="script" value="changeCash.lua"/>
 	<event type="think" name="SkullCheck" event="script" value="skullcheck.lua"/>
-	<event type="login" name="AntiMC" event="script" value="antimc.lua"/>
 	<event type="login" name="loot" script="loot.lua"/>
 	
-	
-	 <event type="login" name="Arena_Login" script="Arena_Death.lua"/>
-     <event type="preparedeath" name="Arena_Death" script="Arena_Death.lua"/>
+	<event type="login" name="Arena_Login" script="Arena_Death.lua"/>
+	<event type="preparedeath" name="Arena_Death" script="Arena_Death.lua"/>
 	 
-     <event type="logout" name="testlogout" script="testlogout.lua" />
+	<event type="logout" name="testlogout" script="testlogout.lua" />
 
-
-
-	<!-- Svargrond Arena: Killing a boss -->
-	<event type="kill" name="SvargrondArenaKill" script="svargrond arena/arena_kill.lua" />
 	<event type="preparedeath" name="pvpenfo" event="script" value="pvpenfo.lua"/>
 
 	<event type="extendedopcode" name="ExtendedOpcode" script="extendedopcode.lua" />
