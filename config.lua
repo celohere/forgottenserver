@@ -17,7 +17,7 @@ stopAttackingAtExit = "false"
 
 -- Connection Config
 -- NOTE: maxPlayers set to 0 means no limit
-ip = "000.00.000.00"
+ip = "127.0.0.2"
 bindOnlyGlobalAddress = false
 loginProtocolPort = 7171
 gameProtocolPort = 7172
@@ -49,12 +49,12 @@ timeBetweenExActions = 800
 
 -- Map
 -- NOTE: set mapName WITHOUT .otbm at the end
-mapName = "yourmapnamehere"
-mapAuthor = "Celohere"
+mapName = "test"
+mapAuthor = "Yurez"
 
 -- MySQL
 mysqlHost = "127.0.0.1"
-mysqlUser = "user"
+mysqlUser = "root"
 mysqlPass = "1111111"
 mysqlDatabase = "yourdatabase"
 mysqlPort = 3306
