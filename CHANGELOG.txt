@@ -1,4 +1,4 @@
-Added stopAttackingAtExit in config.lua
+Added stopAttackingAtExit in config.lua (working with players amd monsters)
 Added server save when close the .exe
 Added old school exhausted (not in the master branch)
 Added summons corpse (not in the master branch)
