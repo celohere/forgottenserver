@@ -823,12 +823,12 @@ void Player::sendPing()
 		lastPing = timeNow;
 		if (client) {
 			client->sendPing();
-		} else if
-			(g_config.getBoolean(ConfigManager::STOP_ATTACK_AT_EXIT))
-				setAttackedCreature(nullptr);
 		} else {
 			hasLostConnection = true;
-}
+			if (g_config.getBoolean(ConfigManager::STOP_ATTACK_AT_EXIT))
+				setAttackedCreature(nullptr);
+		}
+	}
 
 	int64_t noPongTime = timeNow - lastPong;
 	if ((hasLostConnection || noPongTime >= 7000) && attackedCreature && attackedCreature->getPlayer()) {
