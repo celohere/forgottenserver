@@ -19,12 +19,14 @@
 
 #include "otpch.h"
 
+#include "configmanager.h"
 #include "monster.h"
 #include "game.h"
 #include "spells.h"
 
 extern Game g_game;
 extern Monsters g_monsters;
+extern ConfigManager g_config;
 
 int32_t Monster::despawnRange;
 int32_t Monster::despawnRadius;
@@ -472,24 +474,40 @@ void Monster::onCreatureLeave(Creature* creature)
 	// std::cout << "onCreatureLeave - " << creature->getName() << std::endl;
 
 	if (getMaster() == creature) {
-		//Turn the monster off until its master comes back
-		isMasterInRange = false;
-		updateIdleStatus();
-	}
+		if (g_config.getBoolean(ConfigManager::TELEPORT_SUMMONS)) {
+			const Tile* creatureTile = creature->getTile();
+			if (creatureTile) {
+				if (!creatureTile->hasFlag(TILESTATE_PROTECTIONZONE)) {
+					g_game.internalTeleport(this, creature->getPosition());
+					g_game.addMagicEffect(creature->getPosition(), CONST_ME_TELEPORT);
+				} else {
+					g_game.removeCreature(this, true);
+					g_game.addMagicEffect(this->getPosition(), CONST_ME_POFF);
+				}
+			}
+			} else {
+				//Take random steps and only use defense abilities (e.g. heal) until its master comes back
+				isMasterInRange = false;
+			}
+		}
 
-	//update friendList
-	if (isFriend(creature)) {
-		removeFriend(creature);
-	}
+		//update friendList
+		if (isFriend(creature)) {
+			if (!g_config.getBoolean(ConfigManager::TELEPORT_SUMMONS)) {
+				removeFriend(creature);
+			}
+		}
 
-	//update targetList
-	if (isOpponent(creature)) {
-		removeTarget(creature);
-		if (targetList.empty()) {
-			updateIdleStatus();
+		//update targetList
+		if (isOpponent(creature)) {
+			if (!g_config.getBoolean(ConfigManager::TELEPORT_SUMMONS)) {
+				removeTarget(creature);
+				if (targetList.empty()) {
+					updateIdleStatus();
+				}
+			}
 		}
 	}
-}
 
 bool Monster::searchTarget(TargetSearchType_t searchType /*= TARGETSEARCH_DEFAULT*/)
 {
