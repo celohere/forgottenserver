@@ -1,5 +1,5 @@
 Added teleport summons to master -- Crédits Delusion --
-Added stopAttackingAtExit in config.lua (working with players amd monsters)
+Added stopAttackingAtExit in config.lua (working with players and monsters)
 Added server save when close the .exe
 Added old school exhausted (not in the master branch)
 Added summons corpse (not in the master branch)
