@@ -7,6 +7,9 @@
 	<action itemid="1740" script="quests/quests.lua" />
 	<action fromid="1747" toid="1749" script="quests/quests.lua" />
 	<action uniqueid="30015" script="quests/annihilator.lua" />
+	
+	<!-- PVP arena lever -->
+	<action uniqueid="7001" script="arenalever.lua" />
 
 	<!-- Tools -->
 	<action itemid="5942" script="tools/blessed wooden stake.lua"/>
