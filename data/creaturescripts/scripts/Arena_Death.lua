@@ -4,8 +4,8 @@ return true
 end
  
 local arena = {
-     from = {x=121, y=33, z=10}, -- left top corner of  arena
-     to = {x=128, y=37, z=10}, -- right bottom corner of  arena
+     from = {x=121, y=33, z=9}, -- left top corner of  arena
+     to = {x=128, y=37, z=9}, -- right bottom corner of  arena
      temple = { x = 125, y = 31, z = 9 } -- change it to exit pos
  
 	 }
