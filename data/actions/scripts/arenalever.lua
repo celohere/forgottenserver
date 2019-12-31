@@ -1,8 +1,8 @@
  
 -- CONFIG BEGINS HERE --
 local arena = {
-  frompos = {x = 121, y = 33, z = 10},
-  topos = {x = 129, y = 38, z = 10},
+  frompos = {x = 121, y = 33, z = 9},
+  topos = {x = 129, y = 38, z = 9},
   exitpos = {x = 125, y = 31, z = 9}
 }
 local checkpvparena = true -- checks if someone is blocking the arena
@@ -10,8 +10,8 @@ local duel_limit = 10 * 60 -- in seconds
 local player1pos = {x = 119, y = 35, z = 9}
 local leverpos = {x = 119, y = 34, z = 9}
 local player2pos = {x = 130, y = 35, z = 9}
-local nplayer1pos = {x = 121, y = 35, z = 10}
-local nplayer2pos = {x = 128, y = 35, z = 10}
+local nplayer1pos = {x = 121, y = 35, z = 9}
+local nplayer2pos = {x = 128, y = 35, z = 9}
 -- CONFIG ENDS HERE --
  
  
@@ -24,7 +24,7 @@ function kick_r()
 if gettThingfromPos(TYPE_PLAYER, arena.frompos, arena.topos, GET_COUNT) > 1 then
    for a = arena.frompos.x, arena.topos.x do
    for b = arena.frompos.y, arena.topos.y do
-     pos = {x=a,y=b,z=10,stackpos = 255}
+     pos = {x=a,y=b,z=9,stackpos = 255}
      if(isPlayer(getTopCreature(pos).uid)) then
        doPlayerSendTextMessage(getTopCreature(pos).uid,MESSAGE_INFO_DESCR,"Time up. Round drawn.")
        doTeleportThing(getTopCreature(pos).uid,arena.exitpos)
@@ -88,7 +88,7 @@ local cid = player:getId()
            if gettThingfromPos(TYPE_PLAYER, arena.frompos, arena.topos, GET_COUNT) == 1 then
              for c = arena.frompos.x, arena.topos.x do
              for d = arena.frompos.y, arena.topos.y do
-               pos = {x=c,y=d,z=10, stackpos = 255}
+               pos = {x=c,y=d,z=9, stackpos = 255}
                if(isPlayer(getTopCreature(pos).uid)) then
                  doPlayerSendTextMessage(getTopCreature(pos).uid,MESSAGE_INFO_DESCR,"You have been kicked from the arena.")
                  doTeleportThing(getTopCreature(pos).uid,arena.exitpos)
@@ -100,7 +100,7 @@ local cid = player:getId()
            if arena_counter < 0 then
              for c = arena.frompos.x, arena.topos.x do
              for d = arena.frompos.y, arena.topos.y do
-               pos = {x=c,y=d,z=10, stackpos = 255}
+               pos = {x=c,y=d,z=9, stackpos = 255}
                if(isPlayer(getTopCreature(pos).uid)) then
                  doPlayerSendTextMessage(getTopCreature(pos).uid,MESSAGE_INFO_DESCR,"You have been kicked from the arena.")
                  doTeleportThing(getTopCreature(pos).uid,arena.exitpos)
