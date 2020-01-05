@@ -21,20 +21,19 @@ function onLogin(player)
 	nextUseStaminaTime[player.uid] = 0
 
 
-    -- STAMINA DEVIDO A QUEDAS START
+	-- STAMINA DEVIDO A QUEDAS START
    
-    --local stamina_full = 42 * 60 -- config. 42 = horas
-   -- if player:getStamina() >= stamina_full then
-      --  player:sendCancelMessage("Your stamina is already full.")
-   -- elseif player:getPremiumDays() < 1 then
-     --   player:sendCancelMessage("You must have a premium account.")
-   -- else
-      --  player:setStamina(stamina_full)
-     -- player:sendTextMessage(MESSAGE_INFO_DESCR, "Your stamina has been refilled.")      
-   -- end
+	--local stamina_full = 42 * 60 -- config. 42 = horas
+ 	-- if player:getStamina() >= stamina_full then
+	--  player:sendCancelMessage("Your stamina is already full.")
+	-- elseif player:getPremiumDays() < 1 then
+	--   player:sendCancelMessage("You must have a premium account.")
+	-- else
+	--  player:setStamina(stamina_full)
+	-- player:sendTextMessage(MESSAGE_INFO_DESCR, "Your stamina has been refilled.")      
+	-- end
    
-    -- STAMINA DEVIDO A QUEDAS END
-
+	-- STAMINA DEVIDO A QUEDAS END
 
 	-- Promotion
 	local vocation = player:getVocation()
@@ -48,6 +47,30 @@ function onLogin(player)
 		end
 	elseif not promotion then
 		player:setVocation(vocation:getDemotion())
+	end
+	
+	-- Outfits
+	if not player:isPremium() then
+		if player:getSex() == PLAYERSEX_FEMALE then
+			local outfit = player:getOutfit()
+			if outfit.lookType > 139 then
+				player:setOutfit({lookType = 136, lookHead = 78, lookBody = 106, lookLegs = 58, lookFeet = 95})
+			end
+		else
+			local outfit = player:getOutfit()
+			if outfit.lookType > 131 then
+				player:setOutfit({lookType = 128, lookHead = 78, lookBody = 106, lookLegs = 58, lookFeet = 95})
+			end
+		end
+	end
+
+	-- Premium system
+	if player:isPremium() then
+		player:setStorageValue(43434, 1)
+	elseif player:getStorageValue(43434) == 1 then
+		player:setStorageValue(43434, 0)
+		player:teleportTo({x = 160, y = 54, z = 7})
+		player:setTown(Town("Motherland"))
 	end
 
 	-- Events
