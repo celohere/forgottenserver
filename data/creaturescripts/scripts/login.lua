@@ -74,6 +74,24 @@ function onLogin(player)
 		player:sendTextMessage(MESSAGE_INFO_DESCR, "Your premium time has expired.")
 	end
 
+ -- for global with rookgaard
+ -- Premium system
+ --   local rookTownId = 6
+ --   local thaisTownId = 2
+
+ --   if player:isPremium() and player:getStorageValue(43434) ~= 1 then
+ --       player:setStorageValue(43434, 1)
+ --   elseif not player:isPremium() and player:getStorageValue(43434) == 1 then
+ --       if player:getVocation():getId() == 0 then
+ --           player:setTown(Town(rookTownId))
+ --       else
+ --           player:setTown(Town(thaisTownId))
+ --       end
+ --       player:sendTextMessage(22, "Your premium time has expired.")
+ --       player:setStorageValue(43434, -1)        
+ --       player:teleportTo(player:getTown():getTemplePosition())
+ --   end
+
 	-- Events
 	player:registerEvent("pvpenfo")
 	player:registerEvent("logoutdelay")
