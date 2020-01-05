@@ -71,6 +71,7 @@ function onLogin(player)
 		player:setStorageValue(43434, 0)
 		player:teleportTo({x = 160, y = 54, z = 7})
 		player:setTown(Town("Motherland"))
+		player:sendTextMessage(MESSAGE_INFO_DESCR, "Your premium time has expired.")
 	end
 
 	-- Events
