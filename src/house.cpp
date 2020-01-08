@@ -99,8 +99,7 @@ void House::setOwner(uint32_t guid, bool updateDatabase/* = true*/, Player* play
 		for (Door* door : doorSet) {
 			door->setAccessList("");
 		}
-	}
-	else {
+	} else {
 		std::string strRentPeriod = asLowerCaseString(g_config.getString(ConfigManager::HOUSE_RENT_PERIOD));
 		time_t currentTime = time(nullptr);
 		if (strRentPeriod == "yearly") {
