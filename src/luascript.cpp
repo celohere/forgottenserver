@@ -10092,8 +10092,11 @@ int LuaScriptInterface::luaItemTypeCreate(lua_State* L)
 	uint32_t id;
 	if (isNumber(L, 2)) {
 		id = getNumber<uint32_t>(L, 2);
-	} else {
+	} else if (isString(L, 2)) {
 		id = Item::items.getItemIdByName(getString(L, 2));
+	} else {
+		lua_pushnil(L);
+		return 1;
 	}
 
 	const ItemType& itemType = Item::items[id];
