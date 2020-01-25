@@ -75,6 +75,7 @@ classicEquipmentSlots = true
 classicAttackSpeed = true
 autoStackItems = true
 displayLootMessage = true
+summonsDropCorpse = false
 
 -- Rates
 -- NOTE: rateExp is not used if you have enabled stages in data/XML/stages.xml
