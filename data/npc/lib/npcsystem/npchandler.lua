@@ -410,22 +410,22 @@ if NpcHandler == nil then
 	end
 
 	-- Handles onBuy events. If you wish to handle this yourself, use the CALLBACK_ONBUY callback.
-	function NpcHandler:onBuy(creature, itemid, subType, amount, ignoreCap, inBackpacks)
+	function NpcHandler:onBuy(creature, itemid, subType, amount, inBackpacks)
 		local cid = creature:getId()
 		local callback = self:getCallback(CALLBACK_ONBUY)
-		if callback == nil or callback(cid, itemid, subType, amount, ignoreCap, inBackpacks) then
-			if self:processModuleCallback(CALLBACK_ONBUY, cid, itemid, subType, amount, ignoreCap, inBackpacks) then
+		if callback == nil or callback(cid, itemid, subType, amount, inBackpacks) then
+			if self:processModuleCallback(CALLBACK_ONBUY, cid, itemid, subType, amount, inBackpacks) then
 				--
 			end
 		end
 	end
 
 	-- Handles onSell events. If you wish to handle this yourself, use the CALLBACK_ONSELL callback.
-	function NpcHandler:onSell(creature, itemid, subType, amount, ignoreCap, inBackpacks)
+	function NpcHandler:onSell(creature, itemid, subType, amount, inBackpacks)
 		local cid = creature:getId()
 		local callback = self:getCallback(CALLBACK_ONSELL)
-		if callback == nil or callback(cid, itemid, subType, amount, ignoreCap, inBackpacks) then
-			if self:processModuleCallback(CALLBACK_ONSELL, cid, itemid, subType, amount, ignoreCap, inBackpacks) then
+		if callback == nil or callback(cid, itemid, subType, amount, inBackpacks) then
+			if self:processModuleCallback(CALLBACK_ONSELL, cid, itemid, subType, amount, inBackpacks) then
 				--
 			end
 		end
