@@ -10,7 +10,7 @@ function msgcontains(message, keyword)
 	return message:find(keyword) and not message:find('(%w+)' .. keyword)
 end
 
-function doNpcSellItem(cid, itemid, amount, subType, ignoreCap, inBackpacks, backpack)
+function doNpcSellItem(cid, itemid, amount, subType, inBackpacks, backpack)
 	local amount = amount or 1
 	local subType = subType or 0
 	local item = 0
@@ -21,7 +21,7 @@ function doNpcSellItem(cid, itemid, amount, subType, ignoreCap, inBackpacks, bac
 		else
 			stuff = doCreateItemEx(itemid, math.min(100, amount))
 		end
-		return doPlayerAddItemEx(cid, stuff, ignoreCap) ~= RETURNVALUE_NOERROR and 0 or amount, 0
+		return doPlayerAddItemEx(cid, stuff) ~= RETURNVALUE_NOERROR and 0 or amount, 0
 	end
 
 	local a = 0
@@ -30,7 +30,7 @@ function doNpcSellItem(cid, itemid, amount, subType, ignoreCap, inBackpacks, bac
 		for i = 1, amount do
 			local item = doAddContainerItem(container, itemid, subType)
 			if isInArray({(getContainerCapById(backpack) * b), amount}, i) then
-				if doPlayerAddItemEx(cid, container, ignoreCap) ~= RETURNVALUE_NOERROR then
+				if doPlayerAddItemEx(cid, container) ~= RETURNVALUE_NOERROR then
 					b = b - 1
 					break
 				end
@@ -47,7 +47,7 @@ function doNpcSellItem(cid, itemid, amount, subType, ignoreCap, inBackpacks, bac
 
 	for i = 1, amount do -- normal method for non-stackable items
 		local item = doCreateItemEx(itemid, subType)
-		if doPlayerAddItemEx(cid, item, ignoreCap) ~= RETURNVALUE_NOERROR then
+		if doPlayerAddItemEx(cid, item) ~= RETURNVALUE_NOERROR then
 			break
 		end
 		a = i
