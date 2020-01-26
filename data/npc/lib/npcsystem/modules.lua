@@ -909,7 +909,7 @@ if Modules == nil then
 	end
 
 	-- Callback onBuy() function. If you wish, you can change certain Npc to use your onBuy().
-	function ShopModule:callbackOnBuy(cid, itemid, subType, amount, ignoreCap, inBackpacks)
+	function ShopModule:callbackOnBuy(cid, itemid, subType, amount, inBackpacks)
 		local shopItem = self:getShopItem(itemid, subType)
 		if shopItem == nil then
 			error("[ShopModule.onBuy] shopItem == nil")
@@ -942,7 +942,7 @@ if Modules == nil then
 		end
 
 		local subType = shopItem.subType or 1
-		local a, b = doNpcSellItem(cid, itemid, amount, subType, ignoreCap, inBackpacks, backpack)
+		local a, b = doNpcSellItem(cid, itemid, amount, subType, inBackpacks, backpack)
 		if a < amount then
 			local msgId = MESSAGE_NEEDMORESPACE
 			if a == 0 then
