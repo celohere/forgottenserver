@@ -2486,8 +2486,7 @@ Cylinder* Player::queryDestination(int32_t& index, const Thing& thing, Item** de
 		}
 
 		bool autoStack = (g_config.getBoolean(ConfigManager::AUTO_STACK_ITEMS) && !((flags & FLAG_IGNOREAUTOSTACK) == FLAG_IGNOREAUTOSTACK));
-		bool isStackable = item->isStackable();
-
+		bool isStackable = item->isStackable() && !item->isRune();
 		std::vector<Container*> containers;
 
 		for (uint32_t slotIndex = CONST_SLOT_FIRST; slotIndex <= CONST_SLOT_LAST; ++slotIndex) {
