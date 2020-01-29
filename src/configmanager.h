@@ -51,6 +51,7 @@ class ConfigManager
 			LOOT_MESSAGE,
 			REMOVE_WEAPON_AMMO,
 			STOP_ATTACK_AT_EXIT,
+			SUMMONS_DROP_CORPSE,
 			
 			LAST_BOOLEAN_CONFIG /* this must be the last one */
 		};
