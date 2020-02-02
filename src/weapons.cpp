@@ -615,7 +615,6 @@ int32_t WeaponMelee::getElementDamage(const Player* player, const Creature* targ
 	int32_t maxValue = Weapons::getMaxWeaponDamage(player->getLevel(), attackSkill, attackValue, attackFactor);
 	int32_t minValue = 0;
 
-	maxValue = static_cast<int32_t>(maxValue * player->getVocation()->meleeDamageMultiplier);
 	if (maxValue > 0) {
 		if (target) {
 			if (target->getPlayer()) {
@@ -630,7 +629,7 @@ int32_t WeaponMelee::getElementDamage(const Player* player, const Creature* targ
 		}
 	}
 
-	return -normal_random(0, static_cast<int32_t>(maxValue * player->getVocation()->meleeDamageMultiplier));
+	return -normal_random(minValue, static_cast<int32_t>(maxValue * player->getVocation()->meleeDamageMultiplier));
 }
 
 int32_t WeaponMelee::getWeaponDamage(const Player* player, const Creature* target, const Item* item, bool maxDamage /*= false*/) const
@@ -660,7 +659,7 @@ int32_t WeaponMelee::getWeaponDamage(const Player* player, const Creature* targe
 		}
 	}
 
-	return -normal_random(0, maxValue);
+	return -normal_random(minValue, maxValue);
 }
 
 WeaponDistance::WeaponDistance(LuaScriptInterface* _interface) :
