@@ -602,7 +602,7 @@ bool WeaponMelee::getSkillType(const Player* player, const Item* item,
 	return false;
 }
 
-int32_t WeaponMelee::getElementDamage(const Player* player, const Creature*, const Item* item) const
+int32_t WeaponMelee::getElementDamage(const Player* player, const Creature* target, const Item* item) const
 {
 	if (elementType == COMBAT_NONE) {
 		return 0;
@@ -613,10 +613,27 @@ int32_t WeaponMelee::getElementDamage(const Player* player, const Creature*, con
 	float attackFactor = player->getAttackFactor();
 
 	int32_t maxValue = Weapons::getMaxWeaponDamage(player->getLevel(), attackSkill, attackValue, attackFactor);
+	int32_t minValue = 0;
+
+	maxValue = static_cast<int32_t>(maxValue * player->getVocation()->meleeDamageMultiplier);
+	if (maxValue > 0) {
+		if (target) {
+			if (target->getPlayer()) {
+				minValue = static_cast<int32_t>(std::ceil(maxValue * 0.3));
+			} else {
+				//0.2 is against monsters
+				minValue = static_cast<int32_t>(std::ceil(maxValue * 0.2));
+			}
+		} else {
+			//0.2 is against monsters
+			minValue = static_cast<int32_t>(std::ceil(maxValue * 0.2));
+		}
+	}
+
 	return -normal_random(0, static_cast<int32_t>(maxValue * player->getVocation()->meleeDamageMultiplier));
 }
 
-int32_t WeaponMelee::getWeaponDamage(const Player* player, const Creature*, const Item* item, bool maxDamage /*= false*/) const
+int32_t WeaponMelee::getWeaponDamage(const Player* player, const Creature* target, const Item* item, bool maxDamage /*= false*/) const
 {
 	int32_t attackSkill = player->getWeaponSkill(item);
 	int32_t attackValue = std::max<int32_t>(0, item->getAttack());
@@ -625,6 +642,22 @@ int32_t WeaponMelee::getWeaponDamage(const Player* player, const Creature*, cons
 	int32_t maxValue = static_cast<int32_t>(Weapons::getMaxWeaponDamage(player->getLevel(), attackSkill, attackValue, attackFactor) * player->getVocation()->meleeDamageMultiplier);
 	if (maxDamage) {
 		return -maxValue;
+	}
+
+	int32_t minValue = 0;
+
+	if (maxValue > 0) {
+		if (target) {
+			if (target->getPlayer()) {
+				minValue = static_cast<int32_t>(std::ceil(maxValue * 0.3));
+			} else {
+				//0.2 is against monsters
+				minValue = static_cast<int32_t>(std::ceil(maxValue * 0.2));
+			}
+		} else {
+			//0.2 is against monsters
+			minValue = static_cast<int32_t>(std::ceil(maxValue * 0.2));
+		}
 	}
 
 	return -normal_random(0, maxValue);
@@ -841,11 +874,17 @@ int32_t WeaponDistance::getElementDamage(const Player* player, const Creature* t
 
 	int32_t minValue = 0;
 	int32_t maxValue = Weapons::getMaxWeaponDamage(player->getLevel(), attackSkill, attackValue, attackFactor);
-	if (target) {
-		if (target->getPlayer()) {
-			minValue = static_cast<int32_t>(std::ceil(player->getLevel() * 0.1));
+	if (maxValue > 0) {
+		if (target) {
+			if (target->getPlayer()) {
+				minValue = static_cast<int32_t>(std::ceil(maxValue * 0.3));
+			} else {
+				//0.2 is against monsters
+				minValue = static_cast<int32_t>(std::ceil(maxValue * 0.2));
+			}
 		} else {
-			minValue = static_cast<int32_t>(std::ceil(player->getLevel() * 0.2));
+			//0.2 is against monsters
+			minValue = static_cast<int32_t>(std::ceil(maxValue * 0.2));
 		}
 	}
 
@@ -871,18 +910,24 @@ int32_t WeaponDistance::getWeaponDamage(const Player* player, const Creature* ta
 		return -maxValue;
 	}
 
-	int32_t minValue;
-	if (target) {
-		if (target->getPlayer()) {
-			minValue = static_cast<int32_t>(std::ceil(player->getLevel() * 0.1));
+	int32_t minValue = 0;
+
+	if (maxValue > 0) {
+		if (target) {
+			if (target->getPlayer()) {
+				minValue = static_cast<int32_t>(std::ceil(maxValue * 0.3));
+			} else {
+				//0.2 is against monsters
+				minValue = static_cast<int32_t>(std::ceil(maxValue * 0.2));
+			}
 		} else {
-			minValue = static_cast<int32_t>(std::ceil(player->getLevel() * 0.2));
+			//0.2 is against monsters
+			minValue = static_cast<int32_t>(std::ceil(maxValue * 0.2));
 		}
-	} else {
-		minValue = 0;
 	}
-	return -normal_random(minValue, maxValue);
-}
+
+		return -normal_random(minValue, maxValue);
+	}
 
 bool WeaponDistance::getSkillType(const Player* player, const Item*, skills_t& skill, uint32_t& skillpoint) const
 {
