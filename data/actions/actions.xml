@@ -155,11 +155,10 @@
 	<action fromid="2406" toid="2419" script="other/destroy.lua" />
 	<action fromid="2421" toid="2453" script="other/destroy.lua" />
 
-	<action itemid="2005" script="other/fluids2.lua" />
-	<action itemid="2006" script="other/fluids.lua" />
-	<action fromid="2007" toid="2009" script="other/fluids2.lua" />
+	<action fromid="2005" toid="2009" script="other/fluids2.lua"/>
 	<action fromid="2011" toid="2015" script="other/fluids2.lua" />
 	<action itemid="2023" script="other/fluids2.lua" />
+	<action itemid="1773" script="other/fluids2.lua" />
 	<action itemid="1775" script="other/fluids2.lua" />
 	<action fromid="2031" toid="2034" script="other/fluids2.lua" />
 	<action fromid="2574" toid="2577" script="other/fluids2.lua" />
