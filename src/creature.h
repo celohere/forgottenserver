@@ -106,8 +106,6 @@ class Creature : virtual public Thing
 		Creature();
 
 	public:
-		static double speedA, speedB, speedC;
-
 		virtual ~Creature();
 
 		// non-copyable
@@ -421,6 +419,9 @@ class Creature : virtual public Thing
 		void setLossSkill(bool _skillLoss) {
 			skillLoss = _skillLoss;
 		}
+		void setUseDefense(bool useDefense) {
+			canUseDefense = useDefense;
+		}
 
 		//creature script events
 		bool registerCreatureEvent(const std::string& name);
@@ -453,6 +454,7 @@ class Creature : virtual public Thing
 		void setLastPosition(Position newLastPos) {
 			lastPosition = newLastPos;
 		}
+
 		static bool canSee(const Position& myPos, const Position& pos, int32_t viewRangeX, int32_t viewRangeY);
 
 		double getDamageRatio(Creature* attacker) const;
