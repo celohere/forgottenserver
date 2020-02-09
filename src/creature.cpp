@@ -268,7 +268,7 @@ void Creature::onWalk(Direction& dir)
 			if (r < DIRECTION_DIAGONAL_MASK) {
 				dir = static_cast<Direction>(r);
 			}
-			g_game.internalCreatureSay(this, TALKTYPE_MONSTER_SAY, "Hicks!", false);
+			g_game.internalCreatureSay(this, TALKTYPE_SAY, "Hicks!", false);
 		}
 	}
 }
@@ -857,7 +857,7 @@ BlockType_t Creature::blockHit(Creature* attacker, CombatType_t combatType, int3
 			hasDefense = true;
 		}
 
-		if (checkDefense && hasDefense && canUseDefense) {
+		if (checkDefense && hasDefense) {
 			int32_t defense = getDefense();
 			damage -= uniform_random(defense / 2, defense);
 			if (damage <= 0) {
@@ -868,10 +868,15 @@ BlockType_t Creature::blockHit(Creature* attacker, CombatType_t combatType, int3
 		}
 
 		if (checkArmor) {
-			int32_t armor = getArmor();
-			if (armor > 3) {
-				damage -= uniform_random(armor / 2, armor - (armor % 2 + 1));
-			} else if (armor > 0) {
+			int32_t armorValue = getArmor();
+			if (armorValue > 1) {
+				double armorFormula = armorValue * 0.475;
+				int32_t armorReduction = static_cast<int32_t>(std::ceil(armorFormula));
+				damage -= uniform_random(
+					armorReduction,
+					armorReduction + static_cast<int32_t>(std::floor(armorFormula))
+				);
+			} else if (armorValue == 1) {
 				--damage;
 			}
 
