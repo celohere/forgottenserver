@@ -69,6 +69,7 @@ Creature::Creature() :
 	scriptEventsBitField = 0;
 
 	hiddenHealth = false;
+	canUseDefense = true;
 
 	skull = SKULL_NONE;
 
@@ -842,7 +843,7 @@ void Creature::drainMana(Creature* attacker, int32_t manaLoss)
 }
 
 BlockType_t Creature::blockHit(Creature* attacker, CombatType_t combatType, int32_t& damage,
-                               bool checkDefense /* = false */, bool checkArmor /* = false */, bool /* field  = false */)
+	bool checkDefense /* = false */, bool checkArmor /* = false */, bool /* field  = false */)
 {
 	BlockType_t blockType = BLOCK_NONE;
 
@@ -851,13 +852,12 @@ BlockType_t Creature::blockHit(Creature* attacker, CombatType_t combatType, int3
 		blockType = BLOCK_IMMUNITY;
 	} else if (checkDefense || checkArmor) {
 		bool hasDefense = false;
-
 		if (blockCount > 0) {
 			--blockCount;
 			hasDefense = true;
 		}
 
-		if (checkDefense && hasDefense) {
+		if (checkDefense && hasDefense && canUseDefense) {
 			int32_t defense = getDefense();
 			damage -= uniform_random(defense / 2, defense);
 			if (damage <= 0) {
@@ -868,15 +868,11 @@ BlockType_t Creature::blockHit(Creature* attacker, CombatType_t combatType, int3
 		}
 
 		if (checkArmor) {
-			int32_t armorValue = getArmor();
-			if (armorValue > 1) {
-				double armorFormula = armorValue * 0.475;
-				int32_t armorReduction = static_cast<int32_t>(std::ceil(armorFormula));
-				damage -= uniform_random(
-					armorReduction,
-					armorReduction + static_cast<int32_t>(std::floor(armorFormula))
-				);
-			} else if (armorValue == 1) {
+			int32_t armor = getArmor();
+			if (armor > 3) {
+				damage -= uniform_random(armor / 2, armor - (armor % 2 + 1));
+			}
+			else if (armor > 0) {
 				--damage;
 			}
 
@@ -897,6 +893,7 @@ BlockType_t Creature::blockHit(Creature* attacker, CombatType_t combatType, int3
 	}
 
 	onAttacked();
+	
 	return blockType;
 }
 
