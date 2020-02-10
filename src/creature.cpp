@@ -69,6 +69,7 @@ Creature::Creature() :
 	scriptEventsBitField = 0;
 
 	hiddenHealth = false;
+	canUseDefense = true;
 
 	skull = SKULL_NONE;
 
@@ -268,7 +269,7 @@ void Creature::onWalk(Direction& dir)
 			if (r < DIRECTION_DIAGONAL_MASK) {
 				dir = static_cast<Direction>(r);
 			}
-			g_game.internalCreatureSay(this, TALKTYPE_MONSTER_SAY, "Hicks!", false);
+			g_game.internalCreatureSay(this, TALKTYPE_SAY, "Hicks!", false);
 		}
 	}
 }
@@ -842,7 +843,7 @@ void Creature::drainMana(Creature* attacker, int32_t manaLoss)
 }
 
 BlockType_t Creature::blockHit(Creature* attacker, CombatType_t combatType, int32_t& damage,
-                               bool checkDefense /* = false */, bool checkArmor /* = false */, bool /* field  = false */)
+	bool checkDefense /* = false */, bool checkArmor /* = false */, bool /* field  = false */)
 {
 	BlockType_t blockType = BLOCK_NONE;
 
@@ -851,7 +852,6 @@ BlockType_t Creature::blockHit(Creature* attacker, CombatType_t combatType, int3
 		blockType = BLOCK_IMMUNITY;
 	} else if (checkDefense || checkArmor) {
 		bool hasDefense = false;
-
 		if (blockCount > 0) {
 			--blockCount;
 			hasDefense = true;
@@ -892,6 +892,7 @@ BlockType_t Creature::blockHit(Creature* attacker, CombatType_t combatType, int3
 	}
 
 	onAttacked();
+	
 	return blockType;
 }
 

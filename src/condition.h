@@ -164,6 +164,8 @@ class ConditionAttributes final : public ConditionGeneric
 		int32_t statsPercent[STAT_LAST + 1];
 		int32_t currentSkill;
 		int32_t currentStat;
+		
+		bool disableDefense = false;
 
 		void updatePercentStats(Player* player);
 		void updateStats(Player* player);
