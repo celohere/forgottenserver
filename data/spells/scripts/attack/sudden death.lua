@@ -10,13 +10,13 @@ end
 
 setCombatCallback(combat, CALLBACK_PARAM_LEVELMAGICVALUE, "onGetFormulaValues")
 
-function onCastSpell(creature, variant, isHotkey)
-    local tile = Tile(Variant.getPosition(variant))
+function onCastSpell(cid, var, isHotkey)
+    local tile = Tile(var.getPosition(var))
     if tile and tile:getTopCreature() then
-        return combat:execute(creature, var)
+        return combat:execute(cid, var)
     end
 
-    creature:sendCancelMessage("You can only use this rune on creatures.")
-    creature:getPosition():sendMagicEffect(CONST_ME_POFF)
+    cid:sendCancelMessage("You can only use this rune on creatures.")
+    cid:getPosition():sendMagicEffect(CONST_ME_POFF)
     return false
 end
