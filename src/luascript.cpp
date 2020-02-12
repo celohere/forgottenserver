@@ -1378,6 +1378,10 @@ void LuaScriptInterface::registerFunctions()
 	registerEnum(CLIENTOS_OTCLIENT_WINDOWS)
 	registerEnum(CLIENTOS_OTCLIENT_MAC)
 
+	registerEnum(FIGHTMODE_ATTACK)
+	registerEnum(FIGHTMODE_BALANCED)
+	registerEnum(FIGHTMODE_DEFENSE)
+
 	registerEnum(ITEM_ATTRIBUTE_NONE)
 	registerEnum(ITEM_ATTRIBUTE_ACTIONID)
 	registerEnum(ITEM_ATTRIBUTE_UNIQUEID)

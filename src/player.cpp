@@ -379,7 +379,7 @@ void Player::getShieldAndWeapon(const Item*& shield, const Item*& weapon) const
 				break;
 
 			case WEAPON_SHIELD: {
-				if (!shield || item->getDefense() > shield->getDefense()) {
+				if (!shield || (shield && item->getDefense() > shield->getDefense())) {
 					shield = item;
 				}
 				break;
@@ -411,12 +411,19 @@ int32_t Player::getDefense() const
 	}
 
 	if (shield && shield->getDefense() >= defenseValue) {
-		defenseValue = baseDefense + shield->getDefense() + extraDefense;
+		defenseValue = weapon != nullptr ? shield->getDefense() + weapon->getExtraDefense() : shield->getDefense();
 		defenseSkill = getSkillLevel(SKILL_SHIELD);
 	}
 
 	if (defenseSkill == 0) {
-		return 0;
+		switch (fightMode) {
+		case FIGHTMODE_ATTACK:
+		case FIGHTMODE_BALANCED:
+			return 1;
+
+		case FIGHTMODE_DEFENSE:
+			return 2;
+		}
 	}
 
 	defenseValue = static_cast<int32_t>(defenseValue * vocation->defenseMultiplier);
