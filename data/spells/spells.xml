@@ -228,7 +228,7 @@
 	<rune group="attack" name="Light Magic Missile" id="2287" allowfaruse="1" charges="5" exhaustion="2000" maglv="0" needtarget="1" blocktype="solid" script="attack/light magic missile.lua"/>
 	<rune group="attack" name="Heavy Magic Missile" id="2311" allowfaruse="1" charges="5" exhaustion="2000" maglv="3" needtarget="1" blocktype="solid" script="attack/heavy magic missile.lua"/>
 	<rune group="attack" name="Explosion" id="2313" allowfaruse="1" charges="3" maglv="6" exhaustion="2000" blocktype="solid" script="attack/explosion.lua"/>
-	<rune group="attack" name="Sudden Death" id="2268" allowfaruse="1" charges="1" maglv="15" exhaustion="2000" needtarget="1" blocktype="solid" script="attack/sudden death.lua"/>
+	<rune group="attack" name="Sudden Death" id="2268" allowfaruse="1" charges="1" maglv="15" exhaustion="2000" needtarget="0" blocktype="solid" script="attack/sudden death.lua"/>
 	<rune group="attack" name="Envenom" id="2292" allowfaruse="1" charges="1" maglv="4" exhaustion="2000" needtarget="1" script="attack/envenom.lua"/>
 	<rune group="attack" name="Magic Wall" id="2293" allowfaruse="1" charges="3" maglv="9" exhaustion="2000" blocktype="all" script="support/magic wall rune.lua"/>
 
