@@ -4,6 +4,8 @@ Added server save when close the .exe
 Added old school exhausted (not in the master branch)
 Added summons corpse (not in the master branch)
 Added autoloot gold coins (not in the master branch)
+Fixed issue with armors and shields
+Fixed combat modes
 Fixed max summons bug
 Fixed visual bug in beds
 Fixed a bug related to npc selling runes trying to stack inside full containers -- crédits to me --
