@@ -1,5 +1,5 @@
 function destroyItem(player, target, toPosition)
-	if target == nil or not target:isItem() then
+	if type(target) ~= "userdata" or not target:isItem() then
 		return false
 	end
 
