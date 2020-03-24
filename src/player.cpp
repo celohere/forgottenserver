@@ -411,7 +411,7 @@ int32_t Player::getDefense() const
 	}
 
 	if (shield && shield->getDefense() >= defenseValue) {
-		defenseValue = weapon != nullptr ? shield->getDefense() + weapon->getExtraDefense() : shield->getDefense();
+		defenseValue = baseDefense + shield->getDefense() + extraDefense;
 		defenseSkill = getSkillLevel(SKILL_SHIELD);
 	}
 
