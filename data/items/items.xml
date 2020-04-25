@@ -2181,6 +2181,7 @@
 		<attribute key="decayTo" value="0" />
 		<attribute key="showduration" value="1" />
 		<attribute key="duration" value="3000" />
+		<attribute key="description" value="The wand glows."/>
 	</item>
 	<item id="2164" article="a" name="might ring">
 		<attribute key="weight" value="100" />
