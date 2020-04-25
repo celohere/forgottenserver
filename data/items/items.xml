@@ -274,6 +274,7 @@
 		<attribute key="type" value="door" />
 		<attribute key="leveldoor" value="1000" />
 		<attribute key="blockprojectile" value="1" />
+		<attribute key="description" value="Only the worthy may pass." />
 	</item>
 	<item id="1228" article="a" name="gate of expertise">
 		<attribute key="type" value="door" />
@@ -282,6 +283,7 @@
 		<attribute key="type" value="door" />
 		<attribute key="leveldoor" value="1000" />
 		<attribute key="blockprojectile" value="1" />
+		<attribute key="description" value="Only the worthy may pass." />
 	</item>
 	<item id="1230" article="a" name="gate of expertise">
 		<attribute key="type" value="door" />
@@ -342,6 +344,7 @@
 		<attribute key="type" value="door" />
 		<attribute key="leveldoor" value="1000" />
 		<attribute key="blockprojectile" value="1" />
+		<attribute key="description" value="Only the worthy may pass." />
 	</item>
 	<item id="1246" article="a" name="gate of expertise">
 		<attribute key="type" value="door" />
@@ -350,6 +353,7 @@
 		<attribute key="type" value="door" />
 		<attribute key="leveldoor" value="1000" />
 		<attribute key="blockprojectile" value="1" />
+		<attribute key="description" value="Only the worthy may pass." />
 	</item>
 	<item id="1248" article="a" name="gate of expertise">
 		<attribute key="type" value="door" />
@@ -396,6 +400,7 @@
 		<attribute key="type" value="door" />
 		<attribute key="leveldoor" value="1000" />
 		<attribute key="blockprojectile" value="1" />
+		<attribute key="description" value="Only the worthy may pass." />
 	</item>
 	<item id="1260" article="a" name="gate of expertise">
 		<attribute key="type" value="door" />
@@ -404,6 +409,7 @@
 		<attribute key="type" value="door" />
 		<attribute key="leveldoor" value="1000" />
 		<attribute key="blockprojectile" value="1" />
+		<attribute key="description" value="Only the worthy may pass." />
 	</item>
 	<item id="1262" article="a" name="gate of expertise">
 		<attribute key="type" value="door" />
