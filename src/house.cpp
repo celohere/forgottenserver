@@ -490,7 +490,7 @@ bool AccessList::isInList(const Player* player)
 {
 	if (allowEveryone) {
 		return true;
-
+	}
 	auto playerIt = playerList.find(player->getGUID());
 	if (playerIt != playerList.end()) {
 		return true;
