@@ -1,9 +1,9 @@
 Added teleport summons to master -- Crédits to Delusion --
 Added stopAttackingAtExit in config.lua (working with players and monsters)
 Added server save when close the .exe -- crédits to danielsalim1 --
-Added old school exhausted (not in the master branch) -- crédits to me --
+Added old school exhausted (https://github.com/celohere/forgottenserver/tree/exhausted-old-school) -- crédits to me --
 Added summons drop corpse option on config.lua -- crédits to me --
-Added autoloot gold coins (not in the master branch)
+Added autoloot gold coins (https://github.com/celohere/forgottenserver/tree/celohere-autoloot-gold)
 Fixed push the last creature from stack -- crédits to Jhon_ and Emilianenko --
 Fixed auto stack -- Crédits Nekiro --
 Fixed Container::queryMaxCount() bug -- Crédits Nekiro --
@@ -19,7 +19,7 @@ Updated actions
 Updated depotlocker(now are counting all items inside locker not just inside depot)
 Updated some text collors
 Changed the map for Yurots map
-Changed /clean command to clean corpses(not in the master branch)
+Changed /clean command to clean corpses(https://github.com/celohere/forgottenserver/tree/clean-removing-corpses)
 
 
 Fixed hotkeys message again(was showing wrong number of runes) -- crédits to danielsalim1 --
