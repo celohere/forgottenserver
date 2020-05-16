@@ -244,7 +244,7 @@ Creature* Tile::getTopCreature() const
 	return nullptr;
 }
 
-const Creature* Tile::getBottomCreature() const
+Creature* Tile::getBottomCreature() const
 {
 	if (const CreatureVector* creatures = getCreatures()) {
 		if (!creatures->empty()) {
@@ -282,7 +282,7 @@ Creature* Tile::getTopVisibleCreature(const Creature* creature) const
 	return nullptr;
 }
 
-const Creature* Tile::getBottomVisibleCreature(const Creature* creature) const
+Creature* Tile::getBottomVisibleCreature(const Creature* creature) const
 {
 	if (const CreatureVector* creatures = getCreatures()) {
 		if (creature) {
