@@ -242,7 +242,7 @@ Thing* Game::internalGetThing(Player* player, const Position& pos, int32_t index
 				if (item && item->isMoveable()) {
 					thing = item;
 				} else {
-					thing = tile->getTopVisibleCreature(player);
+					thing = tile->getBottomVisibleCreature(player);
 				}
 				break;
 			}
