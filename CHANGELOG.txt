@@ -4,6 +4,7 @@ Added server save when close the .exe -- crédits to danielsalim1 --
 Added old school exhausted (not in the master branch) -- crédits to me --
 Added summons drop corpse option on config.lua -- crédits to me --
 Added autoloot gold coins (not in the master branch)
+Fixed push the last creature from stack -- crédits to Jhon_ and Emilianenko --
 Fixed auto stack -- Crédits Nekiro --
 Fixed Container::queryMaxCount() bug -- Crédits Nekiro --
 Fixed issue with armors and shields -- crédits to me --
