@@ -2182,7 +2182,7 @@ ReturnValue Player::queryAdd(int32_t index, const Thing& thing, uint32_t count, 
 	if (childIsOwner) {
 		//a child container is querying the player, just check if enough capacity
 		bool skipLimit = hasBitSet(FLAG_NOLIMIT, flags);
-		if (skipLimit || hasCapacity(item, item->getItemCount())) {
+		if (skipLimit || hasCapacity(item, count)) {
 			return RETURNVALUE_NOERROR;
 		}
 		return RETURNVALUE_NOTENOUGHCAPACITY;
@@ -2373,7 +2373,7 @@ ReturnValue Player::queryAdd(int32_t index, const Thing& thing, uint32_t count, 
 		}
 
 		//check if enough capacity
-		if (!hasCapacity(item, item->getItemCount())) {
+		if (!hasCapacity(item, count)) {
 			return RETURNVALUE_NOTENOUGHCAPACITY;
 		}
 
