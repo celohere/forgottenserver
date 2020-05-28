@@ -4,9 +4,10 @@ Added server save when close the .exe -- crédits to danielsalim1 --
 Added old school exhausted (https://github.com/celohere/forgottenserver/tree/exhausted-old-school) -- crédits to me --
 Added summons drop corpse option on config.lua -- crédits to me --
 Added autoloot gold coins (https://github.com/celohere/forgottenserver/tree/celohere-autoloot-gold)
+Fixed container queryAdd issues -- Crédits to Nekiro --
 Fixed push the last creature from stack -- crédits to Jhon_ and Emilianenko --
 Fixed auto stack -- Crédits Nekiro --
-Fixed Container::queryMaxCount() bug -- Crédits Nekiro --
+Fixed Container::queryMaxCount() bug -- Crédits to Nekiro --
 Fixed issue with armors and shields -- crédits to me --
 Fixed combat modes -- crédits to me --
 Fixed max summons bug -- crédits to me --
