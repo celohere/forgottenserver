@@ -58,3 +58,10 @@ end
 function Creature.isTile(self)
 	return false
 end
+
+function Creature:canAccessPz()
+	if self:isMonster() or (self:isPlayer() and self:isPzLocked()) then
+		return false
+	end
+	return true
+end
