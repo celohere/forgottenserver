@@ -284,6 +284,7 @@
 	<!-- Monks -->
 	<monster name="Dark Monk" file="Monks/dark monk.xml" />
 	<monster name="Monk" file="monks/monk.xml" />
+	<monster name="Training Monk" file="monks/training monk.xml" />
 
 	<!-- Myriapods -->
 	<monster name="Centipede" file="Myriapods/centipede.xml" />
