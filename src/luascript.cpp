@@ -1754,6 +1754,7 @@ void LuaScriptInterface::registerFunctions()
 	registerEnumIn("configKeys", ConfigManager::CLASSIC_ATTACK_SPEED)
 	registerEnumIn("configKeys", ConfigManager::AUTO_STACK_ITEMS)
 	registerEnumIn("configKeys", ConfigManager::LOOT_MESSAGE)
+	registerEnumIn("configKeys", ConfigManager::STOP_ATTACK_AT_EXIT)
 
 	registerEnumIn("configKeys", ConfigManager::MAP_NAME)
 	registerEnumIn("configKeys", ConfigManager::HOUSE_RENT_PERIOD)
