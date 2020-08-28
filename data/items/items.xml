@@ -6762,8 +6762,16 @@
 	<item fromid="3224" toid="3225" name="wooden floor" />
 	<item fromid="3226" toid="3241" article="a" name="broken stone tile" />
 	<item fromid="3242" toid="3245" name="wooden floor" />
-	<item id="3263" name="jungle grass" />
+	<item fromid="3246" toid="3257" name="gravel" />
+	<item id="3258" name="water">
+		<attribute key="type" value="trashholder" />
+		<attribute key="effect" value="bluebubble" />
+		<attribute key="allowpickupable" value="1" />
+	</item>
+	<item fromid="3259" toid="3263" name="jungle grass" />
 	<item fromid="3264" toid="3265" name="earth" />
+	<item fromid="3266" toid="3281" name="jungle grass" />
+	<item fromid="3282" toid="3297" name="grass" />
 	<item fromid="3298" toid="3309" name="jungle grass" />
 	<item id="3310" article="a" name="mud stain">
 		<attribute key="floorchange" value="down" />
