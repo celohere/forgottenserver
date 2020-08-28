@@ -2,14 +2,30 @@
 <items>
 	<item id="100" name="void" />
 	<item id="101" name="earth" />
+	<item id="102" name="grass" />
 	<item id="103" name="dirt" />
 	<item id="104" name="sand" />
+	<item id="105" name="gravel" />
 	<item id="106" name="grass" />
 	<item id="107" name="rock soil" />
 	<item fromid="108" toid="109" name="flowers" />
+	<item fromid="110" toid="133" name="grass" />
+	<item fromid="134" toid="145" name="sand" />
+	<item fromid="146" toid="157" name="gravel" />
+	<item fromid="158" toid="169" name="sand" />
+	<item fromid="170" toid="181" name="gravel" />
+	<item fromid="182" toid="193" name="grass" />
 	<item id="194" name="dirt" />
+	<item fromid="195" toid="206" name="grass" />
+	<item fromid="207" toid="218" name="gravel" />
+	<item fromid="219" toid="230" name="grass" />
 	<item id="231" name="sand" />
+	<item fromid="232" toid="243" name="grass" />
+	<item fromid="244" toid="255" name="sand" />
+	<item fromid="256" toid="267" name="rock soil" />
+	<item fromid="268" toid="279" name="grass" />
 	<item id="280" name="earth ground" />
+	<item fromid="281" toid="292" name="grass" />
 	<item id="293" name="grass">
 		<attribute key="floorchange" value="down" />
 	</item>
@@ -18,6 +34,16 @@
 		<attribute key="decayTo" value="293" />
 		<attribute key="duration" value="300" />
 	</item>
+	<item fromid="295" toid="318" name="grass" />
+	<item fromid="319" toid="326" name="sand" />
+	<item fromid="327" toid="328" name="gravel" />
+	<item fromid="329" toid="334" name="mountain" />
+	<item id="335" name="sand" />
+	<item fromid="336" toid="340" name="mountain" />
+	<item id="341" name="sand" />
+	<item id="342" name="mountain" />
+	<item id="343" name="gravel" />
+	<item fromid="344" toid="350" name="mountain" />
 	<item fromid="351" toid="353" name="dirt floor" />
 	<item id="354" name="muddy floor" />
 	<item id="355" name="muddy floor">
@@ -6736,8 +6762,16 @@
 	<item fromid="3224" toid="3225" name="wooden floor" />
 	<item fromid="3226" toid="3241" article="a" name="broken stone tile" />
 	<item fromid="3242" toid="3245" name="wooden floor" />
-	<item id="3263" name="jungle grass" />
+	<item fromid="3246" toid="3257" name="gravel" />
+	<item id="3258" name="water">
+		<attribute key="type" value="trashholder" />
+		<attribute key="effect" value="bluebubble" />
+		<attribute key="allowpickupable" value="1" />
+	</item>
+	<item fromid="3259" toid="3263" name="jungle grass" />
 	<item fromid="3264" toid="3265" name="earth" />
+	<item fromid="3266" toid="3281" name="jungle grass" />
+	<item fromid="3282" toid="3297" name="grass" />
 	<item fromid="3298" toid="3309" name="jungle grass" />
 	<item id="3310" article="a" name="mud stain">
 		<attribute key="floorchange" value="down" />
