@@ -34,6 +34,16 @@
 		<attribute key="decayTo" value="293" />
 		<attribute key="duration" value="300" />
 	</item>
+	<item fromid="295" toid="318" name="grass" />
+	<item fromid="319" toid="326" name="sand" />
+	<item fromid="327" toid="328" name="gravel" />
+	<item fromid="329" toid="334" name="mountain" />
+	<item id="335" name="sand" />
+	<item fromid="336" toid="340" name="mountain" />
+	<item id="341" name="sand" />
+	<item id="342" name="mountain" />
+	<item id="343" name="gravel" />
+	<item fromid="344" toid="350" name="mountain" />
 	<item fromid="351" toid="353" name="dirt floor" />
 	<item id="354" name="muddy floor" />
 	<item id="355" name="muddy floor">
