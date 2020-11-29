@@ -86,6 +86,7 @@ if Modules == nil then
 				npcHandler:say(parameters.text, cid)
 				player:setVocation(promotion)
 				player:setStorageValue(STORAGEVALUE_PROMOTION, 1)
+				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 			end
 		else
 			npcHandler:say("You need a premium account in order to get promoted.", cid)
@@ -141,6 +142,7 @@ if Modules == nil then
 				npcHandler:say("You don't have enough money for blessing.", cid)
 			else
 				player:addBlessing(parameters.bless)
+		     	player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				npcHandler:say("You have been blessed by one of the five gods!", cid)
 			end
 		else
@@ -444,8 +446,6 @@ if Modules == nil then
 		if player:isPremium() or not shop_premium[cid] then
 			if not player:removeMoney(cost) then
 				npcHandler:say("You do not have enough money!", cid)
-			elseif player:isPzLocked(cid) then
-				npcHandler:say("Get out of there with this blood.", cid)
 			else
 				npcHandler:say("It was a pleasure doing business with you.", cid)
 				npcHandler:releaseFocus(cid)
@@ -909,7 +909,7 @@ if Modules == nil then
 	end
 
 	-- Callback onBuy() function. If you wish, you can change certain Npc to use your onBuy().
-	function ShopModule:callbackOnBuy(cid, itemid, subType, amount, ignoreCap, inBackpacks)
+	function ShopModule:callbackOnBuy(cid, itemid, subType, amount, inBackpacks)
 		local shopItem = self:getShopItem(itemid, subType)
 		if shopItem == nil then
 			error("[ShopModule.onBuy] shopItem == nil")
@@ -942,7 +942,7 @@ if Modules == nil then
 		end
 
 		local subType = shopItem.subType or 1
-		local a, b = doNpcSellItem(cid, itemid, amount, subType, ignoreCap, inBackpacks, backpack)
+		local a, b = doNpcSellItem(cid, itemid, amount, subType, inBackpacks, backpack)
 		if a < amount then
 			local msgId = MESSAGE_NEEDMORESPACE
 			if a == 0 then
@@ -953,7 +953,11 @@ if Modules == nil then
 			parseInfo[TAG_ITEMCOUNT] = a
 			msg = self.npcHandler:parseMessage(msg, parseInfo)
 			doPlayerSendCancel(cid, msg)
-			self.npcHandler.talkStart[cid] = os.time()
+			if(NPCHANDLER_CONVBEHAVIOR ~= CONVERSATION_DEFAULT) then
+				self.npcHandler.talkStart[cid] = os.time()
+			else
+				self.npcHandler.talkStart = os.time()
+			end
 
 			if a > 0 then
 				doPlayerRemoveMoney(cid, ((a * shopItem.buy) + (b * 20)))
@@ -966,7 +970,11 @@ if Modules == nil then
 			msg = self.npcHandler:parseMessage(msg, parseInfo)
 			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, msg)
 			doPlayerRemoveMoney(cid, totalCost)
-			self.npcHandler.talkStart[cid] = os.time()
+			if(NPCHANDLER_CONVBEHAVIOR ~= CONVERSATION_DEFAULT) then
+				self.npcHandler.talkStart[cid] = os.time()
+			else
+				self.npcHandler.talkStart = os.time()
+			end
 			return true
 		end
 	end
@@ -1000,13 +1008,21 @@ if Modules == nil then
 			msg = self.npcHandler:parseMessage(msg, parseInfo)
 			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, msg)
 			doPlayerAddMoney(cid, amount * shopItem.sell)
-			self.npcHandler.talkStart[cid] = os.time()
+			if(NPCHANDLER_CONVBEHAVIOR ~= CONVERSATION_DEFAULT) then
+				self.npcHandler.talkStart[cid] = os.time()
+			else
+				self.npcHandler.talkStart = os.time()
+			end
 			return true
 		else
 			local msg = self.npcHandler:getMessage(MESSAGE_NEEDITEM)
 			msg = self.npcHandler:parseMessage(msg, parseInfo)
 			doPlayerSendCancel(cid, msg)
-			self.npcHandler.talkStart[cid] = os.time()
+			if(NPCHANDLER_CONVBEHAVIOR ~= CONVERSATION_DEFAULT) then
+				self.npcHandler.talkStart[cid] = os.time()
+			else
+				self.npcHandler.talkStart = os.time()
+			end
 			return false
 		end
 	end
@@ -1159,7 +1175,8 @@ if Modules == nil then
 
 		shop_amount[cid] = module.amount
 		shop_cost[cid] = parameters.cost
-                shop_rlname[cid] = count > 1 and parameters.realName .. ItemType(itemid):getPluralName() or parameters.realName
+        shop_rlname[cid] = count > 1 and parameters.realName ..
+		ItemType(itemid):getPluralName() or parameters.realName
 		shop_itemid[cid] = parameters.itemid
 		shop_container[cid] = parameters.container
 		shop_npcuid[cid] = getNpcCid()
