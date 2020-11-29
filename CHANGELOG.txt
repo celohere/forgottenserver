@@ -1,3 +1,4 @@
+Added backwards compatibility for pre 1.x loot containers -- Crédits to Nekiro --
 Added teleport summons to master -- Crédits to Delusion --
 Added stopAttackingAtExit in config.lua (working with players and monsters)
 Added server save when close the .exe -- crédits to danielsalim1 --
