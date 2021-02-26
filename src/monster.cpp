@@ -500,11 +500,9 @@ void Monster::onCreatureLeave(Creature* creature)
 
 		//update targetList
 		if (isOpponent(creature)) {
-			if (!g_config.getBoolean(ConfigManager::TELEPORT_SUMMONS)) {
-				removeTarget(creature);
-				if (targetList.empty()) {
-					updateIdleStatus();
-				}
+			removeTarget(creature);
+			if (targetList.empty()) {
+				updateIdleStatus();
 			}
 		}
 	}
