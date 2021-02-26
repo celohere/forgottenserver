@@ -355,8 +355,8 @@ if NpcHandler == nil then
 		end
 
 		local callback = self:getCallback(CALLBACK_FAREWELL)
-		if callback == nil or callback() then
-			if self:processModuleCallback(CALLBACK_FAREWELL) then
+		if callback == nil or callback(cid) then
+			if self:processModuleCallback(CALLBACK_FAREWELL, cid) then
                 if(self.queue == nil or not self.queue:greetNext()) then
                     local msg = self:getMessage(MESSAGE_FAREWELL)
                     local player = Player(cid)
@@ -498,7 +498,7 @@ if NpcHandler == nil then
 	-- Handles onThink events. If you wish to handle this yourself, please use the CALLBACK_ONTHINK callback.
 	function NpcHandler:onThink()
 		local callback = self:getCallback(CALLBACK_ONTHINK)
-		if callback == nil or callback() then
+		if callback == nil or callback(cid) then
 			if NPCHANDLER_TALKDELAY == TALKDELAY_ONTHINK then
 				if(NPCHANDLER_CONVBEHAVIOR ~= CONVERSATION_DEFAULT) then
 					for cid, talkDelay in pairs(self.talkDelay) do
