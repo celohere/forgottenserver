@@ -97,9 +97,10 @@ function onDeath(player, corpse, killer, mostDamageKiller, unjustified, mostDama
 		end
 	end
 	if killer == nil then
-            broadcastMessage(player:getName().."["..player:getLevel().."] died. ")
-            else
-                if killer:isPlayer() then
-                    broadcastMessage(player:getName().."["..player:getLevel().."] was killed by "..killer:getName().."["..killer:getLevel().."].")
+		broadcastMessage(player:getName().."["..player:getLevel().."] died. ")
+	else
+		if killer:isPlayer() then
+			broadcastMessage(player:getName().."["..player:getLevel().."] was killed by "..killer:getName().."["..killer:getLevel().."].")
+		end
 	end
 end
