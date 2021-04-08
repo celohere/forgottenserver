@@ -17,10 +17,16 @@ function getAccountNumberByPlayerName(name)
 	return 0
 end
 
---Functions by Oskar--
-function doAddExp(cid, amount)
-    doSendAnimatedText(getCreaturePosition(cid), amount, COLOR_WHITE)
-    return doPlayerAddExperience(cid, amount) or false
+function doAddExp(cid, amount, useExpStages, customColor, ...)
+    local player = cid:getPlayer()
+    if not player then
+        return false
+    else
+        if useExpStages then amount = amount * Game.getExperienceStage(player:getLevel()) end
+        if not customColor then customColor = TEXTCOLOR_WHITE_EXP end
+        Game.sendAnimatedText(amount, getCreaturePosition(cid), customColor)
+        return doPlayerAddExp(cid, amount)
+    end
 end
  
 function doScanContainer(item, backpack, tables, count)
