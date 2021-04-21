@@ -142,7 +142,7 @@ if Modules == nil then
 				npcHandler:say("You don't have enough money for blessing.", cid)
 			else
 				player:addBlessing(parameters.bless)
-		     	player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 				npcHandler:say("You have been blessed by one of the five gods!", cid)
 			end
 		else
@@ -1175,7 +1175,7 @@ if Modules == nil then
 
 		shop_amount[cid] = module.amount
 		shop_cost[cid] = parameters.cost
-        shop_rlname[cid] = count > 1 and parameters.realName ..
+		shop_rlname[cid] = count > 1 and parameters.realName ..
 		ItemType(itemid):getPluralName() or parameters.realName
 		shop_itemid[cid] = parameters.itemid
 		shop_container[cid] = parameters.container
