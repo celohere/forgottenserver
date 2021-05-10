@@ -189,7 +189,9 @@ if Modules == nil then
 	end
 
 	FocusModule = {
-		npcHandler = nil
+		npcHandler = nil,
+		greetWords = nil,
+		farewellWords = nil
 	}
 
 	-- Creates a new instance of FocusModule without an associated NpcHandler.
@@ -203,14 +205,17 @@ if Modules == nil then
 	-- Inits the module and associates handler to it.
 	function FocusModule:init(handler)
 		self.npcHandler = handler
-		for i, word in pairs(FOCUS_GREETWORDS) do
+		local greetWords = self.greetWords or FOCUS_GREETWORDS
+		local farewellWords = self.farewellWords or FOCUS_FAREWELLWORDS
+		
+		for i, word in pairs(greetWords) do
 			local obj = {}
 			obj[#obj + 1] = word
 			obj.callback = FOCUS_GREETWORDS.callback or FocusModule.messageMatcher
 			handler.keywordHandler:addKeyword(obj, FocusModule.onGreet, {module = self})
 		end
 
-		for i, word in pairs(FOCUS_FAREWELLWORDS) do
+		for i, word in pairs(farewellWords) do
 			local obj = {}
 			obj[#obj + 1] = word
 			obj.callback = FOCUS_FAREWELLWORDS.callback or FocusModule.messageMatcher
@@ -219,10 +224,36 @@ if Modules == nil then
 
 		return true
 	end
-
+	
+	-- Set custom greeting messages
+	function FocusModule:addGreetMessage(message)
+		if not self.greetWords then
+			self.greetWords = {}
+		end
+		
+		if type(message) == "table" then
+			for k, v in pairs(message) do
+				table.insert(self.greetWords, v)
+			end
+		end
+	end
+	
+	-- Set custom farewell messages
+	function FocusModule:addFarewellMessage(message)
+		if not self.farewellWords then
+			self.farewellWords = {}
+		end
+		
+		if type(message) == "table" then
+			for k, v in pairs(message) do
+				table.insert(self.farewellWords, v)
+			end
+		end
+	end
+	
 	-- Greeting callback function.
 	function FocusModule.onGreet(cid, message, keywords, parameters)
-		parameters.module.npcHandler:onGreet(cid)
+		parameters.module.npcHandler:onGreet(cid, message)
 		return true
 	end
 
