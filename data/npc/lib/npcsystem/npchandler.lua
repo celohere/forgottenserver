@@ -545,7 +545,7 @@ if NpcHandler == nil then
 		if self:isInRange(cid) then
 			if(NPCHANDLER_CONVBEHAVIOR == CONVERSATION_PRIVATE) then
 				if not self:isFocused(cid) then
-				self:greet(cid, message)
+					self:greet(cid, message)
 					return
 				end
 			elseif(NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT) then
@@ -558,7 +558,7 @@ if NpcHandler == nil then
 					self:say(msg)
 				else
 					if(not self.queue:isInQueue(cid)) then
-						self.queue:push(cid)
+						self.queue:push(cid, message)
 					end
 					local msg = self:getMessage(MESSAGE_PLACEDINQUEUE)
 					local parseInfo = { [TAG_PLAYERNAME] = getCreatureName(cid), [TAG_QUEUESIZE] = self.queue:getSize() }
