@@ -3,8 +3,8 @@
 
 if(Queue == nil) then
 	Queue = {
-		customers = nil,
-		handler = nil,
+		customers = {id = nil, msg = nil},
+		handler = nil
 	}
 
 	-- Creates a new queue, connected to the given NpcHandler handler
@@ -23,15 +23,18 @@ if(Queue == nil) then
 	end
 
 	-- Pushes a new cid onto the tail of this queue.
-	function Queue:push(cid)
+	function Queue:push(cid, message)
 		if(isPlayer(cid)) then
-			table.insert(self.customers, cid)
+			table.insert(self.customers, {id=cid, msg=message})
 		end
 	end
 
 	-- Returns true if the given cid is already in the queue.
 	function Queue:isInQueue(cid)
-		return (isInArray(self.customers, cid) == TRUE)
+		for k, v in pairs(self.customers) do
+			if v.id == cid then return true end
+		end
+		return false
 	end
 
 	-- Removes and returns the first cid from the queue
@@ -64,9 +67,9 @@ if(Queue == nil) then
 	end
 
 	-- Greets the player with the given cid.
-	function Queue:greet(cid)
+	function Queue:greet(cid, message)
 		if(self.handler ~= nil) then
-			self.handler:greet(cid)
+			self.handler:greet(cid, message)
 		else
 			error('No handler assigned to queue!')
 		end
@@ -76,9 +79,10 @@ if(Queue == nil) then
 	function Queue:greetNext()
 		while (not self:empty()) do
 			local nextPlayer = self:pop()
-			if(self:canGreet(nextPlayer)) then
-				if(callback == nil or callback(nextPlayer)) then
-					self:greet(nextPlayer)
+			if(self:canGreet(nextPlayer.id)) then
+				if(callback == nil or callback(nextPlayer.id)) then
+					self.handler.talkStart = os.time()
+					self:greet(nextPlayer.id, nextPlayer.msg)
 					return true
 				end
 			end
