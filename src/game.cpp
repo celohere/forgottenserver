@@ -4156,12 +4156,12 @@ bool Game::loadExperienceStages()
 
 void Game::playerInviteToParty(uint32_t playerId, uint32_t invitedId)
 {
-	if (playerId == invitedId) {
-		return;
-	}
-
 	Player* player = getPlayerByID(playerId);
 	if (!player) {
+		return;
+	}
+	
+	if (playerId == invitedId) {
 		return;
 	}
 
