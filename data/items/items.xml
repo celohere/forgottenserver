@@ -6895,15 +6895,7 @@
 		<attribute key="type" value="door" />
 	</item>
 	<item fromid="3569" toid="3574" article="a" name="waterfall" />
-	<item id="3587" article="a" name="small boat" />
-	<item fromid="3588" toid="3590" article="a" name="small boat">
-		<attribute key="type" value="teleport" />
-	</item>
-	<item fromid="3591" toid="3592" article="a" name="small boat" />
-	<item fromid="3593" toid="3595" article="a" name="small boat">
-		<attribute key="type" value="teleport" />
-	</item>
-	<item id="3596" article="a" name="small boat" />
+	<item fromid="3587" toid="3596" article="a" name="small boat" />
 	<item fromid="3597" toid="3598" article="a" name="small sail" />
 	<item fromid="3599" toid="3600" article="a" name="paddle" />
 	<item fromid="3601" toid="3602" article="a" name="mast" />
