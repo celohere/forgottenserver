@@ -3275,7 +3275,6 @@
 		<attribute key="weight" value="2300" />
 		<attribute key="defense" value="20" />
 		<attribute key="attack" value="24" />
-		<attribute key="elementFire" value="11" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="extradef" value="1" />
 	</item>
@@ -3394,7 +3393,6 @@
 		<attribute key="attack" value="18" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="extradef" value="1" />
-		<attribute key="elementEarth" value="8" />
 	</item>
 	<item id="2410" article="a" name="throwing knife" plural="throwing knives">
 		<attribute key="weight" value="500" />
@@ -3407,7 +3405,6 @@
 		<attribute key="weight" value="880" />
 		<attribute key="defense" value="8" />
 		<attribute key="attack" value="18" />
-		<attribute key="elementEarth" value="2" />
 		<attribute key="weaponType" value="sword" />
 	</item>
 	<item id="2412" article="a" name="katana">
@@ -3555,7 +3552,6 @@
 		<attribute key="weight" value="4000" />
 		<attribute key="defense" value="16" />
 		<attribute key="attack" value="27" />
-		<attribute key="elementFire" value="11" />
 		<attribute key="weaponType" value="axe" />
 		<attribute key="extradef" value="1" />
 	</item>
