@@ -1,6 +1,6 @@
 function destroyItem(player, target, toPosition)
-	if type(target) ~= "userdata" or not target:isItem() then
-		return false
+	if not target or type(target) ~= "userdata" or not target:isItem() then
+ 	        return false
 	end
 
 	if target:hasAttribute(ITEM_ATTRIBUTE_UNIQUEID) or target:hasAttribute(ITEM_ATTRIBUTE_ACTIONID) then
