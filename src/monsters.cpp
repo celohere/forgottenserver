@@ -498,6 +498,7 @@ bool Monsters::deserializeSpell(const pugi::xml_node& node, spellBlock_t& sb, co
 		} else if (tmpName == "physical") {
 			combat->setParam(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE);
 			combat->setParam(COMBAT_PARAM_BLOCKARMOR, 1);
+			combat->setParam(COMBAT_PARAM_BLOCKSHIELD, 1);
 			combat->setOrigin(ORIGIN_RANGED);
 		} else if (tmpName == "bleed") {
 			combat->setParam(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE);
