@@ -355,6 +355,14 @@ bool Actions::useItem(Player* player, const Position& pos, uint8_t index, Item* 
 	if (isHotkey) {
 		showUseHotkeyMessage(player, item, player->getItemTypeCount(item->getID(), (!item->getFluidType() ? -1 : item->getSubType())));
 	}
+	
+	if (HouseTile* houseTile = dynamic_cast<HouseTile*>(item->getTile())) {
+	    House* house = houseTile->getHouse();
+	    if (house && !house->isInvited(player)) {
+	        player->sendCancelMessage(RETURNVALUE_PLAYERISNOTINVITED);
+	        return false;
+	    }
+	}
 
 	ReturnValue ret = internalUseItem(player, pos, index, item, isHotkey);
 	if (ret != RETURNVALUE_NOERROR) {

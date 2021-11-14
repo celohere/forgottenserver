@@ -5,6 +5,7 @@ Added server save when close the .exe -- crédits to danielsalim1 --
 Added old school exhausted (https://github.com/celohere/forgottenserver/tree/exhausted-old-school) -- crédits to me --
 Added summons drop corpse option on config.lua -- crédits to me --
 Added autoloot gold coins (https://github.com/celohere/forgottenserver/tree/celohere-autoloot-gold)
+Fixed not invited players removing items from house door tiles -- Crédits to Nekiro and ArturKnopik --
 Fixed container queryAdd issues -- Crédits to Nekiro --
 Fixed push the last creature from stack -- crédits to Jhon_ and Emilianenko --
 Fixed auto stack -- Crédits Nekiro --

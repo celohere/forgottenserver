@@ -43,6 +43,7 @@ deathLosePercent = -1
 housePriceEachSQM = 1000
 houseRentPeriod = "never"
 houseAntiTrash = false
+onlyInvitedCanMoveHouseItems = true
 
 -- Item Usage
 timeBetweenActions = 150
