@@ -80,7 +80,7 @@ uint32_t Scheduler::addEvent(SchedulerTask* task)
 
 	// insert the event id in the list of active events
 	uint32_t eventId = task->getEventId();
-	eventIds.insert(eventId);;
+	eventIds.insert(eventId);
 
 	// add the event to the queue
 	eventList.push(task);
