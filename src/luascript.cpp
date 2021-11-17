@@ -7348,8 +7348,7 @@ int LuaScriptInterface::luaPlayerGetDepotLocker(lua_State* L)
 	if (depotLocker) {
 		pushUserdata<Item>(L, depotLocker);
 		setItemMetatable(L, -1, depotLocker);
-	}
-	else {
+	} else {
 		pushBoolean(L, false);
 	}
 	return 1;
