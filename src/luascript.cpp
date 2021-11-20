@@ -6416,18 +6416,6 @@ int LuaScriptInterface::luaCreatureIsInGhostMode(lua_State* L)
 	return 1;
 }
 
-int LuaScriptInterface::luaCreatureIsHealthHidden(lua_State* L)
-{
-	// creature:isHealthHidden()
-	const Creature* creature = getUserdata<const Creature>(L, 1);
-	if (creature) {
-		pushBoolean(L, creature->isHealthHidden());
-	} else {
-		lua_pushnil(L);
-	}
-	return 1;
-}
-
 int LuaScriptInterface::luaCreatureCanSee(lua_State* L)
 {
 	// creature:canSee(position)
@@ -6809,6 +6797,18 @@ int LuaScriptInterface::luaCreatureSetMaxHealth(lua_State* L)
 		player->sendStats();
 	}
 	pushBoolean(L, true);
+	return 1;
+}
+
+int LuaScriptInterface::luaCreatureIsHealthHidden(lua_State* L)
+{
+	// creature:isHealthHidden()
+	const Creature* creature = getUserdata<const Creature>(L, 1);
+	if (creature) {
+		pushBoolean(L, creature->isHealthHidden());
+	} else {
+		lua_pushnil(L);
+	}
 	return 1;
 }
 
