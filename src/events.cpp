@@ -358,8 +358,7 @@ void Events::eventPartyOnShareExperience(Party* party, uint64_t& exp)
 
 	if (scriptInterface.protectedCall(L, 2, 1) != 0) {
 		LuaScriptInterface::reportError(nullptr, LuaScriptInterface::popString(L));
-	}
-	else {
+	} else {
 		exp = LuaScriptInterface::getNumber<uint64_t>(L, -1);
 		lua_pop(L, 1);
 	}
