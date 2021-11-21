@@ -2059,6 +2059,7 @@ void Player::kickPlayer(bool displayEffect)
 		client->logout(displayEffect, true);
 	} else {
 		g_game.removeCreature(this);
+		g_game.addMagicEffect(getPosition(), CONST_ME_POFF);
 	}
 }
 
