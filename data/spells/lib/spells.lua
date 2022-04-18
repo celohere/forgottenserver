@@ -248,3 +248,42 @@ CORPSES = {
 
 -- This array contains all destroyable field items
 FIELDS = {1487,1488,1489,1490,1491,1492,1493,1494,1495,1496,1500,1501,1502,1503,1504}
+
+function Player:conjureItem(reagentId, conjureId, conjureCount, effect)
+    if not conjureCount and conjureId ~= 0 then
+        local itemType = ItemType(conjureId)
+        if itemType:getId() == 0 then
+            return false
+        end
+
+        local charges = itemType:getCharges()
+        if charges ~= 0 then
+            conjureCount = charges
+        end
+    end
+
+    local conjureItem = self:getItemById(reagentId, true, -1)
+    if reagentId ~= 0 and not conjureItem then
+        self:sendCancelMessage(RETURNVALUE_YOUNEEDAMAGICITEMTOCASTSPELL)
+        self:getPosition():sendMagicEffect(CONST_ME_POFF)
+        return false
+    end
+
+    local item = conjureItem:getParent():addItem(conjureId, conjureCount)
+    if not item then
+        item = self:addItem(conjureId, conjureCount)
+        if not item then
+            self:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
+            self:getPosition():sendMagicEffect(CONST_ME_POFF)
+            return false
+        end
+    end
+
+    if item:hasAttribute(ITEM_ATTRIBUTE_DURATION) then
+        item:decay()
+    end
+
+    conjureItem:remove(1)
+    self:getPosition():sendMagicEffect(item:getType():isRune() and CONST_ME_MAGIC_RED or effect)
+    return true
+end
