@@ -1539,16 +1539,6 @@ bool InstantSpell::canCast(const Player* player) const
 	return false;
 }
 
-
-ConjureSpell::ConjureSpell(LuaScriptInterface* _interface) :
-	InstantSpell(_interface)
-{
-	aggressive = false;
-	conjureId = 0;
-	conjureCount = 1;
-	reagentId = 0;
-}
-
 RuneSpell::RuneSpell(LuaScriptInterface* _interface) :
 	Action(_interface)
 {
