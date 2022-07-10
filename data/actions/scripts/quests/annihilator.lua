@@ -26,7 +26,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		for i, targetPlayer in ipairs(players) do
 			Position(playerPosition[i]):sendMagicEffect(CONST_ME_POFF)
 			targetPlayer:teleportTo(newPosition[i], false)
-			targetPlayer:getPosition():sendMagicEffect(CONST_ME_ENERGYAREA)
+			targetPlayer:getPosition():sendMagicEffect(CONST_ME_ENERGYHIT)
 		end
 		item:transform(1946)
 	elseif item.itemid == 1946 then
