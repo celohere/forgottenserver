@@ -472,7 +472,9 @@ void Weapon::onUsedWeapon(Player* player, Item* item, Tile* destTile) const
 
 				}
 			}
-			Weapon::decrementItemCount(item);
+			if (!player->getTile()->hasFlag(TILESTATE_PVPZONE)) {
+				Weapon::decrementItemCount(item);
+			}
 		}
 		break;
 
