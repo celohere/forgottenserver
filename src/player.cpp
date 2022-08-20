@@ -1968,7 +1968,7 @@ void Player::death(Creature* _lastHitCreature)
 					loginPosition = getTemplePosition();
 
 					// Restart first items
-					addStorageValue(30017, 1);
+					addStorageValue(30055, 1);
 
 					// Restart items
 					for (int32_t slot = CONST_SLOT_FIRST; slot <= CONST_SLOT_LAST; slot++)
