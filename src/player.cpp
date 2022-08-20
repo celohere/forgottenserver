@@ -1863,9 +1863,7 @@ void Player::death(Creature* _lastHitCreature)
 		if (expLoss != 0) {
 			uint32_t oldLevel = level;
 
-			if (vocation->getId() == VOCATION_NONE || level > 7) {
 				experience -= expLoss;
-			}
 
 			while (level > 1 && experience < Player::getExpForLevel(level)) {
 				--level;
@@ -1933,6 +1931,56 @@ void Player::death(Creature* _lastHitCreature)
 				delete condition;
 			} else {
 				++it;
+			}
+		}
+
+		// Teleport newbies to newbie island
+		if (g_config.getBoolean(ConfigManager::TELEPORT_NEWBIES)) {
+			if (getVocationId() != VOCATION_NONE && level <= static_cast<uint32_t>(g_config.getNumber(ConfigManager::NEWBIE_LEVEL_THRESHOLD))) {
+				Town* newbieTown = g_game.map.towns.getTown(g_config.getNumber(ConfigManager::NEWBIE_TOWN));
+				if (newbieTown) {
+					// Restart stats
+					level = 1;
+					experience = 0;
+					levelPercent = 0;
+					capacity = 400;
+					health = 150;
+					healthMax = 150;
+					mana = 0;
+					manaMax = 0;
+					magLevel = 0;
+					magLevelPercent = 0;
+					manaSpent = 0;
+					setVocation(0);
+					
+					//Restart spells
+					learnedInstantSpellList.clear();
+
+					// Restart skills
+					for (uint8_t i = SKILL_FIRST; i <= SKILL_LAST; ++i) { //for each skill
+						skills[i].level = 10;
+						skills[i].tries = 0;
+						skills[i].percent = 0;
+					}
+
+					// Restart town
+					setTown(newbieTown);
+					loginPosition = getTemplePosition();
+
+					// Restart first items
+					addStorageValue(30017, 1);
+
+					// Restart items
+					for (int32_t slot = CONST_SLOT_FIRST; slot <= CONST_SLOT_LAST; slot++)
+					{
+						Item* item = inventory[slot];
+						if (item) {
+							g_game.internalRemoveItem(item, item->getItemCount());
+						}
+					}
+				} else {
+					std::cout << "[Warning - Player:death] Newbie teletransportation is enabled, newbie town does not exist." << std::endl;
+				}
 			}
 		}
 	} else {
