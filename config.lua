@@ -78,6 +78,12 @@ autoStackItems = true
 displayLootMessage = true
 summonsDropCorpse = false
 
+-- Character Rooking
+-- Level threshold is the level requirement to teleport players back to newbie town
+teleportNewbies = true
+newbieTownId = 6
+newbieLevelThreshold = 5
+
 -- Rates
 -- NOTE: rateExp is not used if you have enabled stages in data/XML/stages.xml
 rateExp = 250
