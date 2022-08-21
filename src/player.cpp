@@ -1945,7 +1945,7 @@ void Player::death(Creature* _lastHitCreature)
 					level = 1;
 					experience = 0;
 					levelPercent = 0;
-					capacity = 400;
+					capacity = 40000;
 					health = 150;
 					healthMax = 150;
 					mana = 0;
