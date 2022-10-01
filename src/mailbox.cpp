@@ -166,6 +166,8 @@ bool Mailbox::getReceiver(Item* item, std::string& name, uint32_t& depotId) cons
 		++curLine;
 	}
 
+        trimString(name);
+	
 	trimString(strTown);
 	Town* town = g_game.map.towns.getTown(strTown);
 	if (town) {
