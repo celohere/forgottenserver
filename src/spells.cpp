@@ -1205,7 +1205,8 @@ bool InstantSpell::HouseKick(const InstantSpell*, Creature* creature, const std:
 	}
 
 	House* house = getHouseFromPos(targetPlayer);
-	if (!house) {
+	House* owner = getHouseFromPos(player);
+	if (!house || !owner || (house->getId() != owner->getId())) {
 		g_game.addMagicEffect(player->getPosition(), CONST_ME_POFF);
 		player->sendCancelMessage(RETURNVALUE_NOTPOSSIBLE);
 		return false;
