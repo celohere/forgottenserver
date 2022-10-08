@@ -892,6 +892,7 @@ ConditionDamage::ConditionDamage(ConditionId_t _id, ConditionType_t _type, bool 
 	periodDamage = 0;
 	periodDamageTick = 0;
 	tickInterval = 2000;
+	initDamage = 0;
 }
 
 bool ConditionDamage::setParam(ConditionParam_t param, int32_t value)
