@@ -800,7 +800,6 @@ void Items::parseItemNode(const pugi::xml_node& itemNode, uint16_t id)
 				it.combatType = combatType;
 				it.conditionDamage.reset(conditionDamage);
 				uint32_t ticks = 0;
-				int32_t damage = 0;
 				int32_t start = 0;
 				int32_t count = 1;
 				int32_t initDamage = -1;
