@@ -892,6 +892,7 @@ ConditionDamage::ConditionDamage(ConditionId_t _id, ConditionType_t _type, bool 
 	periodDamage = 0;
 	periodDamageTick = 0;
 	tickInterval = 2000;
+	initDamage = 0;
 }
 
 bool ConditionDamage::setParam(ConditionParam_t param, int32_t value)
@@ -1066,15 +1067,15 @@ bool ConditionDamage::startCondition(Creature* creature)
 		return false;
 	}
 
+	if (!delayed) {
+		// delayed condition does no initial damage
+		if (!doDamage(creature, initDamage)) {
+			return false;
+		}
+	}
+	
 	if (!init()) {
 		return false;
-	}
-
-	if (!delayed) {
-		int32_t damage;
-		if (getNextDamage(damage)) {
-			return doDamage(creature, damage);
-		}
 	}
 	return true;
 }
@@ -1137,8 +1138,8 @@ bool ConditionDamage::getNextDamage(int32_t& damage)
 
 bool ConditionDamage::doDamage(Creature* creature, int32_t healthChange)
 {
-	if (creature->isSuppress(getType())) {
-		return true;
+	if (creature->isSuppress(getType()) || creature->isImmune(getType())) {
+		return false;
 	}
 
 	if (field && creature->getPlayer()) {
@@ -1161,6 +1162,7 @@ bool ConditionDamage::doDamage(Creature* creature, int32_t healthChange)
 	if (g_game.combatBlockHit(damage, attacker, creature, false, false, field)) {
 		return false;
 	}
+	
 	return g_game.combatChangeHealth(attacker, creature, damage);
 }
 
