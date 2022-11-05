@@ -3208,8 +3208,8 @@ void Game::checkCreatures(size_t index)
 		Creature* creature = *it;
 		if (creature->creatureCheck) {
 			if (creature->getHealth() > 0) {
-				creature->onThink(EVENT_CREATURE_THINK_INTERVAL);
 				creature->onAttacking(EVENT_CREATURE_THINK_INTERVAL);
+				creature->onThink(EVENT_CREATURE_THINK_INTERVAL);
 				creature->executeConditions(EVENT_CREATURE_THINK_INTERVAL);
 			} else {
 				creature->onDeath();
