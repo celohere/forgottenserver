@@ -74,6 +74,7 @@ maxMessageBuffer = 4
 emoteSpells = false
 classicEquipmentSlots = true
 classicAttackSpeed = true
+showPlayerLogInConsole = true
 autoStackItems = true
 displayLootMessage = true
 summonsDropCorpse = false
