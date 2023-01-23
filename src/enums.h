@@ -439,7 +439,7 @@ struct LightInfo {
 	uint8_t color;
 	LightInfo() {
 		level = 0;
-		color = 0;
+		color = 215;
 	}
 	LightInfo(uint8_t _level, uint8_t _color) {
 		level = _level;
