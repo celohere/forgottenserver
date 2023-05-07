@@ -3179,6 +3179,15 @@ void Player::onEndCondition(ConditionType_t type)
 		onIdleStatus();
 		pzLocked = false;
 		clearAttacked();
+		
+		for (const auto& playerAttackers : g_game.getPlayers()) {
+			Player* attacker = playerAttackers.second;
+			if (attacker->hasAttacked(this))
+			{
+				attacker->removeAttacked(this);
+				sendCreatureSkull(attacker);
+			}
+		}
 
 		if (getSkull() != SKULL_RED) {
 			setSkull(SKULL_NONE);
