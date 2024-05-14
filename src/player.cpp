@@ -3259,17 +3259,14 @@ void Player::onAttackedCreature(Creature* target)
 					pzLocked = true;
 					sendIcons();
 				}
-
 				if (!Combat::isInPvpZone(this, targetPlayer) && !isInWar(targetPlayer)) {
-					// Verify if attacked player has not previously been attacked by the player with the white skull
-					if (!targetPlayer->hasAttacked(this) && getSkull() != SKULL_WHITE) {
-						addAttacked(targetPlayer);
-						targetPlayer->sendCreatureSkull(this);
-					}
-
+					addAttacked(targetPlayer);
 					if (targetPlayer->getSkull() == SKULL_NONE && getSkull() == SKULL_NONE) {
 						setSkull(SKULL_WHITE);
 					}
+				}
+				if (getSkull() == SKULL_NONE) {
+					targetPlayer->sendCreatureSkull(this);
 				}
 			}
 		}
