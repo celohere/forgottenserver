@@ -241,14 +241,18 @@ bool IOLoginData::getPlayers(Playerson& playerson)
 	std::ostringstream query;
 	query << "SELECT `player_id`, `world_id` FROM `players_online`";
 	DBResult_ptr result = db->storeQuery(query.str());
+
+	// Return true if the query returned results from database
 	if (!result) {
-		return false;
+		//std::cout << "No players online." << std::endl;
+		return true;
 	}
 
 	do {
 		playerson.id.push_back(result->getNumber<uint32_t>("player_id"));
 		playerson.world.push_back(result->getNumber<uint16_t>("world_id"));
 	} while (result->next());
+
 	return true;
 }
 
