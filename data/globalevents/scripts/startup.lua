@@ -50,12 +50,10 @@ function onStartup()
     end
 
     -- Update 'servers' table
-	local resultId = db.storeQuery("SELECT * FROM `servers` WHERE `id` = " .. configManager.getNumber(configKeys.WORLD_ID))
+	local resultId = db.storeQuery("SELECT * FROM `servers` WHERE `world_id` = " .. configManager.getNumber(configKeys.WORLD_ID))
 	if resultId ~= false then
-		db.asyncQuery("UPDATE `servers` SET `name` = '" .. configManager.getString(configKeys.SERVER_NAME) .. "', `ip` = '" .. configManager.getString(configKeys.IP) .. "', `port` = " .. configManager.getNumber(configKeys.GAME_PORT) .. " WHERE `id` = " .. configManager.getNumber(configKeys.WORLD_ID))
+		db.asyncQuery("UPDATE `servers` SET `name` = '" .. configManager.getString(configKeys.SERVER_NAME) .. "', `ip` = '" .. configManager.getString(configKeys.IP) .. "', `port` = " .. configManager.getNumber(configKeys.GAME_PORT) .. " WHERE `world_id` = " .. configManager.getNumber(configKeys.WORLD_ID))
 	else
-		db.asyncQuery("INSERT INTO `servers` (`id`, `name`, `ip`, `port`, `world_id`) VALUES (" .. configManager.getNumber(configKeys.WORLD_ID) ..", '" .. configManager.getString(configKeys.SERVER_NAME) .. "', '" .. configManager.getString(configKeys.IP) .. "', " .. configManager.getNumber(configKeys.GAME_PORT) .. ", " .. configManager.getNumber(configKeys.WORLD_ID) ..")")
+		db.asyncQuery("INSERT INTO `servers` (`name`, `ip`, `port`, `world_id`) VALUES ('".. configManager.getString(configKeys.SERVER_NAME) .. "', '".. configManager.getString(configKeys.IP) .. "', ".. configManager.getNumber(configKeys.GAME_PORT) .. ", ".. configManager.getNumber(configKeys.WORLD_ID) .. ")")
 	end
 end
-
-
