@@ -1761,14 +1761,14 @@ BlockType_t Player::blockHit(Creature* attacker, CombatType_t combatType, int32_
 			}
 
 			const ItemType& it = Item::items[item->getID()];
-		if (!it.abilities) {
-			if (damage <= 0) {
-				damage = 0;
-				return BLOCK_ARMOR;
-			}
+			if (!it.abilities) {
+				if (damage <= 0) {
+					damage = 0;
+					return BLOCK_ARMOR;
+				}
 
-			continue;
-		}
+				continue;
+			}
 
 				const int16_t& absorbPercent = it.abilities->absorbPercent[combatTypeToIndex(combatType)];
 				if (absorbPercent != 0) {
