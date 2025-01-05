@@ -48,12 +48,24 @@ function onStartup()
         until not result.next(resultId)
         result.free(resultId)
     end
+	
+	-- Update 'servers' table
+	local worldId = configManager.getNumber(configKeys.WORLD_ID)
+	local serverName = configManager.getString(configKeys.SERVER_NAME)
+	local serverIp = configManager.getString(configKeys.IP)
+	local serverPort = configManager.getNumber(configKeys.GAME_PORT)
 
-    -- Update 'servers' table
-	local resultId = db.storeQuery("SELECT * FROM `servers` WHERE `world_id` = " .. configManager.getNumber(configKeys.WORLD_ID))
-	if resultId ~= false then
-		db.asyncQuery("UPDATE `servers` SET `name` = '" .. configManager.getString(configKeys.SERVER_NAME) .. "', `ip` = '" .. configManager.getString(configKeys.IP) .. "', `port` = " .. configManager.getNumber(configKeys.GAME_PORT) .. " WHERE `world_id` = " .. configManager.getNumber(configKeys.WORLD_ID))
+	local resultId = db.storeQuery("SELECT `id` FROM `servers` WHERE `world_id` = " .. worldId)
+
+	if resultId then
+		db.asyncQuery(string.format("UPDATE `servers` SET `name` = '%s', `ip` = '%s', `port` = %d WHERE `world_id` = %d",
+			serverName, serverIp, serverPort, worldId))
+		print("Server updated with success! world_id: " .. worldId)
 	else
-		db.asyncQuery("INSERT INTO `servers` (`name`, `ip`, `port`, `world_id`) VALUES ('".. configManager.getString(configKeys.SERVER_NAME) .. "', '".. configManager.getString(configKeys.IP) .. "', ".. configManager.getNumber(configKeys.GAME_PORT) .. ", ".. configManager.getNumber(configKeys.WORLD_ID) .. ")")
+		db.asyncQuery(string.format("INSERT INTO `servers` (`name`, `ip`, `port`, `world_id`) VALUES ('%s', '%s', %d, %d)",
+			serverName, serverIp, serverPort, worldId))
+		print("New server created! world_id: " .. worldId)
 	end
+
+
 end
