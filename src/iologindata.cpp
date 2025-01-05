@@ -234,6 +234,42 @@ void IOLoginData::updateOnlineStatus(uint32_t guid, bool login)
 	Database::getInstance()->executeQuery(query.str());
 }
 
+bool IOLoginData::getPlayersByAccount(uint32_t acc) {
+	Playerson playerson;
+
+	// Get all online characters
+	if (IOLoginData::getPlayers(playerson)) {
+		// Verifying account
+		//std::cout << "Checking if account " << acc << " has players online." << std::endl;
+
+		for (uint32_t playerId : playerson.id) {
+			// Get accountID from actual player
+			uint32_t accountId = IOLoginData::getPlayerAccountId(playerId);
+
+			// Log for cases when accountId is not valid
+			if (accountId == 0) {
+				std::cout << "Error: Player ID " << playerId << " has no valid account ID." << std::endl;
+				continue; // Ignore players with invalid IDs
+			}
+
+			// Detailed log for each verified player
+			//std::cout << "Player ID: " << playerId << ", Account ID: " << accountId << std::endl;
+
+			// verifying if Player belong to specified account
+			if (accountId == acc) {
+				//std::cout << "Account " << acc << " already has a player online (Player ID: " << playerId << ")." << std::endl;
+				return false; // Found another character from the same account online
+			}
+		}
+	} else {
+		std::cout << "Failed to fetch online players." << std::endl;
+	}
+
+	// No online players from account
+	//std::cout << "No players from account " << acc << " are currently online." << std::endl;
+	return true;
+}
+
 bool IOLoginData::getPlayers(Playerson& playerson)
 {
 	Database* db = Database::getInstance();
@@ -264,7 +300,7 @@ uint32_t IOLoginData::getPlayerAccountId(uint32_t playerId)
 	query << "SELECT `account_id` FROM `players` WHERE `id` = " << playerId;
 	DBResult_ptr result = db->storeQuery(query.str());
 	if (!result) {
-		return 0; // Retornar 0 para indicar erro
+		return 0;
 	}
 	return result->getNumber<uint32_t>("account_id");
 }

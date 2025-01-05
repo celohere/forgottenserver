@@ -520,42 +520,6 @@ ReturnValue Game::getPlayerByNameWildcard(const std::string& s, Player*& player)
 	return RETURNVALUE_NOERROR;
 }
 
-bool Game::getPlayerByAccount(uint32_t acc) {
-	Playerson playerson;
-
-	// Get all online characters
-	if (IOLoginData::getPlayers(playerson)) {
-		// Verifying account
-		//std::cout << "Checking if account " << acc << " has players online." << std::endl;
-
-		for (uint32_t playerId : playerson.id) {
-			// Get accountID from actual player
-			uint32_t accountId = IOLoginData::getPlayerAccountId(playerId);
-
-			// Log for cases when accountId is not valid
-			if (accountId == 0) {
-				std::cout << "Error: Player ID " << playerId << " has no valid account ID." << std::endl;
-				continue; // Ignore players with invalid IDs
-			}
-
-			// Detailed log for each verified player
-			//std::cout << "Player ID: " << playerId << ", Account ID: " << accountId << std::endl;
-
-			// verifying if Player belong to specified account
-			if (accountId == acc) {
-				//std::cout << "Account " << acc << " already has a player online (Player ID: " << playerId << ")." << std::endl;
-				return false; // Found another character from the same account online
-			}
-		}
-	} else {
-		std::cout << "Failed to fetch online players." << std::endl;
-	}
-
-	// No online players from account
-	//std::cout << "No players from account " << acc << " are currently online." << std::endl;
-	return true;
-}
-
 bool Game::internalPlaceCreature(Creature* creature, const Position& pos, bool extendedPos /*=false*/, bool forced /*= false*/)
 {
 	if (creature->getParent() != nullptr) {

@@ -185,13 +185,6 @@ class Game
 		  */
 		ReturnValue getPlayerByNameWildcard(const std::string& s, Player*& player);
 
-		/**
-		  * Returns a player based on an account number identifier
-		  * \param acc is the account identifier
-		  * \returns A Pointer to the player
-		  */
-		bool getPlayerByAccount(uint32_t acc);
-
 		/* Place Creature on the map without sending out events to the surrounding.
 		  * \param creature Creature to place on the map
 		  * \param pos The position to place the creature
