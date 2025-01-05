@@ -153,8 +153,7 @@ void MonsterType::createLoot(Container* corpse)
 				owner->sendChannelMessage("", ss.str(), TALKTYPE_CHANNEL_O, CHANNEL_LOOT);
 			}
 		}
-	}
-	else if (owner && g_config.getBoolean(ConfigManager::LOOT_MESSAGE)) {
+	} else if (owner && g_config.getBoolean(ConfigManager::LOOT_MESSAGE)) {
 		std::ostringstream ss;
 		ss << "Loot of " << nameDescription << ": nothing (due to low stamina)";
 
@@ -452,22 +451,19 @@ bool Monsters::deserializeSpell(const pugi::xml_node& node, spellBlock_t& sb, co
 				minDamage = pugi::cast<int32_t>(attr.value());
 				maxDamage = minDamage;
 				tickInterval = 5000;
-			}
-			else if ((attr = node.attribute("freeze"))) {
+			} else if ((attr = node.attribute("freeze"))) {
 				conditionType = CONDITION_FREEZING;
 
 				minDamage = pugi::cast<int32_t>(attr.value());
 				maxDamage = minDamage;
 				tickInterval = 8000;
-			}
-			else if ((attr = node.attribute("dazzle"))) {
+			} else if ((attr = node.attribute("dazzle"))) {
 				conditionType = CONDITION_DAZZLED;
 
 				minDamage = pugi::cast<int32_t>(attr.value());
 				maxDamage = minDamage;
 				tickInterval = 10000;
-			}
-			else if ((attr = node.attribute("curse"))) {
+			} else if ((attr = node.attribute("curse"))) {
 				conditionType = CONDITION_CURSED;
 
 				minDamage = pugi::cast<int32_t>(attr.value());

@@ -24,7 +24,7 @@ function onLogin(cid)
 	local pallyItems = {
 			2457, -- Stell Helmet
 			2489, -- Dark Armor
-		      2516, -- Dragon shield
+		    2516, -- Dragon shield
 			2389, -- Spear
 			2647, -- Plate Legs
 			2643, -- Leather boots

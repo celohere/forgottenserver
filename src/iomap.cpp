@@ -282,7 +282,7 @@ bool IOMap::loadMap(Map* map, const std::string& identifier)
 							Item* item = Item::CreateItem(propStream);
 							if (!item) {
 								std::ostringstream ss;
-								ss << "[x:" << x << ", y:" << y << ", z:" << z << "] Failed to create item.";
+								ss << "[x:" << x << ", y:" << y << ", z:" << z << "] Failed to create item " << item->getID() << '.';
 								setLastErrorString(ss.str());
 								return false;
 							}
@@ -338,7 +338,7 @@ bool IOMap::loadMap(Map* map, const std::string& identifier)
 					Item* item = Item::CreateItem(stream);
 					if (!item) {
 						std::ostringstream ss;
-						ss << "[x:" << x << ", y:" << y << ", z:" << z << "] Failed to create item.";
+						ss << "[x:" << x << ", y:" << y << ", z:" << z << "] Failed to create item " << item->getID() << '.';
 						setLastErrorString(ss.str());
 						return false;
 					}

@@ -78,6 +78,7 @@
 		<attribute key="duration" value="300" />
 		<attribute key="floorchange" value="down" />
 	</item>
+	<item fromid="393" toid="404" name="grass" />
 	<item id="405" name="wooden floor" />
 	<item id="406" name="white marble floor" />
 	<item id="407" name="black marble floor" />
@@ -185,30 +186,61 @@
 		<attribute key="decayTo" value="9059" />
 		<attribute key="duration" value="30" />
 	</item>
-	<item id="493" name="water">
+	<item fromid="490" toid="493" name="water">
 		<attribute key="type" value="trashholder" />
 		<attribute key="effect" value="bluebubble" />
 		<attribute key="allowpickupable" value="1" />
 	</item>
+	<item fromid="494" toid="505" name="sand" />
+	<item fromid="506" toid="517" name="dirt floor" />
+	<item fromid="518" toid="529" name="dirt" />
+	<item fromid="530" toid="541" name="grass" />
+	<item fromid="542" toid="553" name="dirt" />
+	<item fromid="554" toid="565" name="gravel" />
+	<item fromid="566" toid="589" name="grass" />
+	<item fromid="590" toid="597" name="sand" />
 	<item fromid="598" toid="601" name="lava">
 		<attribute key="type" value="trashholder" />
 		<attribute key="effect" value="fire" />
 		<attribute key="allowpickupable" value="1" />
 	</item>
-	<item id="670" name="snow" />
+	<item fromid="602" toid="605" name="swamp" />
+	<item fromid="606" toid="617" name="sand" />
+	<item fromid="618" toid="629" name="water">
+		<attribute key="type" value="trashholder" />
+		<attribute key="effect" value="bluebubble" />
+		<attribute key="allowpickupable" value="1" />
+	</item>
+	<item fromid="630" toid="637" name="sand" />
+	<item fromid="638" toid="657" name="grass" />
+	<item fromid="658" toid="670" name="snow" />
 	<item id="671" name="ice" />
+	<item fromid="672" toid="695" name="snow" />
+	<item fromid="696" toid="707" name="gravel" />
 	<item fromid="708" toid="711" name="tar">
 		<attribute key="type" value="trashholder" />
 		<attribute key="effect" value="poff" />
 		<attribute key="allowpickupable" value="1" />
 	</item>
+	<item fromid="712" toid="723" name="sand" />
 	<item id="724" name="cobbled pavement" />
+	<item fromid="725" toid="736" name="dirt" />
+	<item fromid="737" toid="764" name="grass" />
+	<item fromid="765" toid="776" name="sand" />
 	<item fromid="777" toid="790" name="sandstone" />
 	<item id="791" name="grass" />
+	<item fromid="792" toid="803" name="grass" />
 	<item id="804" name="dirt" />
+	<item id="805" name="grass" />
 	<item id="806" name="dirt" />
-	<item id="836" name="sand" />
+	<item fromid="807" toid="815" name="grass" />
+	<item fromid="816" toid="827" name="sand" />
+	<item fromid="828" toid="835" name="grass" />
+	<item fromid="836" toid="848" name="sand" />
+	<item fromid="849" toid="860" name="grass" />
+	<item fromid="861" toid="872" name="sand" />
 	<item fromid="873" toid="878" article="a" name="mountain" />
+	<item fromid="879" toid="890" name="mountain" />
 	<item fromid="891" toid="902" name="rocks" />
 	<item fromid="903" toid="913" article="a" name="stone wall" />
 	<item fromid="914" toid="917" article="a" name="stone archway" />
@@ -2124,7 +2156,7 @@
 		<attribute key="slotType" value="necklace" />
 	</item>
 	<item id="2139" article="an" name="ancient tiara">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="820" />
 		<attribute key="armor" value="0" />
 		<attribute key="slotType" value="head" />
 	</item>
@@ -2274,7 +2306,7 @@
 		<attribute key="slotType" value="necklace" />
 	</item>
 	<item id="2172" article="a" name="bronze amulet">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="500" />
 		<attribute key="slotType" value="necklace" />
 		<attribute key="charges" value="200" />
 		<attribute key="showcharges" value="1" />
@@ -2282,25 +2314,25 @@
 		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="2173" article="an" name="amulet of loss">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="420" />
 		<attribute key="slotType" value="necklace" />
 		<attribute key="charges" value="1" />
 	</item>
 	<item id="2174" article="a" name="strange symbol">
 		<attribute key="slotType" value="ammo" />
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="200" />
 	</item>
 	<item id="2175" article="a" name="spellbook">
 		<attribute key="description" value="It shows your spells and can also shield against attacks when worn." />
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="1800" />
 		<attribute key="defense" value="14" />
 		<attribute key="weaponType" value="shield" />
 	</item>
 	<item id="2176" article="an" name="orb">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="800" />
 	</item>
 	<item id="2177" article="a" name="life crystal">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="263" />
 	</item>
 	<item id="2178" article="a" name="mind stone">
 		<attribute key="weight" value="250" />
@@ -2322,7 +2354,7 @@
 		<attribute key="weight" value="1900" />
 		<attribute key="weaponType" value="wand" />
 		<attribute key="shootType" value="poison" />
-		<attribute key="range" value="3" />
+		<attribute key="range" value="4" />
 	</item>
 	<item id="2183" article="a" name="tempest rod">
 		<attribute key="description" value="It grants you the power of striking your foes with furious thunderstorms." />
@@ -2360,7 +2392,7 @@
 		<attribute key="weight" value="2300" />
 		<attribute key="weaponType" value="wand" />
 		<attribute key="shootType" value="poison" />
-		<attribute key="range" value="2" />
+		<attribute key="range" value="3" />
 	</item>
 	<item id="2189" article="a" name="wand of cosmic energy">
 		<attribute key="description" value="The energy of a radiant star is trapped inside its globe." />
@@ -3563,7 +3595,7 @@
 		<attribute key="weight" value="2300" />
 		<attribute key="weaponType" value="wand" />
 		<attribute key="slotType" value="two-handed" />
-           <attribute key="shootType" value="energy" />
+        <attribute key="shootType" value="energy" />
 		<attribute key="range" value="10" />
 	</item>
 	<item id="2434" article="a" name="dragon hammer">
@@ -4207,7 +4239,7 @@
 		<attribute key="weaponType" value="ammunition" />
 		<attribute key="ammoType" value="arrow" />
 		<attribute key="shootType" value="burstarrow" />
-		<attribute key="hitChance" value="100" />
+		<attribute key="maxHitChance" value="100" />
 	</item>
 	<item id="2547" article="a" name="power bolt">
 		<attribute key="weight" value="80" />
@@ -4576,92 +4608,92 @@
 		<attribute key="slotType" value="head" />
 	</item>
 	<item id="2666" name="meat">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="1300" />
 		<attribute key="showcount" value="0" />
 	</item>
 	<item id="2667" article="a" name="fish" plural="fish">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="52" />
 	</item>
 	<item id="2668" article="a" name="salmon">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="32" />
 		<attribute key="showcount" value="0" />
 	</item>
 	<item id="2669" article="a" name="northern pike">
 		<attribute key="weight" value="830" />
 	</item>
 	<item id="2670" name="shrimp">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="5" />
 		<attribute key="showcount" value="0" />
 	</item>
 	<item id="2671" name="ham">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="200" />
 		<attribute key="showcount" value="0" />
 	</item>
 	<item id="2672" name="dragon ham">
 		<attribute key="description" value="It still contains a small part of the power of a dragon." />
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="300" />
 		<attribute key="showcount" value="0" />
 	</item>
 	<item id="2673" article="a" name="pear">
 		<attribute key="weight" value="140" />
 	</item>
 	<item id="2674" article="a" name="red apple">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="15" />
 	</item>
 	<item id="2675" article="an" name="orange">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="11" />
 	</item>
 	<item id="2676" article="a" name="banana">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="18" />
 	</item>
 	<item id="2677" article="a" name="blueberry" plural="blueberries">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="20" />
 	</item>
 	<item id="2678" article="a" name="coconut">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="48" />
 	</item>
 	<item id="2679" article="a" name="cherry" plural="cherries">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="2" />
 	</item>
 	<item id="2680" article="a" name="strawberry" plural="strawberries">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="2" />
 	</item>
 	<item id="2681" name="grapes" plural="grapes">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="25" />
 		<attribute key="showcount" value="0" />
 	</item>
 	<item id="2682" article="a" name="melon">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="95" />
 	</item>
 	<item id="2683" article="a" name="pumpkin">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="135" />
 	</item>
 	<item id="2684" article="a" name="carrot">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="16" />
 	</item>
 	<item id="2685" article="a" name="tomato" plural="tomatoes">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="10" />
 	</item>
 	<item id="2686" article="a" name="corncob">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="10" />
 	</item>
 	<item id="2687" article="a" name="cookie">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="2" />
 	</item>
 	<item id="2688" article="a" name="candy cane">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="5" />
 	</item>
 	<item id="2689" name="bread">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="50" />
 	</item>
 	<item id="2690" article="a" name="roll">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="10" />
 	</item>
 	<item id="2691" name="brown bread">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="40" />
 	</item>
 	<item id="2692" name="flour">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="10" />
 	</item>
 	<item id="2693" article="a" name="lump of dough" plural="lumps of dough">
 		<attribute key="weight" value="100" />
@@ -4670,10 +4702,10 @@
 		<attribute key="weight" value="1250" />
 	</item>
 	<item id="2695" article="an" name="egg">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="3" />
 	</item>
 	<item id="2696" name="cheese">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="40" />
 	</item>
 	<item id="2697" article="a" name="snowy dead tree" />
 	<item id="2698" article="a" name="snowy fir tree" />
@@ -6739,6 +6771,7 @@
 	<item fromid="3158" toid="3165" article="a" name="large stone carving" />
 	<item fromid="3166" toid="3168" article="a" name="carved stone tile" />
 	<item id="3169" article="a" name="carved stone tile">
+		<attribute key="type" value="teleport" />
 	</item>
 	<item fromid="3170" toid="3172" article="a" name="carved stone tile" />
 	<item fromid="3173" toid="3181" name="ornamented floor" />
@@ -6890,8 +6923,18 @@
 	<item id="3552" article="an" name="open door">
 		<attribute key="type" value="door" />
 	</item>
+	<item fromid="3553" toid="3568" name="grass" />
 	<item fromid="3569" toid="3574" article="a" name="waterfall" />
-	<item fromid="3587" toid="3596" article="a" name="small boat" />
+	<item fromid="3575" toid="3586" name="grass" />
+	<item id="3587" article="a" name="small boat" />
+	<item fromid="3588" toid="3590" article="a" name="small boat">
+		<attribute key="type" value="teleport" />
+	</item>
+	<item fromid="3591" toid="3592" article="a" name="small boat" />
+	<item fromid="3593" toid="3595" article="a" name="small boat">
+		<attribute key="type" value="teleport" />
+	</item>
+	<item id="3596" article="a" name="small boat" />
 	<item fromid="3597" toid="3598" article="a" name="small sail" />
 	<item fromid="3599" toid="3600" article="a" name="paddle" />
 	<item fromid="3601" toid="3602" article="a" name="mast" />
@@ -7359,6 +7402,7 @@
 		<attribute key="attack" value="32" />
 		<attribute key="weaponType" value="distance" />
 		<attribute key="shootType" value="huntingspear" />
+		<attribute key="maxHitChance" value="80" />
 		<attribute key="range" value="3" />
 	</item>
 	<item id="3966" article="a" name="banana staff">
@@ -7962,12 +8006,14 @@
 	<item fromid="4394" toid="4402" article="a" name="red carpet" />
 	<item id="4403" article="a" name="mast" />
 	<item id="4404" article="a" name="bamboo lamp" />
-	<item fromid="4405" toid="4421" name="rock soil" />
+	<item fromid="4405" toid="4438" name="rock soil" />
+	<item fromid="4439" toid="4455" article="a" name="mountain" />
 	<item fromid="4456" toid="4467" name="rocks" />
 	<item fromid="4468" toid="4513" article="a" name="mountain" />
 	<item fromid="4514" toid="4525" name="rock soil" />
 	<item fromid="4526" toid="4553" name="grass" />
 	<item fromid="4554" toid="4566" name="gravel" />
+	<item fromid="4557" toid="4569" name="grass" />
 	<item fromid="4570" toid="4579" name="gravel" />
 	<item fromid="4580" toid="4594" name="mossy spots" />
 	<item id="4595" name="gravel" />
@@ -8259,6 +8305,7 @@
 	<item fromid="4998" toid="5001" article="a" name="hawser" />
 	<item id="5002" article="a" name="ship railing" />
 	<item fromid="5003" toid="5008" article="a" name="ship cabin wall" />
+	<item id="5009" name="metal wall" />
 	<item fromid="5010" toid="5011" article="a" name="white stone wall" />
 	<item fromid="5012" toid="5013" article="a" name="lava wall" />
 	<item id="5014" article="a" name="dead butterfly">
@@ -9158,6 +9205,7 @@
 	<item fromid="5750" toid="5754" article="an" name="earth pile" />
 	<item id="5755" article="a" name="turtle" />
 	<item id="5756" article="a" name="turtle">
+		<attribute key="type" value="teleport" />
 	</item>
 	<item fromid="5757" toid="5761" article="a" name="turtle" />
 	<item id="5762" article="a" name="dead quara constrictor">
@@ -12449,6 +12497,7 @@
 		<attribute key="hitChance" value="80" />
 		<attribute key="weaponType" value="distance" />
 		<attribute key="shootType" value="greenstar" />
+		<attribute key="maxHitChance" value="76" />
 		<attribute key="range" value="5" />
 	</item>
 	<item id="7367" article="an" name="enchanted spear">
@@ -12456,6 +12505,7 @@
 		<attribute key="attack" value="38" />
 		<attribute key="weaponType" value="distance" />
 		<attribute key="shootType" value="enchantedspear" />
+		<attribute key="maxHitChance" value="80" />
 		<attribute key="range" value="4" />
 	</item>
 	<item id="7368" article="an" name="assassin star">
@@ -12504,6 +12554,7 @@
 		<attribute key="attack" value="35" />
 		<attribute key="weaponType" value="distance" />
 		<attribute key="shootType" value="royalspear" />
+		<attribute key="maxHitChance" value="80" />
 		<attribute key="range" value="3" />
 	</item>
 	<item id="7379" name="brutetamer's staff">
@@ -13041,8 +13092,9 @@
 		<attribute key="type" value="magicfield" />
 		<attribute key="replaceable" value="0" />
 		<attribute key="field" value="fire">
-			<attribute key="damage" value="300" />
 		</attribute>
+	</item>
+	<item id="7474" toid="7475" name="sarcophagus" />
 	</item>
 	<item id="30001" name="water" />
 	<item id="30002" name="lifefluid" />

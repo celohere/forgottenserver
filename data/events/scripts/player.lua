@@ -112,6 +112,9 @@ local soulCondition = Condition(CONDITION_SOUL, CONDITIONID_DEFAULT)
 soulCondition:setTicks(4 * 60 * 1000)
 soulCondition:setParameter(CONDITION_PARAM_SOULGAIN, 1)
 
+local applyMultiplier = true
+local applyStaminaChange = true
+
 local function useStamina(player)
 	local staminaMinutes = player:getStamina()
 	if staminaMinutes == 0 then
@@ -143,6 +146,11 @@ function Player:onGainExperience(source, exp, rawExp)
 	if not source or source:isPlayer() then
 		return exp
 	end
+
+    -- Apply extra experience to Premium account
+    --if self:isPremium() then
+    --    exp = exp * 1
+    --end
 
 	-- Soul regeneration
 	local vocation = self:getVocation()

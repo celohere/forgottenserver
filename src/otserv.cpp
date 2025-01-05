@@ -35,6 +35,8 @@
 #include "databasemanager.h"
 #include "scheduler.h"
 #include "databasetasks.h"
+#include "iologindata.h"
+#include "account.h"
 
 DatabaseTasks g_databaseTasks;
 Dispatcher g_dispatcher;
@@ -47,6 +49,8 @@ ConfigManager g_config;
 Monsters g_monsters;
 Vocations g_vocations;
 RSA g_RSA;
+
+extern World world;
 
 std::mutex g_loaderLock;
 std::condition_variable g_loaderSignal;
@@ -82,7 +86,7 @@ int main(int argc, char* argv[])
 	g_loaderSignal.wait(g_loaderUniqueLock);
 
 	if (serviceManager.is_running()) {
-		std::cout << ">> " << g_config.getString(ConfigManager::SERVER_NAME) << " Server Online!" << std::endl << std::endl;
+		std::cout << "[" << g_game.getCurrentTime() << "] " << g_config.getString(ConfigManager::SERVER_NAME) << " Server Online!" << std::endl << std::endl;
 		serviceManager.run();
 	} else {
 		std::cout << ">> No services running. The server is NOT online." << std::endl;
@@ -170,7 +174,7 @@ void mainLoader(int, char*[], ServiceManager* services)
 	if (g_config.getBoolean(ConfigManager::OPTIMIZE_DATABASE) && !DatabaseManager::optimizeTables()) {
 		std::cout << "> No tables were optimized." << std::endl;
 	}
-	
+
 	//load groups
 	std::cout << ">> Loading groups" << std::endl;
 	if (!g_game.groups.load()) {
@@ -305,6 +309,15 @@ void mainLoader(int, char*[], ServiceManager* services)
 	IpNetMask.first = resolvedIp;
 	IpNetMask.second = 0;
 	serverIPs.push_back(IpNetMask);
+
+
+	// Load worlds
+	std::cout << ">> Loading worlds" << std::endl;
+	if (!IOLoginData::loadWorlds(world)) {
+		startupErrorMessage("Failed to load world data from database.");
+		return;
+	}
+	std::cout << ">> Worlds loaded successfully." << std::endl;
 
 #ifndef _WIN32
 	if (getuid() == 0 || geteuid() == 0) {

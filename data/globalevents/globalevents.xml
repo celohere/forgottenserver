@@ -5,7 +5,6 @@
     <globalevent name="raids" interval="15000" event="script" value="raid.lua"/>
     <globalevent interval="100000" name="GuildWar" script="guildwar.lua"/>
 
-
 	<!--
 	<globalevent name="timer_example" time="12:00:00" script="my_script.lua" />
 	-->

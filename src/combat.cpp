@@ -1,21 +1,21 @@
 /**
- * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License along
- * with this program; if not, write to the Free Software Foundation, Inc.,
- * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
- */
+* The Forgotten Server - a free and open-source MMORPG server emulator
+* Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+*
+* This program is free software; you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation; either version 2 of the License, or
+* (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License along
+* with this program; if not, write to the Free Software Foundation, Inc.,
+* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+*/
 
 #include "otpch.h"
 
@@ -1367,6 +1367,10 @@ void MagicField::onStepInField(Creature* creature)
 		return;
 	}
 
+	if (id == ITEM_POISONFIELD_PVP || id == ITEM_POISONFIELD_PERSISTENT || id == ITEM_POISONFIELD_NOPVP) {
+		g_game.addMagicEffect(creature->getPosition(), CONST_ME_GREEN_RINGS);
+	}
+
 	const ItemType& it = items[getID()];
 	if (it.conditionDamage) {
 		Condition* conditionCopy = it.conditionDamage->clone();
@@ -1396,6 +1400,33 @@ void MagicField::onStepInField(Creature* creature)
 			if (!harmfulField || (OTSYS_TIME() - createTime <= 5000) || creature->hasBeenAttacked(ownerId)) {
 				conditionCopy->setParam(CONDITION_PARAM_OWNER, ownerId);
 			}
+		}
+
+		auto combatType = conditionCopy->getType();
+		if (creature && creature->isImmune(combatType) && !creature->isInGhostMode()) {
+			uint8_t hitEffect = 0;
+			switch (combatType) {
+			case CONDITION_ENERGY:{
+				hitEffect = CONST_ME_BLOCKHIT;
+				break;
+			}
+			case CONDITION_FIRE: {
+				hitEffect = CONST_ME_HITBYFIRE;
+				hitEffect = CONST_ME_BLOCKHIT;
+				break;
+			}
+			case CONDITION_POISON: {
+				hitEffect = CONST_ME_GREEN_RINGS;
+				break;
+			}
+			default: {
+				hitEffect = CONST_ME_POFF;
+				break;
+			    }
+			}
+
+			g_game.addMagicEffect(getPosition(), hitEffect);
+			return;
 		}
 
 		creature->addCondition(conditionCopy);

@@ -26,6 +26,9 @@
 #include "creature.h"
 #include "monster.h"
 #include "game.h"
+#include <ctime>
+#include <iomanip>
+#include <sstream>
 #include "actions.h"
 #include "iologindata.h"
 #include "talkaction.h"
@@ -173,13 +176,21 @@ void Game::setGameState(GameState_t newState)
 	}
 }
 
+std::string Game::getCurrentTime() {
+	std::time_t now = std::time(nullptr);
+	std::tm* localTime = std::localtime(&now);
+	std::ostringstream oss;
+	oss << std::put_time(localTime, "%Y-%m-%d %H:%M:%S"); // Format: "YYYY-MM-DD HH:MM:SS"
+	return oss.str();
+}
+
 void Game::saveGameState()
 {
 	if (gameState == GAME_STATE_NORMAL) {
 		setGameState(GAME_STATE_MAINTAIN);
 	}
 
-	std::cout << "Saving server..." << std::endl;
+	std::cout << "[" << getCurrentTime() << "] " << "Saving server..." << std::endl;
 
 	for (const auto& it : players) {
 		it.second->loginPosition = it.second->getPosition();
@@ -189,6 +200,21 @@ void Game::saveGameState()
 	Map::save();
 	
         g_databaseTasks.flush();
+
+	if (gameState == GAME_STATE_MAINTAIN) {
+		setGameState(GAME_STATE_NORMAL);
+	}
+}
+
+void Game::saveGameStateHouses()
+{
+	if (gameState == GAME_STATE_NORMAL) {
+		setGameState(GAME_STATE_MAINTAIN);
+	}
+
+	std::cout << "Saving houses..." << std::endl;
+
+	Map::save();
 
 	if (gameState == GAME_STATE_MAINTAIN) {
 		setGameState(GAME_STATE_NORMAL);
@@ -494,12 +520,33 @@ ReturnValue Game::getPlayerByNameWildcard(const std::string& s, Player*& player)
 	return RETURNVALUE_NOERROR;
 }
 
-Player* Game::getPlayerByAccount(uint32_t acc)
-{
-	for (const auto& it : players) {
-		if (it.second->getAccount() == acc) {
-			return it.second;
+bool Game::getPlayerByAccount(uint32_t acc) {
+	Playerson playerson;
+
+	// Get all online characters
+	if (IOLoginData::getPlayers(playerson)) {
+		// Verifying account
+		//std::cout << "Checking if account " << acc << " has players online." << std::endl;
+
+		for (uint32_t playerId : playerson.id) {
+			uint32_t accountId = IOLoginData::getPlayerAccountId(playerId);
+
+			if (accountId == 0) {
+				std::cout << "Error: Player ID " << playerId << " has no valid account ID." << std::endl;
+				continue;
+			}
+
+			// Detailed log for each verified player
+			//std::cout << "Player ID: " << playerId << ", Account ID: " << accountId << std::endl;
+
+			// verifying if Player belong to specified account
+			if (accountId == acc) {
+				//std::cout << "Account " << acc << " already has a player online (Player ID: " << playerId << ")." << std::endl;
+				return false; // Found another character from the same account online
+			}
 		}
+	} else {
+		std::cout << "Failed to fetch online players." << std::endl;
 	}
 	return nullptr;
 }
@@ -745,6 +792,7 @@ void Game::playerMoveCreature(Player* player, Creature* movingCreature, const Po
 
 ReturnValue Game::internalMoveCreature(Creature* creature, Direction direction, uint32_t flags /*= 0*/)
 {
+	creature->setLastPosition(creature->getPosition());
 	const Position& currentPos = creature->getPosition();
 	Position destPos = getNextPosition(direction, currentPos);
 	Player* player = creature->getPlayer();
@@ -1798,6 +1846,11 @@ void Game::playerOpenPrivateChannel(uint32_t playerId, std::string& receiver)
 
 	if (!IOLoginData::formatPlayerName(receiver)) {
 		player->sendCancelMessage("A player with this name does not exist.");
+		return;
+	}
+
+	if (player->getName() == receiver) {
+		player->sendCancelMessage("You cannot set up a private message channel with yourself.");
 		return;
 	}
 
@@ -3914,6 +3967,9 @@ void Game::resetCommandTag()
 
 void Game::shutdown()
 {
+	std::cout << "Saving game..." << std::flush;
+	saveGameState();
+
 	std::cout << "Shutting down..." << std::flush;
 
 	g_scheduler.shutdown();
@@ -4027,7 +4083,7 @@ void Game::updatePremium(Account& account)
 	}
 
 	if (save && !IOLoginData::saveAccount(account)) {
-		std::cout << "> ERROR: Failed to save account: " << account.name << "!" << std::endl;
+		std::cout << "[" << g_game.getCurrentTime() << "] " << "> ERROR: Failed to save account: " << account.name << "!" << std::endl;
 	}
 }
 
@@ -4035,21 +4091,29 @@ void Game::loadMotdNum()
 {
 	Database* db = Database::getInstance();
 
-	DBResult_ptr result = db->storeQuery("SELECT `value` FROM `server_config` WHERE `config` = 'motd_num'");
+	std::ostringstream query;
+	query << "SELECT `value` FROM `" << g_config.getString(ConfigManager::MYSQL_WORLD_DB) << "`.`server_config` WHERE `config` = 'motd_num'";
+	DBResult_ptr result = db->storeQuery(query.str());
 	if (result) {
 		motdNum = result->getNumber<uint32_t>("value");
 	} else {
-		db->executeQuery("INSERT INTO `server_config` (`config`, `value`) VALUES ('motd_num', '0')");
+		std::ostringstream insertmotdnum;
+		insertmotdnum << "INSERT INTO `" << g_config.getString(ConfigManager::MYSQL_WORLD_DB) << "`.`server_config` (`config`, `value`) VALUES ('motd_num', '0')";
+		db->executeQuery(insertmotdnum.str());
 	}
 
-	result = db->storeQuery("SELECT `value` FROM `server_config` WHERE `config` = 'motd_hash'");
+	std::ostringstream motdhash;
+	motdhash << "SELECT `value` FROM `" << g_config.getString(ConfigManager::MYSQL_WORLD_DB) << "`.`server_config` WHERE `config` = 'motd_hash'";
+	result = db->storeQuery(motdhash.str());
 	if (result) {
 		motdHash = result->getString("value");
 		if (motdHash != transformToSHA1(g_config.getString(ConfigManager::MOTD))) {
 			++motdNum;
 		}
 	} else {
-		db->executeQuery("INSERT INTO `server_config` (`config`, `value`) VALUES ('motd_hash', '')");
+		std::ostringstream insertmotdhash;
+		insertmotdhash << "INSERT INTO `" << g_config.getString(ConfigManager::MYSQL_WORLD_DB) << "`.`server_config` (`config`, `value`) VALUES ('motd_hash', '')";
+		db->executeQuery(insertmotdhash.str());
 	}
 }
 
@@ -4058,11 +4122,11 @@ void Game::saveMotdNum() const
 	Database* db = Database::getInstance();
 
 	std::ostringstream query;
-	query << "UPDATE `server_config` SET `value` = '" << motdNum << "' WHERE `config` = 'motd_num'";
+	query << "UPDATE `" << g_config.getString(ConfigManager::MYSQL_WORLD_DB) << "`.`server_config` SET `value` = '" << motdNum << "' WHERE `config` = 'motd_num'";
 	db->executeQuery(query.str());
 
 	query.str(std::string());
-	query << "UPDATE `server_config` SET `value` = '" << transformToSHA1(g_config.getString(ConfigManager::MOTD)) << "' WHERE `config` = 'motd_hash'";
+	query << "UPDATE `" << g_config.getString(ConfigManager::MYSQL_WORLD_DB) << "`.`server_config` SET `value` = '" << transformToSHA1(g_config.getString(ConfigManager::MOTD)) << "' WHERE `config` = 'motd_hash'";
 	db->executeQuery(query.str());
 }
 
@@ -4085,7 +4149,7 @@ void Game::updatePlayersRecord() const
 	Database* db = Database::getInstance();
 
 	std::ostringstream query;
-	query << "UPDATE `server_config` SET `value` = '" << playersRecord << "' WHERE `config` = 'players_record'";
+	query << "UPDATE `" << g_config.getString(ConfigManager::MYSQL_WORLD_DB) << "`.`server_config` SET `value` = '" << playersRecord << "' WHERE `config` = 'players_record'";
 	db->executeQuery(query.str());
 }
 
@@ -4093,11 +4157,15 @@ void Game::loadPlayersRecord()
 {
 	Database* db = Database::getInstance();
 
-	DBResult_ptr result = db->storeQuery("SELECT `value` FROM `server_config` WHERE `config` = 'players_record'");
+	std::ostringstream insertrecord;
+	insertrecord << "SELECT `value` FROM `" << g_config.getString(ConfigManager::MYSQL_WORLD_DB) << "`.`server_config` WHERE `config` = 'players_record'";
+	DBResult_ptr result = db->storeQuery(insertrecord.str());
 	if (result) {
 		playersRecord = result->getNumber<uint32_t>("value");
 	} else {
-		db->executeQuery("INSERT INTO `server_config` (`config`, `value`) VALUES ('players_record', '0')");
+		std::ostringstream resetrecord;
+		resetrecord << "INSERT INTO `" << g_config.getString(ConfigManager::MYSQL_WORLD_DB) << "`.`server_config` (`config`, `value`) VALUES ('players_record', '0')";
+		db->executeQuery(resetrecord.str());
 	}
 }
 

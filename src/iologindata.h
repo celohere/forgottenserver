@@ -33,11 +33,16 @@ class IOLoginData
 		static bool saveAccount(const Account& acc);
 
 		static bool loginserverAuthentication(uint32_t accountName, const std::string& password, Account& account);
+		static bool loadWorlds(World& world);
+		static uint32_t getWorldId(uint32_t playerId);
+		static std::string getWorldNameById(uint16_t worldId);
 		static uint32_t gameworldAuthentication(uint32_t accountName, const std::string& password, std::string& characterName);
 
 		static AccountType_t getAccountType(uint32_t accountId);
 		static void setAccountType(uint32_t accountId, AccountType_t accountType);
 		static void updateOnlineStatus(uint32_t guid, bool login);
+		static bool getPlayers(Playerson& playerson);
+		static uint32_t getPlayerAccountId(uint32_t playerId);
 		static bool preloadPlayer(Player* player, const std::string& name);
 
 		static bool loadPlayerById(Player* player, uint32_t id);

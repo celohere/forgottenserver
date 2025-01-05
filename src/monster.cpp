@@ -485,7 +485,7 @@ void Monster::onCreatureLeave(Creature* creature)
 					g_game.addMagicEffect(this->getPosition(), CONST_ME_POFF);
 				}
 			}
-			} else {
+		} else {
 				//Take random steps and only use defense abilities (e.g. heal) until its master comes back
 				isMasterInRange = false;
 			}

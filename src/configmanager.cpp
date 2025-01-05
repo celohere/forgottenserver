@@ -63,13 +63,14 @@ bool ConfigManager::load()
 		string[MYSQL_USER] = getGlobalString(L, "mysqlUser", "forgottenserver");
 		string[MYSQL_PASS] = getGlobalString(L, "mysqlPass", "");
 		string[MYSQL_DB] = getGlobalString(L, "mysqlDatabase", "forgottenserver");
+		string[MYSQL_WORLD_DB] = getGlobalString(L, "mysqlWorldDatabase", "forgottenserver");
 		string[MYSQL_SOCK] = getGlobalString(L, "mysqlSock", "");
 
+		integer[WORLD_ID] = getGlobalNumber(L, "worldID", 1);
 		integer[SQL_PORT] = getGlobalNumber(L, "mysqlPort", 3306);
 		integer[GAME_PORT] = getGlobalNumber(L, "gameProtocolPort", 7172);
 		integer[LOGIN_PORT] = getGlobalNumber(L, "loginProtocolPort", 7171);
 		integer[STATUS_PORT] = getGlobalNumber(L, "statusProtocolPort", 7171);
-
 	}
 
 	boolean[ALLOW_CHANGEOUTFIT] = getGlobalBoolean(L, "allowChangeOutfit", true);
@@ -81,6 +82,7 @@ bool ConfigManager::load()
 	boolean[FREE_PREMIUM] = getGlobalBoolean(L, "freePremium", false);
 	boolean[REPLACE_KICK_ON_LOGIN] = getGlobalBoolean(L, "replaceKickOnLogin", true);
 	boolean[ALLOW_CLONES] = getGlobalBoolean(L, "allowClones", false);
+	boolean[SKULL_PLAYER_SUMMON] = getGlobalBoolean(L, "skullPlayerSummon", false);
 	boolean[TELEPORT_SUMMONS] = getGlobalBoolean(L, "teleportSummons", false);
 	boolean[EMOTE_SPELLS] = getGlobalBoolean(L, "emoteSpells", false);
 	boolean[STAMINA_SYSTEM] = getGlobalBoolean(L, "staminaSystem", true);
@@ -203,7 +205,7 @@ bool ConfigManager::getGlobalBoolean(lua_State* L, const char* identifier, const
 	lua_getglobal(L, identifier);
 	if (!lua_isboolean(L, -1)) {
 		if (!lua_isstring(L, -1)) {
-		        lua_pop(L, 1);
+		    lua_pop(L, 1);
 			return _default;
 		}
 

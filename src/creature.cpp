@@ -854,6 +854,7 @@ BlockType_t Creature::blockHit(Creature* attacker, CombatType_t combatType, int3
 		blockType = BLOCK_IMMUNITY;
 	} else if (checkDefense || checkArmor) {
 		bool hasDefense = false;
+
 		if (blockCount > 0) {
 			--blockCount;
 			hasDefense = true;
@@ -894,7 +895,6 @@ BlockType_t Creature::blockHit(Creature* attacker, CombatType_t combatType, int3
 	}
 
 	onAttacked();
-	
 	return blockType;
 }
 

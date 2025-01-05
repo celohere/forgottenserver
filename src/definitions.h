@@ -41,7 +41,6 @@
 #include <vector>
 #include <cstdint>
 
-
 #ifdef _WIN32
 #ifndef NOMINMAX
 #define NOMINMAX

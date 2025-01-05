@@ -121,5 +121,6 @@ function playerExists(name)
 	return false
 end
 
-
-
+function titleCase(str)
+    return (str:gsub("^%l", string.upper))
+end

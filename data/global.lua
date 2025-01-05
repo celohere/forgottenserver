@@ -1,6 +1,6 @@
 dofile('data/lib/lib.lua')
  
-saveDelay = 10 * 60 * 1000 -- 10 minutes for each save.
+saveDelay = 480 * 60 * 1000 -- 8 hours for each save.
 storageValue = 2342
  
 if (getGlobalStorageValue(storageValue) == -1) then
@@ -77,12 +77,9 @@ function isInRange(pos, fromPos, toPos)
 	return pos.x >= fromPos.x and pos.y >= fromPos.y and pos.z >= fromPos.z and pos.x <= toPos.x and pos.y <= toPos.y and pos.z <= toPos.z
 end
 
-
 function doComparePositions(pos1, pos2)
     return (pos1.x == pos2.x and pos1.y == pos2.y and pos1.z == pos2.z)
 end
-
-
 
 function getFormattedWorldTime()
 	local worldTime = getWorldTime()

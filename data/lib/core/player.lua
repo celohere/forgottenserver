@@ -62,6 +62,23 @@ function Player.sendCancelMessage(self, message)
 	return self:sendTextMessage(MESSAGE_STATUS_SMALL, message)
 end
 
+function Player.setExhaustion(self, value, time)
+    self:setStorageValue(value, time + os.time())
+end
+
+function Player.getExhaustion(self, value)
+    local storage = self:getStorageValue(value)
+    if not storage or storage <= os.time() then
+        return 0
+    end
+
+    return storage - os.time()
+end
+
+function Player.hasExhaustion(self, value)
+    return self:getExhaustion(value) > 0
+end
+
 function Player.isUsingOtClient(self)
 	return self:getClient().os >= CLIENTOS_OTCLIENT_LINUX
 end
@@ -95,4 +112,24 @@ function Player.addManaSpent(...)
 	local ret = addManaSpentFunc(...)
 	APPLY_SKILL_MULTIPLIER = true
 	return ret
+end
+
+function Player.isDruid(self)
+	return isInArray({2, 6}, self:getVocation():getId())
+end
+
+function Player.isKnight(self)
+	return isInArray({4, 8}, self:getVocation():getId())
+end
+
+function Player.isPaladin(self)
+	return isInArray({3, 7}, self:getVocation():getId())
+end
+
+function Player.isMage(self)
+	return isInArray({1, 2, 5, 6}, self:getVocation():getId())
+end
+
+function Player.isSorcerer(self)
+	return isInArray({1, 5}, self:getVocation():getId())
 end

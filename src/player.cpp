@@ -122,6 +122,8 @@ Player::Player(ProtocolGame_ptr p) :
 	accountType = ACCOUNT_TYPE_NORMAL;
 	premiumDays = 0;
 
+	worldId = 0;
+
 	idleTime = 0;
 
 	skullTicks = 0;
@@ -859,7 +861,6 @@ void Player::sendPing()
 		g_game.removeCreature(this, true);
 		g_game.addMagicEffect(getPosition(), CONST_ME_POFF);
 	}
-
 }
 
 Item* Player::getWriteItem(uint32_t& _windowTextId, uint16_t& _maxWriteLen)
@@ -1040,7 +1041,8 @@ void Player::onCreatureAppear(Creature* creature, bool isLogin)
 		Game::updatePremium(account);
 
 		if (g_config.getBoolean(ConfigManager::PLAYER_CONSOLE_LOGS)) {
-			std::cout << name << " has logged in." << std::endl;
+			std::cout << "[" << g_game.getCurrentTime() << "] " << name << " has logged in." << std::endl;
+			//std::cout << name << " has logged in." << std::endl;
 		}
 
 		if (guild) {
@@ -1142,7 +1144,8 @@ void Player::onRemoveCreature(Creature* creature, bool isLogout)
 		g_chat->removeUserFromAllChannels(*this);
 
 		if (g_config.getBoolean(ConfigManager::PLAYER_CONSOLE_LOGS)) {
-			std::cout << getName() << " has logged out." << std::endl;
+			std::cout << "[" << g_game.getCurrentTime() << "] " << getName() << " has logged out." << std::endl;
+			//std::cout << getName() << " has logged out." << std::endl;
 		}
 
 		if (guild) {
@@ -1558,7 +1561,7 @@ void Player::addExperience(Creature* source, uint64_t exp, bool sendText/* = fal
 	}
 
 	if (prevLevel != level) {
-		
+
 		updateBaseSpeed();
 		setBaseSpeed(getBaseSpeed());
 
@@ -1742,7 +1745,11 @@ BlockType_t Player::blockHit(Creature* attacker, CombatType_t combatType, int32_
 		return blockType;
 	}
 
-	if (damage > 0) {
+	if (damage <= 0) {
+		damage = 0;
+		return BLOCK_ARMOR;
+	}
+
 		for (int32_t slot = CONST_SLOT_FIRST; slot <= CONST_SLOT_LAST; ++slot) {
 			if (!isItemAbilityEnabled(static_cast<slots_t>(slot))) {
 				continue;
@@ -1754,10 +1761,18 @@ BlockType_t Player::blockHit(Creature* attacker, CombatType_t combatType, int32_
 			}
 
 			const ItemType& it = Item::items[item->getID()];
-			if (it.abilities) {
+		if (!it.abilities) {
+			if (damage <= 0) {
+				damage = 0;
+				return BLOCK_ARMOR;
+			}
+
+			continue;
+		}
+
 				const int16_t& absorbPercent = it.abilities->absorbPercent[combatTypeToIndex(combatType)];
 				if (absorbPercent != 0) {
-					damage -= std::ceil(damage * (absorbPercent / 100.));
+					damage -= std::round(damage * (absorbPercent / 100.));
 
 					uint16_t charges = item->getCharges();
 					if (charges != 0) {
@@ -1768,7 +1783,7 @@ BlockType_t Player::blockHit(Creature* attacker, CombatType_t combatType, int32_
 				if (field) {
 					const int16_t& fieldAbsorbPercent = it.abilities->fieldAbsorbPercent[combatTypeToIndex(combatType)];
 					if (fieldAbsorbPercent != 0) {
-						damage -= std::ceil(damage * (fieldAbsorbPercent / 100.));
+						damage -= std::round(damage * (fieldAbsorbPercent / 100.));
 
 						uint16_t charges = item->getCharges();
 						if (charges != 0) {
@@ -1777,13 +1792,11 @@ BlockType_t Player::blockHit(Creature* attacker, CombatType_t combatType, int32_
 					}
 				}
 			}
-		}
 
 		if (damage <= 0) {
 			damage = 0;
 			blockType = BLOCK_ARMOR;
 		}
-	}
 	return blockType;
 }
 
@@ -2978,6 +2991,19 @@ bool Player::setAttackedCreature(Creature* creature)
 	}
 
 	if (creature) {
+		if (Monster* monster = creature->getMonster()) {
+			if (monster->isSummon()) {
+				if (Player* owner = monster->getMaster()->getPlayer()) {
+					if (g_config.getBoolean(ConfigManager::SKULL_PLAYER_SUMMON) && owner != const_cast<Player*>(this)) {
+						addAttacked(owner);
+						addInFightTicks(true);
+						if (skull == SKULL_NONE && owner->skull == SKULL_NONE) {
+							setSkull(SKULL_WHITE);
+						}
+					}
+				}
+			}
+		}
 		g_dispatcher.addTask(createTask(std::bind(&Game::checkCreatureAttack, &g_game, getID())));
 	}
 	return true;
@@ -3037,8 +3063,7 @@ void Player::doAttacking(uint32_t)
 		SchedulerTask* task = createSchedulerTask(std::max<uint32_t>(SCHEDULER_MINTICKS, delay), std::bind(&Game::checkCreatureAttack, &g_game, getID()));
 		if (!classicSpeed) {
 			setNextActionTask(task);
-		}
-		else {
+		} else {
 			g_scheduler.addEvent(task);
 		}
 

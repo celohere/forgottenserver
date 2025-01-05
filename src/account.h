@@ -24,6 +24,9 @@
 
 struct Account {
 	std::vector<std::string> characters;
+	std::vector<uint16_t> world;
+	uint16_t gamePort; // New member to save gamePort
+
 	uint32_t name;
 	time_t lastDay;
 	uint32_t id;
@@ -33,4 +36,29 @@ struct Account {
 	Account() : lastDay(0), id(0), premiumDays(0), accountType(ACCOUNT_TYPE_NORMAL) {}
 };
 
+struct World {
+	std::vector<uint16_t> id;
+	std::vector<std::string> name;
+	std::vector<uint32_t> ip;
+	std::vector<uint16_t> port;
+	std::vector<uint16_t> world_id;
+
+	// Default costructor
+	World() {}
+
+	// Constructor with initialization list
+	World(std::initializer_list<uint16_t> idList,
+		std::initializer_list<std::string> nameList,
+		std::initializer_list<uint32_t> ipList,
+		std::initializer_list<uint16_t> portList,
+		std::initializer_list<uint16_t> world_idList)
+		: id(idList), name(nameList), ip(ipList), port(portList), world_id(world_idList) {}
+};
+
+struct Playerson {
+	std::vector<uint32_t> id;
+	std::vector<uint16_t> world;
+
+	Playerson() : id(), world() {}
+};
 #endif

@@ -95,8 +95,13 @@ void ProtocolGame::login(const std::string& name, uint32_t accountId, OperatingS
 			return;
 		}
 
-		if (g_config.getBoolean(ConfigManager::ONE_PLAYER_ON_ACCOUNT) && player->getAccountType() < ACCOUNT_TYPE_GAMEMASTER && g_game.getPlayerByAccount(player->getAccount())) {
+		if (g_config.getBoolean(ConfigManager::ONE_PLAYER_ON_ACCOUNT) && player->getAccountType() < ACCOUNT_TYPE_GAMEMASTER && !g_game.getPlayerByAccount(player->getAccount())) {
 			disconnectClient("You may only login with one character\nof your account at the same time.");
+			return;
+		}
+
+		if (player->getWorldId() != g_config.getNumber(ConfigManager::WORLD_ID)) {
+			disconnectClient("Incorrect world, please try relogin.");
 			return;
 		}
 
@@ -335,10 +340,7 @@ void ProtocolGame::onRecvFirstMessage(NetworkMessage& msg)
 	g_dispatcher.addTask(createTask(std::bind(&ProtocolGame::login, getThis(), characterName, accountId, operatingSystem)));
 }
 
-void ProtocolGame::onConnect()
-{
-	//
-}
+void ProtocolGame::onConnect() {}
 
 void ProtocolGame::disconnectClient(const std::string& message) const
 {

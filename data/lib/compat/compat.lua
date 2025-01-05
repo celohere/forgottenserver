@@ -643,6 +643,7 @@ function isCorpse(uid) local i = Item(uid) return i ~= nil and ItemType(i:getId(
 
 isItemMoveable = isItemMovable
 isMoveable = isMovable
+getItemNameById = getItemName
 
 function getItemName(itemId) return ItemType(itemId):getName() end
 function getItemWeight(itemId, ...) return ItemType(itemId):getWeight(...) / 100 end
@@ -835,13 +836,6 @@ end
 
 function queryTileAddThing(thing, position, ...) local t = Tile(position) return t ~= nil and t:queryAdd(thing, ...) or false end
 
-
-
-
-
-
-
-
 function doTeleportThing(uid, dest, pushMovement)
 	if type(uid) == "userdata" then
 		if uid:isCreature() then
@@ -899,6 +893,7 @@ function getThingfromPos(pos)
 	end
 
 	local thing
+	local stackpos = pos.stackpos or 0
 	if stackpos == STACKPOS_TOP_MOVEABLE_ITEM_OR_CREATURE then
 		thing = tile:getTopCreature()
 		if thing == nil then
@@ -912,7 +907,7 @@ function getThingfromPos(pos)
 	elseif stackpos == STACKPOS_TOP_CREATURE then
 		thing = tile:getTopCreature()
 	else
-		thing = tile:getThing(pos.stackpos)
+        thing = tile:getThing(stackpos)
 	end
 	return pushThing(thing)
 end
@@ -1028,6 +1023,20 @@ function Guild.addMember(self, player)
 end
 function Guild.removeMember(self, player)
 	return player:getGuild() == self and player:setGuild(nil)
+end
+
+function doTileAddItemEx(pos, uid, flags)
+	local tile = Tile(pos)
+	if not tile then
+		return false
+	end
+
+	local item = Item(uid)
+	if item then
+		return tile:addItemEx(item, flags)
+	end
+
+	return false
 end
 
 function isInArray(array, value) return table.contains(array, value) end

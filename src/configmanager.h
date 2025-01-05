@@ -54,6 +54,7 @@ class ConfigManager
 			REMOVE_WEAPON_AMMO,
 			STOP_ATTACK_AT_EXIT,
 			SUMMONS_DROP_CORPSE,
+			SKULL_PLAYER_SUMMON,
 			
 			LAST_BOOLEAN_CONFIG /* this must be the last one */
 		};
@@ -74,6 +75,7 @@ class ConfigManager
 			MYSQL_USER,
 			MYSQL_PASS,
 			MYSQL_DB,
+			MYSQL_WORLD_DB,
 			MYSQL_SOCK,
 			DEFAULT_PRIORITY,
 			MAP_AUTHOR,
@@ -109,6 +111,7 @@ class ConfigManager
 			STAIRHOP_DELAY,
 			EXP_FROM_PLAYERS_LEVEL_RANGE,
 			MAX_PACKETS_PER_SECOND,
+			WORLD_ID,
 
 			LAST_INTEGER_CONFIG /* this must be the last one */
 		};

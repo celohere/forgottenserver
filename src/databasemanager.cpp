@@ -57,7 +57,11 @@ bool DatabaseManager::tableExists(const std::string& tableName)
 	Database* db = Database::getInstance();
 
 	std::ostringstream query;
-	query << "SELECT `TABLE_NAME` FROM `information_schema`.`tables` WHERE `TABLE_SCHEMA` = " << db->escapeString(g_config.getString(ConfigManager::MYSQL_DB)) << " AND `TABLE_NAME` = " << db->escapeString(tableName) << " LIMIT 1";
+	if (tableName == "server_config") {
+		query << "SELECT `TABLE_NAME` FROM `information_schema`.`tables` WHERE `TABLE_SCHEMA` = " << db->escapeString(g_config.getString(ConfigManager::MYSQL_WORLD_DB)) << " AND `TABLE_NAME` = " << db->escapeString(tableName) << " LIMIT 1";
+	} else {
+		query << "SELECT `TABLE_NAME` FROM `information_schema`.`tables` WHERE `TABLE_SCHEMA` = " << db->escapeString(g_config.getString(ConfigManager::MYSQL_DB)) << " AND `TABLE_NAME` = " << db->escapeString(tableName) << " LIMIT 1";
+	}
 	return db->storeQuery(query.str()).get() != nullptr;
 }
 
@@ -73,8 +77,12 @@ int32_t DatabaseManager::getDatabaseVersion()
 {
 	if (!tableExists("server_config")) {
 		Database* db = Database::getInstance();
-		db->executeQuery("CREATE TABLE `server_config` (`config` VARCHAR(50) NOT NULL, `value` VARCHAR(256) NOT NULL DEFAULT '', UNIQUE(`config`)) ENGINE = InnoDB");
-		db->executeQuery("INSERT INTO `server_config` VALUES ('db_version', 0)");
+		std::ostringstream createconfig;
+		createconfig << "CREATE TABLE  `" << g_config.getString(ConfigManager::MYSQL_WORLD_DB) << "`.`server_config` (`config` VARCHAR(50) NOT NULL, `value` VARCHAR(256) NOT NULL DEFAULT '', UNIQUE(`config`)) ENGINE = InnoDB";
+		db->executeQuery(createconfig.str());
+		std::ostringstream insertversion;
+		insertversion << "INSERT INTO `" << g_config.getString(ConfigManager::MYSQL_WORLD_DB) << "`.`server_config` VALUES ('db_version', 0)";
+		db->executeQuery(insertversion.str());
 		return 0;
 	}
 
@@ -144,7 +152,7 @@ bool DatabaseManager::getDatabaseConfig(const std::string& config, int32_t& valu
 {
 	Database* db = Database::getInstance();
 	std::ostringstream query;
-	query << "SELECT `value` FROM `server_config` WHERE `config` = " << db->escapeString(config);
+	query << "SELECT `value` FROM `" << g_config.getString(ConfigManager::MYSQL_WORLD_DB) << "`.`server_config` WHERE `config` = " << db->escapeString(config);
 
 	DBResult_ptr result = db->storeQuery(query.str());
 	if (!result) {
@@ -163,9 +171,9 @@ void DatabaseManager::registerDatabaseConfig(const std::string& config, int32_t 
 	int32_t tmp;
 
 	if (!getDatabaseConfig(config, tmp)) {
-		query << "INSERT INTO `server_config` VALUES (" << db->escapeString(config) << ", '" << value << "')";
+		query << "INSERT INTO `" << g_config.getString(ConfigManager::MYSQL_WORLD_DB) << "`.`server_config` VALUES (" << db->escapeString(config) << ", '" << value << "')";
 	} else {
-		query << "UPDATE `server_config` SET `value` = '" << value << "' WHERE `config` = " << db->escapeString(config);
+		query << "UPDATE `" << g_config.getString(ConfigManager::MYSQL_WORLD_DB) << "`.`server_config` SET `value` = '" << value << "' WHERE `config` = " << db->escapeString(config);
 	}
 
 	db->executeQuery(query.str());

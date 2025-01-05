@@ -29,10 +29,31 @@
 #include "ban.h"
 #include <iomanip>
 #include "game.h"
+#include "account.h"
 
 extern ConfigManager g_config;
 extern IPList serverIPs;
 extern Game g_game;
+World world;
+
+void initializeWorldsFromDatabase() {
+	std::cout << "Initializing worlds from database..." << std::endl;
+
+	if (!IOLoginData::loadWorlds(world)) {
+		std::cerr << "Failed to load world data from the database." << std::endl;
+	}
+	else {
+		std::cout << "World data loaded successfully." << std::endl;
+
+		// Log from loaded data
+		for (size_t i = 0; i < world.id.size(); ++i) {
+			std::cout << "World ID: " << world.world_id[i]
+				<< ", Name: " << world.name[i]
+				<< ", IP: " << world.ip[i]
+				<< ", Port: " << world.port[i] << std::endl;
+		}
+	}
+}
 
 void ProtocolLogin::disconnectClient(const std::string& message)
 {
@@ -47,15 +68,7 @@ void ProtocolLogin::disconnectClient(const std::string& message)
 
 void ProtocolLogin::getCharacterList(uint32_t accountName, const std::string& password)
 {
-	uint32_t serverIp = serverIPs[0].first;
-	for (uint32_t i = 0; i < serverIPs.size(); i++) {
-		if (getConnection()) {
-			if ((serverIPs[i].first & serverIPs[i].second) == (getConnection()->getIP() & serverIPs[i].second)) {
-				serverIp = serverIPs[i].first;
-				break;
-			}
-		}
-	}
+	//std::cout << "Getting character list..." << std::endl;
 
 	Account account;
 	if (!IOLoginData::loginserverAuthentication(accountName, password, account)) {
@@ -64,12 +77,12 @@ void ProtocolLogin::getCharacterList(uint32_t accountName, const std::string& pa
 	}
 
 	auto output = OutputMessagePool::getOutputMessage();
-	//Update premium days
+	// Update premium days
 	Game::updatePremium(account);
 
 	const std::string& motd = g_config.getString(ConfigManager::MOTD);
 	if (!motd.empty()) {
-		//Add MOTD
+		// Add MOTD
 		output->addByte(0x14);
 
 		std::ostringstream ss;
@@ -77,28 +90,62 @@ void ProtocolLogin::getCharacterList(uint32_t accountName, const std::string& pa
 		output->addString(ss.str());
 	}
 
-	//Add char list
+	// Add char list
 	output->addByte(0x64);
 
 	uint8_t size = std::min<size_t>(std::numeric_limits<uint8_t>::max(), account.characters.size());
 	output->addByte(size);
+
+	//std::cout << "Character list:" << std::endl;
 	for (uint8_t i = 0; i < size; i++) {
+		//int count = i + 1;
+		//std::cout << "Character " << count << ": " << account.characters[i] << std::endl;
+
+		// Getting world name from database
+		std::string worldName = IOLoginData::getWorldNameById(account.world[i]); // Pass only the world ID
+
+		if (worldName.empty()) {
+			std::cerr << "Failed to get world name for character " << i << std::endl;
+			worldName = "Unknown";
+		}
+
+		//std::cout << "World Name: " << worldName << std::endl;
+
+		// Determining player IP and port based on world ID
+		uint32_t playerIp = 0;
+		uint16_t playerPort = 0;
+
+		auto it = std::find(world.world_id.begin(), world.world_id.end(), account.world[i]);
+		if (it != world.world_id.end()) {
+			size_t index = std::distance(world.world_id.begin(), it);
+			playerIp = world.ip[index];
+			playerPort = world.port[index];
+		} else {
+			std::cerr << "World ID not found: " << account.world[i] << std::endl;
+		}
+
+		//std::cout << "Player IP: " << playerIp << ", Port: " << playerPort << std::endl;
+
 		output->addString(account.characters[i]);
-		output->addString(g_config.getString(ConfigManager::SERVER_NAME));
-		output->add<uint32_t>(serverIp);
-		output->add<uint16_t>(g_config.getNumber(ConfigManager::GAME_PORT));
+		output->addString(worldName); // World name instead of server name
+		output->add<uint32_t>(playerIp);
+		output->add<uint16_t>(playerPort);
 	}
 
-	//Add premium days
+	// Add premium days
 	if (g_config.getBoolean(ConfigManager::FREE_PREMIUM)) {
-		output->add<uint16_t>(0xFFFF); //client displays free premium
+		output->add<uint16_t>(0xFFFF); // Client displays free premium
 	} else {
 		output->add<uint16_t>(account.premiumDays);
 	}
 
+	//std::cout << "Sending character list to client..." << std::endl;
+
 	send(output);
 
 	disconnect();
+
+	//std::cout << "Character list sent successfully." << std::endl;
 }
 
 void ProtocolLogin::onRecvFirstMessage(NetworkMessage& msg)

@@ -359,6 +359,12 @@ class Player final : public Creature, public Cylinder
 		AccountType_t getAccountType() const {
 			return accountType;
 		}
+		uint16_t getWorldId() const {
+			return worldId;
+		}
+
+		uint16_t playerPort;
+
 		uint32_t getLevel() const {
 			return level;
 		}
@@ -1057,7 +1063,6 @@ class Player final : public Creature, public Cylinder
 		Item* inventory[CONST_SLOT_LAST + 1];
 		Item* writeItem;
 		House* editHouse;
-		Npc* shopOwner;
 		Party* party;
 		Player* tradePartner;
 		ProtocolGame_ptr client;
@@ -1099,6 +1104,7 @@ class Player final : public Creature, public Cylinder
 		uint16_t staminaMinutes;
 		uint16_t maxWriteLen;
 		int16_t lastDepotId;
+		int16_t worldId;
 
 		uint8_t soul;
 		uint8_t blessings;
@@ -1122,6 +1128,15 @@ class Player final : public Creature, public Cylinder
 		bool inventoryAbilities[CONST_SLOT_LAST + 1];
 
 		static uint32_t playerAutoID;
+
+		// Methods to access and define player port
+		void setPlayerPort(uint16_t port) {
+			playerPort = port;
+		}
+
+		uint16_t getPlayerPort() const {
+			return playerPort;
+		}
 
 		void updateItemsLight(bool internal = false);
 		int32_t getStepSpeed() const final {

@@ -2,8 +2,8 @@
 <talkactions>
 	<!-- commands -->
 	<!-- Gamemasters -->
-        <talkaction words="/attr" separator=" " script="attributes.lua" />
-        <talkaction words="/save" separator=" " script="save.lua" />
+	<talkaction words="/attr" separator=" " script="attributes.lua" />
+	<talkaction words="/save" separator=" " script="save.lua" />
 	<talkaction words="/ban" separator=" " script="ban.lua" />
 	<talkaction words="/ipban" separator=" " script="ipban.lua" />
 	<talkaction words="/unban" separator=" " script="unban.lua" />
@@ -49,10 +49,7 @@
     <talkaction words="!mana" script="expmana.lua"/>
 	<talkaction words="!share" script="partyShareExp.lua"/>
 	<talkaction words="/share" script="partyShareExp.lua"/>
-
-      
-
-
+	
 	<!-- test talkactions -->
 	<talkaction words="!z" separator=" " script="magiceffect.lua" />
 	<talkaction words="!x" separator=" " script="animationeffect.lua" />

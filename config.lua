@@ -55,10 +55,12 @@ mapName = "test"
 mapAuthor = "Yurez"
 
 -- MySQL
+worldID = "1"
 mysqlHost = "127.0.0.1"
 mysqlUser = "root"
-mysqlPass = "1111111"
-mysqlDatabase = "yourdatabase"
+mysqlPass = ""
+mysqlDatabase = "tfs-multi-world"
+mysqlWorldDatabase = "multi-world"
 mysqlPort = 3306
 mysqlSock = ""
 

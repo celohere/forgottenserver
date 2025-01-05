@@ -422,7 +422,7 @@ bool ConditionAttributes::startCondition(Creature* creature)
 	if (!Condition::startCondition(creature)) {
 		return false;
 	}
-	
+
 	creature->setUseDefense(!disableDefense);
 
 	if (Player* player = creature->getPlayer()) {
