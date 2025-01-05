@@ -36,25 +36,6 @@ extern IPList serverIPs;
 extern Game g_game;
 World world;
 
-void initializeWorldsFromDatabase() {
-	std::cout << "Initializing worlds from database..." << std::endl;
-
-	if (!IOLoginData::loadWorlds(world)) {
-		std::cerr << "Failed to load world data from the database." << std::endl;
-	}
-	else {
-		std::cout << "World data loaded successfully." << std::endl;
-
-		// Log from loaded data
-		for (size_t i = 0; i < world.id.size(); ++i) {
-			std::cout << "World ID: " << world.world_id[i]
-				<< ", Name: " << world.name[i]
-				<< ", IP: " << world.ip[i]
-				<< ", Port: " << world.port[i] << std::endl;
-		}
-	}
-}
-
 void ProtocolLogin::disconnectClient(const std::string& message)
 {
 	auto output = OutputMessagePool::getOutputMessage();
