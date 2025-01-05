@@ -2,7 +2,6 @@ function Container.isContainer(self)
 	return true
 end
 
-
 function Container.getItemsById(self, itemId)
     local list = {}
     for index = 0, (self:getSize() - 1) do
