@@ -758,6 +758,8 @@ class Player final : public Creature, public Cylinder
 			}
 		}
 
+		uint32_t getItemCountInBackpacks(uint16_t itemId, int32_t subType = -1) const;
+
 		//inventory
 		void sendInventoryItem(slots_t slot, const Item* item) {
 			if (client) {

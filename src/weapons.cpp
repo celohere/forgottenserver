@@ -428,10 +428,10 @@ void Weapon::onUsedWeapon(Player* player, Item* item, Tile* destTile) const
 		}
 	}
 
- 	if (!player->hasFlag(PlayerFlag_HasNoExhaustion) && exhaustion > 0) {
+	if (!player->hasFlag(PlayerFlag_HasNoExhaustion) && exhaustion > 0) {
 		player->addWeaponExhaust(exhaustion);
 	}
-	
+
 	uint32_t manaCost = getManaCost(player);
 	if (manaCost != 0) {
 		player->addManaSpent(manaCost);
@@ -443,42 +443,21 @@ void Weapon::onUsedWeapon(Player* player, Item* item, Tile* destTile) const
 	}
 
 	if (breakChance != 0 && uniform_random(1, 100) <= breakChance) {
+		ammoReload(player, item);  // Recharge distance weapon
 		Weapon::decrementItemCount(item);
-		return;
 	}
 
 	switch (action) {
-	        case WEAPONACTION_REMOVECOUNT:
+		case WEAPONACTION_REMOVECOUNT:
 		if (g_config.getBoolean(ConfigManager::REMOVE_WEAPON_AMMO)) {
-			uint32_t count = item->getItemCount();
-			if (count - 1 == 0)
-			{
-				uint32_t playerCount = player->getItemTypeCount(item->getID(), -1);
-				playerCount--;
-				if (playerCount > 0)
-				{
-					int32_t removeCount = std::max<int32_t>(1, std::min<int32_t>(100, playerCount));
-					bool test = player->removeItemOfType(item->getID(), removeCount, -1, true);
-					if (test)
-					{
-						g_game.transformItem(item, item->getID(), removeCount);
-						std::ostringstream ss;
-
-						ss << "Your " << item->getPluralName() << " were charged.";
-
-						player->sendTextMessage(MESSAGE_STATUS_SMALL, ss.str());
-						break;
-					}
-
-				}
-			}
+			ammoReload(player, item); // Recharge ammo
 			if (!player->getTile()->hasFlag(TILESTATE_PVPZONE)) {
 				Weapon::decrementItemCount(item);
 			}
 		}
 		break;
 
-	        case WEAPONACTION_REMOVECHARGE: {
+		case WEAPONACTION_REMOVECHARGE: {
 			uint16_t charges = item->getCharges();
 			if (charges != 0) {
 				g_game.transformItem(item, item->getID(), charges - 1);
@@ -492,6 +471,36 @@ void Weapon::onUsedWeapon(Player* player, Item* item, Tile* destTile) const
 
 		default:
 			break;
+	}
+}
+
+void Weapon::ammoReload(Player* player, Item* item) const {
+	uint32_t count = item->getItemCount();
+
+	if (count - 1 == 0) {
+		uint32_t playerCount = player->getItemCountInBackpacks(item->getID(), -1);
+
+		if (playerCount > 0) {
+			int32_t removeCount = std::max<int32_t>(1, std::min<int32_t>(100, playerCount));
+
+			bool test = player->removeItemOfType(item->getID(), removeCount, -1, true);
+
+			if (test) {
+				g_game.transformItem(item, item->getID(), removeCount + 1);
+				// Added +1 to account for the Ammunition or Throwing Weapons already equipped in the ammo slot and hand.
+				// The getItemTypeCount function includes the ammo slot and hands in its count, 
+				// so this adjustment ensures the correct number of items are transformed.
+				std::ostringstream ss;
+
+				ss << "Your " << item->getPluralName() << " have been recharged.";
+				player->sendTextMessage(MESSAGE_STATUS_SMALL, ss.str());
+			}
+		} else {
+			std::ostringstream ss;
+
+			ss << "There are not enough " << item->getPluralName() << " in your backpack to reload.";
+			player->sendTextMessage(MESSAGE_STATUS_SMALL, ss.str());
+		}
 	}
 }
 

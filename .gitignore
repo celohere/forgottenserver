@@ -222,3 +222,10 @@ src/protocollogin.cpp.bak
 src/spells.cpp.bak
 src/weapons.cpp.bak
 vc14/theforgottenserver.VC.db
+src/connection.cpp
+src/connection.h
+src/creature.cpp
+src/player.cpp
+src/player.h
+src/weapons.cpp
+src/weapons.h

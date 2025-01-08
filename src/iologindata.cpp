@@ -100,7 +100,7 @@ bool IOLoginData::loadWorlds(World& world)
 	// Verify if the query failed
 	if (!result) {
 		std::cerr << "> No worlds found in the database or query failed." << std::endl;
-		return false; // Return false if there's no resuls
+		return false;
 	}
 
 	std::cout << "> Worlds successfully loaded." << std::endl;
@@ -111,25 +111,30 @@ bool IOLoginData::loadWorlds(World& world)
 		std::string ipStr = result->getString("ip");
 		uint16_t port = result->getNumber<uint16_t>("port");
 		uint16_t world_id = result->getNumber<uint16_t>("world_id");
+
+		// Loop to search for duplicated world id's
+		auto it = std::find(world.world_id.begin(), world.world_id.end(), world_id);
+		if (it != world.world_id.end()) {
+			std::cerr << "Duplicate world_id detected in database: " << world_id << std::endl;
+			continue;
+		}
+
 		// IP conversion from string to uint32_t with byte order inversion
 		uint32_t ip = 0;
 		int a, b, c, d;
 		char dot;
 
-		// Using stringstream to convert IP
 		std::stringstream ss(ipStr);
-		if (ss >> a >> dot >> b >> dot >> c >> dot >> d) {
-			ip = (d << 24) | (c << 16) | (b << 8) | a;
+		if (!(ss >> a >> dot >> b >> dot >> c >> dot >> d)) {
+			std::cerr << "Invalid IP format: " << ipStr << " for world ID " << world_id << std::endl;
+			continue;
 		}
-		else {
-			std::cerr << "Invalid IP format: " << ipStr << std::endl;
-			return false;
-		}
+
+		ip = (d << 24) | (c << 16) | (b << 8) | a;
 
 		std::cout << "> Loaded World - ID: " << id
 			<< ", Name: " << name
 			<< ", IP: " << ipStr
-			//<< ", IP: " << ip //Converted IP from string to uint32_t
 			<< ", Port: " << port
 			<< ", World ID: " << world_id << std::endl;
 

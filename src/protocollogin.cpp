@@ -57,6 +57,16 @@ void ProtocolLogin::getCharacterList(uint32_t accountName, const std::string& pa
 		return;
 	}
 
+	uint32_t serverIp = serverIPs[0].first;
+	for (uint32_t i = 0; i < serverIPs.size(); i++) {
+		if (getConnection()) {
+			if ((serverIPs[i].first & serverIPs[i].second) == (getConnection()->getIP() & serverIPs[i].second)) {
+				serverIp = serverIPs[i].first;
+				break;
+			}
+		}
+	}
+
 	auto output = OutputMessagePool::getOutputMessage();
 	// Update premium days
 	Game::updatePremium(account);
@@ -77,38 +87,30 @@ void ProtocolLogin::getCharacterList(uint32_t accountName, const std::string& pa
 	uint8_t size = std::min<size_t>(std::numeric_limits<uint8_t>::max(), account.characters.size());
 	output->addByte(size);
 
-	//std::cout << "Character list:" << std::endl;
 	for (uint8_t i = 0; i < size; i++) {
-		//int count = i + 1;
-		//std::cout << "Character " << count << ": " << account.characters[i] << std::endl;
-
-		// Getting world name from database
-		std::string worldName = IOLoginData::getWorldNameById(account.world[i]); // Pass only the world ID
+		std::string worldName = IOLoginData::getWorldNameById(account.world[i]);
 
 		if (worldName.empty()) {
 			std::cerr << "Failed to get world name for character " << i << std::endl;
 			worldName = "Unknown";
 		}
 
-		//std::cout << "World Name: " << worldName << std::endl;
-
 		// Determining player IP and port based on world ID
-		uint32_t playerIp = 0;
-		uint16_t playerPort = 0;
+		uint32_t playerIp = serverIp;
+		uint16_t playerPort = g_config.getNumber(ConfigManager::GAME_PORT);
 
 		auto it = std::find(world.world_id.begin(), world.world_id.end(), account.world[i]);
 		if (it != world.world_id.end()) {
 			size_t index = std::distance(world.world_id.begin(), it);
 			playerIp = world.ip[index];
 			playerPort = world.port[index];
-		} else {
+		}
+		else {
 			std::cerr << "World ID not found: " << account.world[i] << std::endl;
 		}
 
-		//std::cout << "Player IP: " << playerIp << ", Port: " << playerPort << std::endl;
-
 		output->addString(account.characters[i]);
-		output->addString(worldName); // World name instead of server name
+		output->addString(worldName);
 		output->add<uint32_t>(playerIp);
 		output->add<uint16_t>(playerPort);
 	}
@@ -116,11 +118,10 @@ void ProtocolLogin::getCharacterList(uint32_t accountName, const std::string& pa
 	// Add premium days
 	if (g_config.getBoolean(ConfigManager::FREE_PREMIUM)) {
 		output->add<uint16_t>(0xFFFF); // Client displays free premium
-	} else {
+	}
+	else {
 		output->add<uint16_t>(account.premiumDays);
 	}
-
-	//std::cout << "Sending character list to client..." << std::endl;
 
 	send(output);
 

@@ -86,6 +86,7 @@ class Connection : public std::enable_shared_from_this<Connection>
 			receivedFirst = false;
 			packetsSent = 0;
 			timeConnected = time(nullptr);
+			std::cout << "[Connection] Connection opened at " << std::ctime(&timeConnected) << std::endl;
 		}
 		~Connection();
 

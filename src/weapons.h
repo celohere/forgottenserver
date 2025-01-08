@@ -64,6 +64,13 @@ class Weapon : public Event
 	public:
 		explicit Weapon(LuaScriptInterface* _interface);
 
+		/**
+		* @brief Handles the reloading of ammo for distance weapons, transferring items from the player's backpack to the weapon slot.
+		* @param player The player using the ammo or distance weapon.
+		* @param item The ammo or distance weapon item being used.
+		*/
+		void ammoReload(Player* player, Item* item) const;
+
 		bool configureEvent(const pugi::xml_node& node) override;
 		bool loadFunction(const pugi::xml_attribute&) final {
 			return true;

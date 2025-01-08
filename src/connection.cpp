@@ -63,6 +63,8 @@ void ConnectionManager::closeAll()
 
 void Connection::close(bool force)
 {
+	std::cout << "Closing connection with IP: " << getIP() << " | Force close: " << force << std::endl;
+
 	//any thread
 	ConnectionManager::getInstance().releaseConnection(shared_from_this());
 
@@ -82,6 +84,7 @@ void Connection::close(bool force)
 	} else {
 		//will be closed by the destructor or onWriteOperation
 	}
+	std::cout << "[Connection] Connection closed." << std::endl;
 }
 
 void Connection::closeSocket()
@@ -99,9 +102,10 @@ void Connection::closeSocket()
 	}
 }
 
-Connection::~Connection()
-{
+Connection::~Connection() {
 	closeSocket();
+	std::time_t timeClosed = std::time(nullptr);
+	std::cout << "[Connection] Connection closed at " << std::ctime(&timeClosed) << std::endl;
 }
 
 void Connection::accept(Protocol_ptr protocol)
@@ -176,6 +180,7 @@ void Connection::parsePacket(const boost::system::error_code& error)
 	readTimer.cancel();
 
 	if (error) {
+		std::cout << "[Network error - Connection::parsePacket] Error occurred: " << error.message() << std::endl;
 		close(FORCE_CLOSE);
 	}
 
@@ -260,6 +265,7 @@ uint32_t Connection::getIP()
 		return 0;
 	}
 
+	std::cout << "Getting IP address: " << endpoint.address().to_string() << std::endl;
 	return htonl(endpoint.address().to_v4().to_ulong());
 }
 
@@ -282,14 +288,16 @@ void Connection::onWriteOperation(const boost::system::error_code& error)
 	}
 }
 
-void Connection::handleTimeout(ConnectionWeak_ptr connectionWeak, const boost::system::error_code& error)
-{
+void Connection::handleTimeout(ConnectionWeak_ptr connectionWeak, const boost::system::error_code& error) {
 	if (error == boost::asio::error::operation_aborted) {
-		//The timer has been manually cancelled
 		return;
 	}
 
 	if (auto connection = connectionWeak.lock()) {
+		std::cout << "[Timeout] Timeout occurred for connection with IP: " << connection->getIP() << std::endl;
 		connection->close(FORCE_CLOSE);
+	}
+	else {
+		std::cout << "[Timeout] Connection object no longer exists." << std::endl;
 	}
 }
