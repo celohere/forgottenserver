@@ -2784,16 +2784,13 @@ uint32_t Player::getItemCountInBackpacks(uint16_t itemId, int32_t subType /*= -1
 {
 	uint32_t count = 0;
 
-	// Percorre cada slot de inventário do jogador
 	for (int32_t i = CONST_SLOT_FIRST; i <= CONST_SLOT_LAST; i++) {
 		Item* item = inventory[i];
 		if (!item) {
-			continue; // Se não houver item no slot, pula para o próximo
+			continue;
 		}
 
-		// Verifica se o item está dentro de um container (mochila, por exemplo)
 		if (Container* container = item->getContainer()) {
-			// Apenas conta os itens dentro das mochilas ou containers
 			for (ContainerIterator it = container->iterator(); it.hasNext(); it.advance()) {
 				if ((*it)->getID() == itemId) {
 					count += Item::countByType(*it, subType);

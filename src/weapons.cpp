@@ -489,7 +489,7 @@ void Weapon::ammoReload(Player* player, Item* item) const {
 				g_game.transformItem(item, item->getID(), removeCount + 1);
 				// Added +1 to account for the Ammunition or Throwing Weapons already equipped in the ammo slot and hand.
 				// The getItemTypeCount function includes the ammo slot and hands in its count, 
-				// so this adjustment ensures the correct number of items are transformed.
+				// So this adjustment ensures that the correct number of items is transformed.
 				std::ostringstream ss;
 
 				ss << "Your " << item->getPluralName() << " have been recharged.";
