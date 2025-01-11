@@ -104,8 +104,7 @@ void ProtocolLogin::getCharacterList(uint32_t accountName, const std::string& pa
 			size_t index = std::distance(world.world_id.begin(), it);
 			playerIp = world.ip[index];
 			playerPort = world.port[index];
-		}
-		else {
+		} else {
 			std::cerr << "World ID not found: " << account.world[i] << std::endl;
 		}
 
@@ -118,8 +117,7 @@ void ProtocolLogin::getCharacterList(uint32_t accountName, const std::string& pa
 	// Add premium days
 	if (g_config.getBoolean(ConfigManager::FREE_PREMIUM)) {
 		output->add<uint16_t>(0xFFFF); // Client displays free premium
-	}
-	else {
+	} else {
 		output->add<uint16_t>(account.premiumDays);
 	}
 
