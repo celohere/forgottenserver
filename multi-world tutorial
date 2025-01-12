@@ -1,0 +1,87 @@
+												Configuring the Multi_World System in The Forgotten Server
+
+
+This tutorial explains how to set up multiple worlds using The Forgotten Server. The system uses a central database (schema.sql) that contains shared tables across all servers, differentiated by the world_id field,
+and an individual database (server.sql) for each world to store world-specific data such as houses, house lists, tile stores, and server configuration. Each world is treated as a separate server instance.
+
+Step 1: Setting Up Directories for Each World
+Create a separate copy of the server directory for each world. For example:
+
+/server-world1/config.lua
+/server-world2/config.lua
+Each directory will contain the server files and its own config.lua file.
+
+
+#Step 2: Configuring config.lua for each World
+Edit the config.lua file in each server directory to reflect the specific configurations for each world.
+
+Here is an example of how the config.lua should look:
+
+config.lua Example
+-- Connection Config
+-- NOTE: maxPlayers set to 0 means no limit
+ip = "127.0.0.2"  -- Replace with your server's IP address
+bindOnlyGlobalAddress = false
+loginProtocolPort = 7171  -- Do NOT change this; it is shared by all worlds
+gameProtocolPort = 7172   -- Each world needs a unique game port, e.g. world1: 7172, world2: 7173...
+statusProtocolPort = 7171
+maxPlayers = 100
+motd = "Welcome to Forgotten Server."
+onePlayerOnlinePerAccount = true
+allowClones = false
+teleportSummons = false
+serverName = "Forgotten World 1"
+statusTimeout = 50000
+replaceKickOnLogin = true
+maxPacketsPerSecond = 100
+
+-- MySQL Config
+worldID = "1"  -- Each world must have a unique worldID
+mysqlHost = "127.0.0.1"
+mysqlUser = "root"
+mysqlPass = ""
+mysqlDatabase = "tfs-multi-world"  -- Central database shared by all worlds (schema.sql)
+mysqlWorldDatabase = "world1-db"   -- Individual database for this world (server.sql)
+mysqlPort = 3306
+mysqlSock = ""
+
+For World 2, the configuration would look similar, with some changes:
+
+gameProtocolPort: 7173 (or another available port)
+worldID: 2
+mysqlWorldDatabase: world2-db
+Repeat the process for additional worlds, ensuring unique gameProtocolPort, worldID, and mysqlWorldDatabase values.
+
+
+Step 3: Setting Up Databases
+You need two types of databases:
+
+A central database (schema.sql) shared by all worlds.
+Individual world databases (server.sql) for each world.
+
+Central Database Setup
+Create a database for the shared schema (e.g., tfs-multi-world).
+Import the schema.sql file into the central database.
+
+Individual Database Setup
+For each world, create a separate database (e.g., world1-db, world2-db).
+Import the server.sql file into each individual database.
+
+
+Step 4: Running Multiple Worlds
+Once you’ve configured the directories and databases, you can run multiple worlds simultaneously.
+
+Copy the server compiled executable (theforgottenserver.exe) into each server directory.
+Start each world from its respective directory.
+
+Step 5: Testing the Worlds
+Configure your game client to connect to the appropriate ports:
+
+World 1: IP: 127.0.0.2, Port: 7171
+World 2: IP: 127.0.0.2, Port: 7171
+
+
+Conclusion
+By following these steps, you can successfully set up and run multiple worlds in The Forgotten Server.
+Each world operates independently (wich means you can use diferent maps) but shares accounts and other central data via the schema.sql database.
+If you encounter issues or have further questions, feel free to ask (but don't expects answers...).
