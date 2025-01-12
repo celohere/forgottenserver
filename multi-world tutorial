@@ -1,4 +1,4 @@
-												Configuring the Multi_World System in The Forgotten Server
+										Configuring the Multi_World System in The Forgotten Server
 
 
 This tutorial explains how to set up multiple worlds using The Forgotten Server. The system uses a central database (schema.sql) that contains shared tables across all servers, differentiated by the world_id field,
