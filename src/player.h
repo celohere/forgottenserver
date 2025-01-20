@@ -1082,6 +1082,7 @@ class Player final : public Creature, public Cylinder
 		uint32_t actionTaskEvent;
 		uint32_t nextStepEvent;
 		uint32_t walkTaskEvent;
+		uint32_t classicAttackEvent;
 		uint32_t MessageBufferTicks;
 		uint32_t lastIP;
 		uint32_t accountNumber;

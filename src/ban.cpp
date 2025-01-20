@@ -131,6 +131,19 @@ bool IOBan::isPlayerBanned(uint32_t playerId, BanInfo& banInfo)
 		return false;
 	}
 
+	int64_t expiresAt = result->getNumber<int64_t>("expires_at");
+	if (expiresAt != 0 && time(nullptr) > expiresAt) {
+		// Move the ban to history if it has expired
+		query.str(std::string());
+		query << "INSERT INTO `player_ban_history` (`player_id`, `reason`, `banned_at`, `expired_at`, `banned_by`) VALUES (" << playerId << ',' << db->escapeString(result->getString("reason")) << ',' << result->getNumber<time_t>("banned_at") << ',' << expiresAt << ',' << result->getNumber<uint32_t>("banned_by") << ')';
+		g_databaseTasks.addTask(query.str());
+
+		query.str(std::string());
+		query << "DELETE FROM `player_bans` WHERE `account_id` = " << playerId;
+		g_databaseTasks.addTask(query.str());
+		return false;
+	}
+
 	banInfo.expiresAt = result->getNumber<int64_t>("expires_at");
 	banInfo.reason = result->getString("reason");
 	banInfo.bannedBy = result->getString("name");

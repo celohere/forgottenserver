@@ -268,7 +268,7 @@ class ConditionDamage final : public Condition
 		void setInitDamage(int32_t initDamage) {
 			this->initDamage = initDamage;
 		}
-		
+
 		//serialization
 		void serialize(PropWriteStream& propWriteStream) final;
 		bool unserializeProp(ConditionAttr_t attr, PropStream& propStream) final;

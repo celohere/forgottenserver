@@ -113,6 +113,8 @@ Player::Player(ProtocolGame_ptr p) :
 	actionTaskEvent = 0;
 	nextStepEvent = 0;
 
+	classicAttackEvent = 0;
+
 	lastFailedFollow = 0;
 
 	sex = PLAYERSEX_FEMALE;
@@ -3086,7 +3088,8 @@ void Player::doAttacking(uint32_t)
 		if (!classicSpeed) {
 			setNextActionTask(task);
 		} else {
-			g_scheduler.addEvent(task);
+			g_scheduler.stopEvent(classicAttackEvent);
+			classicAttackEvent = g_scheduler.addEvent(task);
 		}
 
 		if (result) {
@@ -3226,7 +3229,7 @@ void Player::onEndCondition(ConditionType_t type)
 		onIdleStatus();
 		pzLocked = false;
 		clearAttacked();
-		
+
 		for (const auto& playerAttackers : g_game.getPlayers()) {
 			Player* attacker = playerAttackers.second;
 			if (attacker->hasAttacked(this))

@@ -52,12 +52,12 @@ bool IOLoginData::saveAccount(const Account& acc)
 	return Database::getInstance()->executeQuery(query.str());
 }
 
-bool IOLoginData::loginserverAuthentication(uint32_t accountID, const std::string& password, Account& account)
+bool IOLoginData::loginserverAuthentication(uint32_t accountName, const std::string& password, Account& account)
 {
 	Database* db = Database::getInstance();
 
 	std::ostringstream query;
-	query << "SELECT `id`, `name`, `password`, `type`, `premdays`, `lastday` FROM `accounts` WHERE `id` = " << accountID;
+	query << "SELECT `id`, `name`, `password`, `type`, `premdays`, `lastday` FROM `accounts` WHERE `name` = " << accountName;
 	DBResult_ptr result = db->storeQuery(query.str());
 	if (!result) {
 		return false;
@@ -249,10 +249,10 @@ bool IOLoginData::getPlayersByAccount(uint32_t acc) {
 
 		for (uint32_t playerId : playerson.id) {
 			// Get accountID from actual player
-			uint32_t accountId = IOLoginData::getPlayerAccountId(playerId);
+			uint32_t accountName = IOLoginData::getPlayerAccountId(playerId);
 
 			// Log for cases when accountId is not valid
-			if (accountId == 0) {
+			if (accountName == 0) {
 				std::cout << "Error: Player ID " << playerId << " has no valid account ID." << std::endl;
 				continue; // Ignore players with invalid IDs
 			}
@@ -261,7 +261,7 @@ bool IOLoginData::getPlayersByAccount(uint32_t acc) {
 			//std::cout << "Player ID: " << playerId << ", Account ID: " << accountId << std::endl;
 
 			// verifying if Player belong to specified account
-			if (accountId == acc) {
+			if (accountName == acc) {
 				//std::cout << "Account " << acc << " already has a player online (Player ID: " << playerId << ")." << std::endl;
 				return false; // Found another character from the same account online
 			}
