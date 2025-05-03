@@ -229,10 +229,13 @@ void IOLoginData::updateOnlineStatus(uint32_t guid, bool login)
 	if (g_config.getBoolean(ConfigManager::ALLOW_CLONES)) {
 		return;
 	}
-
 	std::ostringstream query;
 	if (login) {
-		query << "INSERT INTO `players_online` (`player_id`, `world_id`) VALUES (" << guid << ", " << getWorldId(guid) << ");";
+		uint32_t wid = getWorldId(guid);
+		if (wid == 0) {
+			wid = 1;
+		}
+		query << "INSERT INTO `players_online` (`player_id`, `world_id`) VALUES (" << guid << ", " << wid << ");";
 	} else {
 		query << "DELETE FROM `players_online` WHERE `player_id` = " << guid;
 	}
