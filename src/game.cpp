@@ -2807,8 +2807,15 @@ void Game::playerRequestAddVip(uint32_t playerId, const std::string& name)
 		uint32_t guid;
 		bool specialVip;
 		std::string formattedName = name;
-		if (!IOLoginData::getGuidByNameEx(guid, specialVip, formattedName)) {
+		uint16_t targetWorldId;
+
+		if (!IOLoginData::getGuidByNameEx(guid, specialVip, formattedName, targetWorldId)) {
 			player->sendTextMessage(MESSAGE_STATUS_SMALL, "A player with this name does not exist.");
+			return;
+		}
+
+		if (targetWorldId != player->getWorldId()) {
+			player->sendTextMessage(MESSAGE_STATUS_SMALL, "You can only add players from your world.");
 			return;
 		}
 

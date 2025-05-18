@@ -51,7 +51,7 @@ class IOLoginData
 		static bool loadPlayer(Player* player, DBResult_ptr result);
 		static bool savePlayer(Player* player);
 		static uint32_t getGuidByName(const std::string& name);
-		static bool getGuidByNameEx(uint32_t& guid, bool& specialVip, std::string& name);
+		static bool getGuidByNameEx(uint32_t& guid, bool& specialVip, std::string& name, uint16_t& worldId);
 		static std::string getNameByGuid(uint32_t guid);
 		static bool formatPlayerName(std::string& name);
 		static bool addStorageValue(uint32_t guid, uint32_t storageKey, uint32_t storageValue);
