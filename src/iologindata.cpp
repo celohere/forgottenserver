@@ -1014,12 +1014,12 @@ uint32_t IOLoginData::getGuidByName(const std::string& name)
 	return result->getNumber<uint32_t>("id");
 }
 
-bool IOLoginData::getGuidByNameEx(uint32_t& guid, bool& specialVip, std::string& name)
+bool IOLoginData::getGuidByNameEx(uint32_t& guid, bool& specialVip, std::string& name, uint16_t& worldId)
 {
 	Database* db = Database::getInstance();
 
 	std::ostringstream query;
-	query << "SELECT `name`, `id`, `group_id`, `account_id` FROM `players` WHERE `name` = " << db->escapeString(name);
+	query << "SELECT `name`, `id`, `group_id`, `account_id`, `world_id` FROM `players` WHERE `name` = " << db->escapeString(name);
 	DBResult_ptr result = db->storeQuery(query.str());
 	if (!result) {
 		return false;
@@ -1027,6 +1027,8 @@ bool IOLoginData::getGuidByNameEx(uint32_t& guid, bool& specialVip, std::string&
 
 	name = result->getString("name");
 	guid = result->getNumber<uint32_t>("id");
+	worldId = result->getNumber<uint16_t>("world_id");
+
 	Group* group = g_game.groups.getGroup(result->getNumber<uint16_t>("group_id"));
 
 	uint64_t flags;
