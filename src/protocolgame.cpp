@@ -1,3 +1,4 @@
+	std::forward_list<VIPEntry> vipEntries = IOLoginData::getVIPEntries(player->getAccount(), player->getWorldId());
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
  * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
@@ -1595,7 +1596,7 @@ void ProtocolGame::sendAddCreature(const Creature* creature, const Position& pos
 	//player light level
 	sendCreatureLight(creature);
 
-	const std::forward_list<VIPEntry>& vipEntries = IOLoginData::getVIPEntries(player->getAccount());
+	std::forward_list<VIPEntry> vipEntries = IOLoginData::getVIPEntries(player->getAccount(), player->getWorldId());
 
 	if (player->isAccessPlayer()) {
 		for (const VIPEntry& entry : vipEntries) {
