@@ -58,9 +58,9 @@ class IOLoginData
 		static void increaseBankBalance(uint32_t guid, uint64_t bankBalance);
 		static bool hasBiddedOnHouse(uint32_t guid);
 
-		static std::forward_list<VIPEntry> getVIPEntries(uint32_t accountId);
-		static void addVIPEntry(uint32_t accountId, uint32_t guid);
-		static void removeVIPEntry(uint32_t accountId, uint32_t guid);
+		static std::forward_list<VIPEntry> getVIPEntries(uint32_t accountId, uint16_t worldId);
+		static void addVIPEntry(uint32_t accountId, uint32_t guid, uint16_t worldId);
+		static void removeVIPEntry(uint32_t accountId, uint32_t guid, uint16_t worldId);
 
 		static void addPremiumDays(uint32_t accountId, int32_t addDays);
 		static void removePremiumDays(uint32_t accountId, int32_t removeDays);
