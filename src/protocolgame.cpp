@@ -1,4 +1,3 @@
-	std::forward_list<VIPEntry> vipEntries = IOLoginData::getVIPEntries(player->getAccount(), player->getWorldId());
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
  * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
