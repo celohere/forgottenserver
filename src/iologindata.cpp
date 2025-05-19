@@ -676,7 +676,10 @@ bool IOLoginData::loadPlayer(Player* player, DBResult_ptr result)
 
 	//load vip
 	query.str(std::string());
-	query << "SELECT `player_id` FROM `account_viplist` WHERE `account_id` = " << player->getAccount();
+	query << "SELECT `player_id` FROM `account_viplist` "
+		<< "WHERE `account_id` = " << player->getAccount()
+		<< " AND `world_id` = " << player->getWorldId() << ";";
+
 	if ((result = db->storeQuery(query.str()))) {
 		do {
 			player->addVIPInternal(result->getNumber<uint32_t>("player_id"));
@@ -1100,12 +1103,17 @@ bool IOLoginData::hasBiddedOnHouse(uint32_t guid)
 	return db->storeQuery(query.str()).get() != nullptr;
 }
 
-std::forward_list<VIPEntry> IOLoginData::getVIPEntries(uint32_t accountId)
+std::forward_list<VIPEntry> IOLoginData::getVIPEntries(uint32_t accountId, uint16_t worldId)
 {
 	std::forward_list<VIPEntry> entries;
 
 	std::ostringstream query;
-	query << "SELECT `player_id`, (SELECT `name` FROM `players` WHERE `id` = `player_id`) AS `name`, `description`, `icon`, `notify` FROM `account_viplist` WHERE `account_id` = " << accountId;
+	query << "SELECT `player_id`, "
+		<< "(SELECT `name` FROM `players` WHERE `id` = `player_id`) AS `name`, "
+		<< "`description`, `icon`, `notify` "
+		<< "FROM `account_viplist` "
+		<< "WHERE `account_id` = " << accountId
+		<< " AND `world_id` = " << worldId;
 
 	DBResult_ptr result = Database::getInstance()->storeQuery(query.str());
 	if (result) {
@@ -1119,19 +1127,23 @@ std::forward_list<VIPEntry> IOLoginData::getVIPEntries(uint32_t accountId)
 	return entries;
 }
 
-void IOLoginData::addVIPEntry(uint32_t accountId, uint32_t guid)
+void IOLoginData::addVIPEntry(uint32_t accountId, uint32_t guid, uint16_t worldId)
 {
 	Database* db = Database::getInstance();
 
 	std::ostringstream query;
-	query << "INSERT INTO `account_viplist` (`account_id`, `player_id`) VALUES (" << accountId << ',' << guid << ')';
+	query << "INSERT INTO `account_viplist` (`account_id`, `player_id`, `world_id`) VALUES ("
+		<< accountId << ", " << guid << ", " << worldId << ")";
 	db->executeQuery(query.str());
 }
 
-void IOLoginData::removeVIPEntry(uint32_t accountId, uint32_t guid)
+void IOLoginData::removeVIPEntry(uint32_t accountId, uint32_t guid, uint16_t worldId)
 {
 	std::ostringstream query;
-	query << "DELETE FROM `account_viplist` WHERE `account_id` = " << accountId << " AND `player_id` = " << guid;
+	query << "DELETE FROM `account_viplist` "
+		<< "WHERE `account_id` = " << accountId
+		<< " AND `player_id` = " << guid
+		<< " AND `world_id` = " << worldId;
 	Database::getInstance()->executeQuery(query.str());
 }
 

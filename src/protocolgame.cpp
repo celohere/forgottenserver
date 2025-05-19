@@ -1595,7 +1595,7 @@ void ProtocolGame::sendAddCreature(const Creature* creature, const Position& pos
 	//player light level
 	sendCreatureLight(creature);
 
-	const std::forward_list<VIPEntry>& vipEntries = IOLoginData::getVIPEntries(player->getAccount());
+	std::forward_list<VIPEntry> vipEntries = IOLoginData::getVIPEntries(player->getAccount(), player->getWorldId());
 
 	if (player->isAccessPlayer()) {
 		for (const VIPEntry& entry : vipEntries) {

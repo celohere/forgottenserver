@@ -2119,21 +2119,40 @@ bool Player::addVIP(uint32_t vipGuid, const std::string& vipName, VipStatus_t st
 		return false;
 	}
 
+	// Consulting account_id from database to check if account_id is the same
+	std::ostringstream query;
+	query << "SELECT `account_id` FROM `players` WHERE `id` = " << vipGuid;
+	DBResult_ptr dbResult = Database::getInstance()->storeQuery(query.str());
+
+	if (!dbResult) {
+		sendTextMessage(MESSAGE_STATUS_SMALL, "Player does not exist.");
+		return false;
+	}
+
+	uint32_t vipAccountId = dbResult->getNumber<uint32_t>("account_id");
+
+	if (vipAccountId == accountNumber) {
+		sendTextMessage(MESSAGE_STATUS_SMALL, "You cannot add characters from your own account.");
+		return false;
+	}
+
 	if (VIPList.size() >= getMaxVIPEntries() || VIPList.size() == 200) { // max number of buddies is 200 in 9.53
 		sendTextMessage(MESSAGE_STATUS_SMALL, "You cannot add more buddies.");
 		return false;
 	}
 
-	auto result = VIPList.insert(vipGuid);
-	if (!result.second) {
+	auto insertResult = VIPList.insert(vipGuid);
+	if (!insertResult.second) {  
 		sendTextMessage(MESSAGE_STATUS_SMALL, "This player is already in your list.");
 		return false;
 	}
 
-	IOLoginData::addVIPEntry(accountNumber, vipGuid);
+	IOLoginData::addVIPEntry(accountNumber, vipGuid, getWorldId());
+
 	if (client) {
 		client->sendVIP(vipGuid, vipName, status);
 	}
+
 	return true;
 }
 
