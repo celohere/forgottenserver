@@ -3282,7 +3282,6 @@ void Player::onAttackedCreature(Creature* target)
 				addAttacked(targetPlayer);
 				if (targetPlayer->getSkull() == SKULL_NONE && getSkull() == SKULL_NONE) {
 					setSkull(SKULL_WHITE);
-					IOLoginData::savePlayer(this);
 				}
 				targetPlayer->sendCreatureSkull(this);
 			}
