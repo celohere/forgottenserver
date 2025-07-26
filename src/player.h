@@ -574,7 +574,7 @@ class Player final : public Creature, public Cylinder
  		void addWeaponExhaust(uint32_t ticks);
 		void addCombatExhaust(uint32_t ticks);
 		void addHealExhaust(uint32_t ticks);
-		void addInFightTicks(bool pzlock = false);
+		void addInFightTicks();
 
 		uint64_t getGainedExperience(Creature* attacker) const final;
 
