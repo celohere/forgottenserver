@@ -2024,18 +2024,23 @@ void Player::addHealExhaust(uint32_t ticks)
 	addCondition(condition);
 }
 
-void Player::addInFightTicks(bool pzlock /*= false*/)
+void Player::addInFightTicks()
 {
 	if (hasFlag(PlayerFlag_NotGainInFight)) {
 		return;
 	}
 
-	if (pzlock) {
+	if (!pzLocked) {
 		pzLocked = true;
+		sendIcons();
 	}
 
 	Condition* condition = Condition::createCondition(CONDITIONID_DEFAULT, CONDITION_INFIGHT, g_config.getNumber(ConfigManager::PZ_LOCKED), 0);
-	addCondition(condition);
+	if (condition) {
+		if (!addCondition(condition)) {
+			delete condition;
+		}
+	}
 }
 
 void Player::removeList()
@@ -3245,29 +3250,41 @@ void Player::onAttackedCreature(Creature* target)
 
 	Player* targetPlayer = target->getPlayer();
 	if (targetPlayer && !isPartner(targetPlayer)) {
-		if (!pzLocked && g_game.getWorldType() == WORLD_TYPE_PVP_ENFORCED) {
+		if (!pzLocked && g_game.getWorldType() != WORLD_TYPE_PVP_ENFORCED) {
 			pzLocked = true;
 			sendIcons();
 		}
 
-		if (getSkull() == SKULL_NONE && getSkullClient(targetPlayer) == SKULL_YELLOW) {
+		if ((getSkull() == SKULL_WHITE || getSkull() == SKULL_RED) &&
+			(targetPlayer->getSkull() == SKULL_WHITE || targetPlayer->getSkull() == SKULL_RED)) {
 			addAttacked(targetPlayer);
 			targetPlayer->sendCreatureSkull(this);
+		} else if ((targetPlayer->getSkull() == SKULL_WHITE || targetPlayer->getSkull() == SKULL_RED) &&
+			targetPlayer->hasAttacked(this)) {
+			addAttacked(targetPlayer);
+			sendIcons();
+		} else if ((targetPlayer->getSkull() == SKULL_WHITE || targetPlayer->getSkull() == SKULL_RED) &&
+			!targetPlayer->hasAttacked(this)) {
+			addAttacked(targetPlayer);
+			if (getSkull() == SKULL_NONE) {
+				targetPlayer->sendCreatureSkull(this);
+			}
+			if (!pzLocked) {
+				pzLocked = true;
+				sendIcons();
+			}
 		} else {
-			if ((!targetPlayer->hasAttacked(this)) || (!g_config.getBoolean(ConfigManager::ALLOW_FIGHT_BACK))) {
-				if (!pzLocked && g_game.getWorldType() != WORLD_TYPE_PVP_ENFORCED) {
-					pzLocked = true;
-					sendIcons();
+			if (!pzLocked && g_game.getWorldType() != WORLD_TYPE_PVP_ENFORCED) {
+				pzLocked = true;
+				sendIcons();
+			}
+			if (!Combat::isInPvpZone(this, targetPlayer) && !isInWar(targetPlayer)) {
+				addAttacked(targetPlayer);
+				if (targetPlayer->getSkull() == SKULL_NONE && getSkull() == SKULL_NONE) {
+					setSkull(SKULL_WHITE);
+					IOLoginData::savePlayer(this);
 				}
-				if (!Combat::isInPvpZone(this, targetPlayer) && !isInWar(targetPlayer)) {
-					addAttacked(targetPlayer);
-					if (targetPlayer->getSkull() == SKULL_NONE && getSkull() == SKULL_NONE) {
-						setSkull(SKULL_WHITE);
-					}
-				}
-				if (getSkull() == SKULL_NONE) {
-					targetPlayer->sendCreatureSkull(this);
-				}
+				targetPlayer->sendCreatureSkull(this);
 			}
 		}
 	}
@@ -3603,14 +3620,21 @@ Skulls_t Player::getSkullClient(const Creature* creature) const
 		}
 
 		if (player->hasAttacked(this)) {
+			if ((getSkull() == SKULL_WHITE || getSkull() == SKULL_RED) && hasAttacked(player)) {
+				return SKULL_NONE;
+			}
+			if (getSkull() == SKULL_WHITE || getSkull() == SKULL_RED) {
+				return SKULL_YELLOW;
+			}
 			return SKULL_YELLOW;
 		}
 
-		if (isPartner(player)) {
+		if (party && party == player->party) {
 			return SKULL_GREEN;
 		}
 	}
-	return Creature::getSkullClient(creature);
+	Skulls_t skull = Creature::getSkullClient(creature);
+	return skull;
 }
 
 bool Player::hasAttacked(const Player* attacked) const
