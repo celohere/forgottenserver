@@ -3240,7 +3240,9 @@ void Player::onAttackedCreature(Creature* target)
 	}
 
 	if (target == this) {
-		addInFightTicks();
+		if (!hasCondition(CONDITION_INFIGHT)) {
+			addInFightTicks();
+		}
 		return;
 	}
 
@@ -3250,45 +3252,53 @@ void Player::onAttackedCreature(Creature* target)
 
 	Player* targetPlayer = target->getPlayer();
 	if (targetPlayer && !isPartner(targetPlayer)) {
-		if (!pzLocked && g_game.getWorldType() != WORLD_TYPE_PVP_ENFORCED) {
-			pzLocked = true;
-			sendIcons();
-		}
+		bool shouldApplyPzLocked = false;
 
 		if ((getSkull() == SKULL_WHITE || getSkull() == SKULL_RED) &&
 			(targetPlayer->getSkull() == SKULL_WHITE || targetPlayer->getSkull() == SKULL_RED)) {
 			addAttacked(targetPlayer);
 			targetPlayer->sendCreatureSkull(this);
-		} else if ((targetPlayer->getSkull() == SKULL_WHITE || targetPlayer->getSkull() == SKULL_RED) &&
+			shouldApplyPzLocked = true;
+		}
+		else if ((targetPlayer->getSkull() == SKULL_WHITE || targetPlayer->getSkull() == SKULL_RED) &&
 			targetPlayer->hasAttacked(this)) {
 			addAttacked(targetPlayer);
 			sendIcons();
-		} else if ((targetPlayer->getSkull() == SKULL_WHITE || targetPlayer->getSkull() == SKULL_RED) &&
+			shouldApplyPzLocked = true;
+		}
+		else if ((targetPlayer->getSkull() == SKULL_WHITE || targetPlayer->getSkull() == SKULL_RED) &&
 			!targetPlayer->hasAttacked(this)) {
 			addAttacked(targetPlayer);
 			if (getSkull() == SKULL_NONE) {
 				targetPlayer->sendCreatureSkull(this);
 			}
-			if (!pzLocked) {
-				pzLocked = true;
-				sendIcons();
-			}
+			shouldApplyPzLocked = true;
 		} else {
-			if (!pzLocked && g_game.getWorldType() != WORLD_TYPE_PVP_ENFORCED) {
-				pzLocked = true;
-				sendIcons();
-			}
 			if (!Combat::isInPvpZone(this, targetPlayer) && !isInWar(targetPlayer)) {
 				addAttacked(targetPlayer);
 				if (targetPlayer->getSkull() == SKULL_NONE && getSkull() == SKULL_NONE) {
 					setSkull(SKULL_WHITE);
+					IOLoginData::savePlayer(this);
 				}
 				targetPlayer->sendCreatureSkull(this);
+				shouldApplyPzLocked = true;
+			}
+		}
+
+		if (shouldApplyPzLocked && !pzLocked && g_game.getWorldType() != WORLD_TYPE_PVP_ENFORCED) {
+			pzLocked = true;
+			sendIcons();
+		}
+
+		if (!hasCondition(CONDITION_INFIGHT)) {
+			Condition* condition = Condition::createCondition(CONDITIONID_DEFAULT, CONDITION_INFIGHT, g_config.getNumber(ConfigManager::PZ_LOCKED), 0);
+			if (condition) {
+				if (!addCondition(condition)) {
+					delete condition;
+				}
 			}
 		}
 	}
-
-	addInFightTicks();
 }
 
 void Player::onAttacked()
@@ -4123,3 +4133,4 @@ void Player::setGuild(Guild* guild)
 		oldGuild->removeMember(this);
 	}
 }
+
