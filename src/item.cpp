@@ -1060,6 +1060,16 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance,
 				}
 			}
 
+			if (it.increaseMagicPercent) {
+				if (begin) {
+					begin = false;
+					s << " (";
+				} else {
+					s << ", ";
+				}
+				s << "Magic damage " << std::showpos << it.increaseMagicPercent << '%' << std::noshowpos;
+			}
+
 			if (!begin) {
 				s << ')';
 			}
@@ -1201,6 +1211,17 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance,
 
 				s << "speed " << std::showpos << (it.abilities->speed >> 1) << std::noshowpos;
 			}
+		}
+
+		if (it.increaseMagicPercent) {
+			if (begin) {
+				begin = false;
+				s << " (";
+			} else {
+				s << ", ";
+			}
+
+			s << "Magic damage " << std::showpos << it.increaseMagicPercent << '%' << std::noshowpos;
 		}
 
 		if (!begin) {
