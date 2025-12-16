@@ -219,6 +219,7 @@ class ItemType
 		int32_t defense;
 		int32_t extraDefense;
 		int32_t armor;
+		int32_t increaseMagicPercent = 0;
 		int32_t rotateTo;
 		int32_t runeMagLevel;
 		int32_t runeLevel;
