@@ -3459,9 +3459,9 @@ bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage
 				for (CreatureEvent* creatureEvent : events) {
 					creatureEvent->executeHealthChange(target, attacker, damage);
 				}
-				damage.origin = ORIGIN_NONE;
-				return combatChangeHealth(attacker, target, damage);
 			}
+			damage.origin = ORIGIN_NONE;
+			return combatChangeHealth(attacker, target, damage);
 		}
 		target->gainHealth(attacker, damage.primary.value);
 	} else {
@@ -3487,6 +3487,29 @@ bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage
 		if (healthChange == 0) {
 			return true;
 		}
+
+		auto originList = { ORIGIN_RANGED, ORIGIN_MELEE, ORIGIN_CONDITION };
+		auto it = std::find(originList.begin(), originList.end(), damage.origin);
+		if (attackerPlayer && it == originList.end() && damage.origin != ORIGIN_NONE) {
+			int32_t magicPercentBonus = 0;
+			for (int32_t slot = CONST_SLOT_FIRST; slot <= CONST_SLOT_LAST; ++slot) {
+				Item* item = attackerPlayer->inventory[slot];
+				if (item) {
+					const ItemType& iiType = Item::items[item->getID()];
+					const int32_t& slotPosition = item->getSlotPosition();
+					if (iiType.increaseMagicPercent && (iiType.slotPosition & slotPosition)) {
+						magicPercentBonus += iiType.increaseMagicPercent;
+					}
+				}
+			}
+
+			if (magicPercentBonus > 0) {
+				float bonusMultiplier = 1.0f + (magicPercentBonus / 100.0f);
+				damage.primary.value = static_cast<int32_t>(damage.primary.value * bonusMultiplier);
+			}
+		}
+
+		healthChange = damage.primary.value + damage.secondary.value;
 
 		TextMessage message;
 		SpectatorVec list;
@@ -3543,9 +3566,8 @@ bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage
 				for (CreatureEvent* creatureEvent : events) {
 					creatureEvent->executeHealthChange(target, attacker, damage);
 				}
-				damage.origin = ORIGIN_NONE;
-				return combatChangeHealth(attacker, target, damage);
 			}
+			damage.origin = ORIGIN_NONE;
 		}
 
 		int32_t targetHealth = target->getHealth();
